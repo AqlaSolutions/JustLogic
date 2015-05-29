@@ -1,0 +1,14 @@
+using JustLogic.Core;
+using System.Collections.Generic;
+using UnityEngine;
+
+[UnitMenu("Navigation/Add Off Mesh Links")]
+[UnitFriendlyName("NavMesh.Add Off Mesh Links")]
+public class JLNavMeshAddOffMeshLinks : JLAction
+{
+    protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
+    {
+        UnityEngine.NavMesh.AddOffMeshLinks();
+        return null;
+    }
+}

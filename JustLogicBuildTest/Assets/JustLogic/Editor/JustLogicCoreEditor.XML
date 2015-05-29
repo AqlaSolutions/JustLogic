@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JustLogicCoreEditor</name>
+    </assembly>
+    <members>
+        <member name="M:JustLogic.Editor.Copier.GetCompexity(System.Object)">
+            <summary>
+            Warning: does full copy-operation
+            </summary>
+        </member>
+        <member name="T:JustLogic.Editor.Copier.CopiedElement">
+            <tocexclude />
+        </member>
+        <member name="T:JustLogic.Editor.Copier.CopiedData">
+            <tocexclude />
+        </member>
+        <member name="T:JLCustomExpressionAssetEditorBase">
+            <tocexclude />
+        </member>
+        <member name="T:JustLogicExpressionHolderEditor">
+            <tocexclude />
+        </member>
+        <member name="T:JLCustomScriptAssetEditorBase">
+            <tocexclude />
+        </member>
+        <member name="M:JustLogic.Editor.JLGUI.IParameterDrawer.Initialize(JustLogic.Editor.JLGUI.DrawerInitArgs,System.Object,JustLogic.Editor.JLGUI.IDrawContext)">
+            <summary>
+            Returns true if drawer is suitable for specified args
+            </summary>
+        </member>
+        <member name="M:JustLogic.Editor.JLGUI.IParameterDrawer.UpdateLayoutType(System.Int32,JustLogic.Editor.JLGUI.IDrawContext,System.Int32@,System.Int32@,System.Boolean@)">
+            <summary>
+            Can set Layout and other properties
+            </summary>
+        </member>
+        <member name="M:JustLogic.Editor.JLGUI.IParameterDrawer.Draw(JustLogic.Editor.JLGUI.IDrawContext)">
+            <summary>
+            Invoke from OnGUI
+            </summary>
+            <returns>Is Value changed</returns>
+        </member>
+        <member name="M:JustLogic.Editor.JLGUI.ParameterDrawerBase.DrawLabel(UnityEngine.GUIContent,System.Boolean,System.Boolean@,JustLogic.Editor.JLGUI.IDrawContext)">
+            <summary>
+            Override to draw before, after or replace with custom implementation
+            </summary>
+        </member>
+        <member name="T:JustLogic.Editor.JLGUI.Drawers.AutoHorizontalLayoutedDrawer">
+            <summary>
+            Если есть label, то рисуется в отдельной строке. Если label отсутствует, рисует в той же
+            </summary>
+        </member>
+        <member name="M:JustLogic.Editor.JLGUI.IParameterDrawersFactory.CreateDrawer(JustLogic.Editor.JLGUI.DrawerInitArgs,System.Object,JustLogic.Editor.JLGUI.IDrawContext)">
+            <summary>
+            Invokes Initialize and Dispose
+            </summary>
+        </member>
+        <member name="M:JustLogic.Editor.JLScriptableHelper.ReplaceUnitSubtypeInternal(JLScriptable,JustLogic.Core.TypeInfo)">
+            <summary>
+            ReplaceUnitSubtype without wrapping in Evalute
+            </summary>
+        </member>
+        <member name="T:JustLogicEventHandlerEditorBase">
+            <tocexclude />
+        </member>
+        <member name="T:JustLogicScriptEditorBase">
+            <tocexclude />
+        </member>
+        <member name="T:JustLogicTimerEditor">
+            <tocexclude />
+        </member>
+    </members>
+</doc>

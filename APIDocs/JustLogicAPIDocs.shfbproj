@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77327b7d-7b42-4ee1-8fd3-0268571827f9}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.5.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>JustLogicApiDocs</HtmlHelpName>
+    <Language>en-US</Language>
+    <FrameworkVersion>.NET Framework 3.5</FrameworkVersion>
+    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <KeepLogFile>False</KeepLogFile>
+    <PlugInConfigurations>
+      <PlugInConfig id="Table of Contents Exclusion" enabled="True" xmlns="">
+        <configuration />
+      </PlugInConfig>
+    </PlugInConfigurations>
+    <HelpTitle>JustLogic API Documentation</HelpTitle>
+    <NamingMethod>MemberName</NamingMethod>
+    <Preliminary>True</Preliminary>
+    <CopyrightText>Copyright %28c%29 Vlad Taranov 2014</CopyrightText>
+    <FeedbackEMailAddress>aqla.dev%40gmail.com</FeedbackEMailAddress>
+    <FeedbackEMailLinkText>aqla.dev%40gmail.com</FeedbackEMailLinkText>
+    <FooterText>&amp;lt%3bdiv align=&amp;quot%3bcenter&amp;quot%3b&amp;gt%3b&amp;lt%3ba href=&amp;quot%3bhttp://www.aqla.net/&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b&amp;gt%3b&amp;lt%3bstrong&amp;gt%3bAqla Solutions&amp;lt%3b/strong&amp;gt%3b&amp;lt%3b/a&amp;gt%3b&amp;lt%3b/div&amp;gt%3b</FooterText>
+    <HeaderText>&amp;lt%3bdiv align=&amp;quot%3bcenter&amp;quot%3b&amp;gt%3b&amp;lt%3ba href=&amp;quot%3bhttp://www.aqla.net/&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b&amp;gt%3b&amp;lt%3bstrong&amp;gt%3bAqla Solutions&amp;lt%3b/strong&amp;gt%3b&amp;lt%3b/a&amp;gt%3b&amp;lt%3b/div&amp;gt%3b</HeaderText>
+    <SyntaxFilters>CSharp, JScript</SyntaxFilters>
+    <MissingTags>AutoDocumentCtors, AutoDocumentDispose</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected, SealedProtected</VisibleItems>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\JustLogicBuildTest\Assets\JustLogic\Plugins\JustLogic.dll" xmlns="" />
+      <DocumentationSource sourceFile="..\JustLogicBuildTest\Assets\JustLogic\Plugins\JustLogic.xml" xmlns="" />
+      <DocumentationSource sourceFile="..\JustLogicBuildTest\Assets\JustLogic\Editor\JustLogicCoreEditor.dll" xmlns="" />
+      <DocumentationSource sourceFile="..\JustLogicBuildTest\Assets\JustLogic\Editor\JustLogicCoreEditor.xml" xmlns="" />
+    </DocumentationSources>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="" isExposed="False">
+        <Filter entryType="Class" fullName="JLAction" isExposed="True" />
+        <Filter entryType="Class" fullName="JLActionExtensions" isExposed="True" />
+        <Filter entryType="Class" fullName="JLCustomExpressionAsset" isExposed="False">
+          <Filter entryType="Constructor" fullName="JLCustomExpressionAsset.#ctor" filterName=".ctor" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JLCustomExpressionAssetBase" isExposed="False">
+          <Filter entryType="Constructor" fullName="JLCustomExpressionAssetBase.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Field" fullName="JLCustomExpressionAssetBase.Value" filterName="Value" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JLCustomExpressionAssetEditorBase" isExposed="True" />
+        <Filter entryType="Class" fullName="JLCustomScriptAsset" isExposed="False">
+          <Filter entryType="Constructor" fullName="JLCustomScriptAsset.#ctor" filterName=".ctor" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JLCustomScriptAssetBase" isExposed="False">
+          <Filter entryType="Constructor" fullName="JLCustomScriptAssetBase.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Field" fullName="JLCustomScriptAssetBase.Value" filterName="Value" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JLCustomScriptAssetEditorBase" isExposed="False">
+          <Filter entryType="Constructor" fullName="JLCustomScriptAssetEditorBase.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Method" fullName="JLCustomScriptAssetEditorBase.Draw" filterName="Draw" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JLExpression" isExposed="True" />
+        <Filter entryType="Class" fullName="JLExpressionExtensions" isExposed="True" />
+        <Filter entryType="Class" fullName="JLUnitBase" isExposed="True">
+          <Filter entryType="Field" fullName="JLUnitBase.CreateInstanceFunc" filterName="CreateInstanceFunc" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicEventHandler" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogicEventHandlerBase" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicEventHandlerBase.#ctor" filterName=".ctor" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicEventHandlerCoreBase" isExposed="False">
+          <Filter entryType="Method" fullName="JustLogicEventHandlerCoreBase.Trigger" filterName="Trigger" isExposed="True" />
+          <Filter entryType="Property" fullName="JustLogicEventHandlerCoreBase.TriggeredCounter" filterName="TriggeredCounter" isExposed="True" />
+          <Filter entryType="Field" fullName="JustLogicEventHandlerCoreBase.DisableOnTriggered" filterName="DisableOnTriggered" isExposed="True" />
+          <Filter entryType="Field" fullName="JustLogicEventHandlerCoreBase.EventHandlerData" filterName="EventHandlerData" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicEventHandlerEditorBase" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicEventHandlerEditorBase.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Method" fullName="JustLogicEventHandlerEditorBase.Draw" filterName="Draw" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicEventHandlerLite" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogicEventHandlerMouse" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogicExpressionHolderEditor" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicExpressionHolderEditor.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Method" fullName="JustLogicExpressionHolderEditor.Draw" filterName="Draw" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicMarker" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogicMarkerBase" isExposed="True">
+          <Filter entryType="Method" fullName="JustLogicMarkerBase.Awake" filterName="Awake" isExposed="False" />
+          <Filter entryType="Method" fullName="JustLogicMarkerBase.Reset" filterName="Reset" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicSceneExpression" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicSceneExpression.#ctor" filterName=".ctor" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicSceneExpressionBase" isExposed="False">
+          <Filter entryType="Field" fullName="JustLogicSceneExpressionBase.Value" filterName="Value" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicScript" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicScript.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Field" fullName="JustLogicScript.Engine" filterName="Engine" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicScriptableContainerBase" isExposed="False">
+          <Filter entryType="Property" fullName="JustLogicScriptableContainerBase.EditorScriptData" filterName="EditorScriptData" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicScriptBase" isExposed="False">
+          <Filter entryType="Property" fullName="JustLogicScriptBase.EditorScriptData" filterName="EditorScriptData" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicScriptEditorBase" isExposed="False">
+          <Filter entryType="Method" fullName="JustLogicScriptEditorBase.Draw" filterName="Draw" isExposed="True" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicTimer" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogicTimerBase" isExposed="True">
+          <Filter entryType="Method" fullName="JustLogicTimerBase.Reset" filterName="Reset" isExposed="False" />
+          <Filter entryType="Method" fullName="JustLogicTimerBase.Update" filterName="Update" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogicTimerEditor" isExposed="False">
+          <Filter entryType="Constructor" fullName="JustLogicTimerEditor.#ctor" filterName=".ctor" isExposed="True" />
+          <Filter entryType="Method" fullName="JustLogicTimerEditor.Draw" filterName="Draw" isExposed="True" />
+        </Filter>
+      </Filter>
+      <Filter entryType="Namespace" fullName="JustLogic.Core" isExposed="True">
+        <Filter entryType="Class" fullName="JustLogic.Core.ConcreteInstantiator" filterName="ConcreteInstantiator" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.EditorEventsMediator" filterName="EditorEventsMediator" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.EnumerableExtensions" filterName="EnumerableExtensions" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.IEnumeratorExtensions" filterName="IEnumeratorExtensions" isExposed="False" />
+        <Filter entryType="Interface" fullName="JustLogic.Core.IExpressionHolder" filterName="IExpressionHolder" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.Instantiator" filterName="Instantiator" isExposed="False" />
+        <Filter entryType="Interface" fullName="JustLogic.Core.IUndoableBehavior" filterName="IUndoableBehavior" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.JLTypeExtensions" filterName="JLTypeExtensions" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.MethodInvokation" filterName="MethodInvokation" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.MethodInvokationArgument" filterName="MethodInvokationArgument" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.MethodInvokationArgumentBase" filterName="MethodInvokationArgumentBase" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.MethodInvokationBase" filterName="MethodInvokationBase" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.MethodPointerExtensions" filterName="MethodPointerExtensions" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.ParameterRuntimeAttribute" filterName="ParameterRuntimeAttribute" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.SerializableMethod" filterName="SerializableMethod" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.SerializableMethodBase" filterName="SerializableMethodBase" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.SerializedEnum" filterName="SerializedEnum" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.SerializedEnumBase" filterName="SerializedEnumBase" isExposed="False" />
+        <Filter entryType="Structure" fullName="JustLogic.Core.TypeInfo.CompleteMethodInfo" filterName="TypeInfo.CompleteMethodInfo" isExposed="True">
+          <Filter entryType="Property" fullName="JustLogic.Core.TypeInfo.CompleteMethodInfo.Pointer" filterName="Pointer" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="JustLogic.Core.TypeKey" filterName="TypeKey" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.UndoData" filterName="UndoData" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Core.UndoDataBase" filterName="UndoDataBase" isExposed="False" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="JustLogic.Editor" isExposed="False">
+        <Filter entryType="Class" fullName="JustLogic.Editor.Copier" filterName="Copier" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogic.Editor.Copier.CopiedData" filterName="Copier.CopiedData" isExposed="True" />
+        <Filter entryType="Structure" fullName="JustLogic.Editor.Copier.CopiedElement" filterName="Copier.CopiedElement" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Editor.DrawersLibrary" filterName="DrawersLibrary" isExposed="True" />
+        <Filter entryType="Structure" fullName="JustLogic.Editor.DrawersLibrary.TwoTypesKey" filterName="DrawersLibrary.TwoTypesKey" isExposed="False" />
+        <Filter entryType="Class" fullName="JustLogic.Editor.EditorCommands" filterName="EditorCommands" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogic.Editor.JLScriptableHelper" filterName="JLScriptableHelper" isExposed="True" />
+        <Filter entryType="Class" fullName="JustLogic.Editor.UnitsGenerator" filterName="UnitsGenerator" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="" isExposed="False">
+        <Filter entryType="Class" fullName="JLActionExtensions" isExposed="True" />
+        <Filter entryType="Class" fullName="JLExpressionExtensions" isExposed="True" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="System" isExposed="True">
+        <Filter entryType="Class" fullName="System.Attribute" filterName="Attribute" isExposed="False" />
+        <Filter entryType="Class" fullName="System.IDisposable" filterName="IDisposable" isExposed="False" />
+        <Filter entryType="Class" fullName="System.Object" filterName="Object" isExposed="False" />
+        <Filter entryType="Class" fullName="System.ValueType" filterName="ValueType" isExposed="False" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="UnityEditor" isExposed="True">
+        <Filter entryType="Class" fullName="UnityEditor.Editor" filterName="Editor" isExposed="False" />
+        <Filter entryType="Class" fullName="UnityEditor.EditorWindow" filterName="EditorWindow" isExposed="False" />
+      </Filter>
+      <Filter entryType="Namespace" fullName="UnityEngine" isExposed="True">
+        <Filter entryType="Class" fullName="UnityEngine.Behaviour" filterName="Behaviour" isExposed="False" />
+        <Filter entryType="Class" fullName="UnityEngine.Component" filterName="Component" isExposed="False" />
+        <Filter entryType="Class" fullName="UnityEngine.MonoBehaviour" filterName="MonoBehaviour" isExposed="False" />
+        <Filter entryType="Class" fullName="UnityEngine.Object" filterName="Object" isExposed="False" />
+        <Filter entryType="Class" fullName="UnityEngine.ScriptableObject" filterName="ScriptableObject" isExposed="False" />
+      </Filter>
+    </ApiFilter>
+    <SdkLinkTarget>Top</SdkLinkTarget>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in
+       order for Visual Studio to perform the build.  The others are optional
+       common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>..\deployscript\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\deployscript\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

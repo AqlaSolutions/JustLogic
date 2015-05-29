@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: JL Script 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5845ba68c9019c84288fe3f0918fc696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _editorUndoDataHolder:
+    UndoIndex: 1
+  _editorScriptRef: {fileID: 0}
+  EditorRelativeReferences:
+  - {fileID: 11400002}
+  StoredInstanceId: -62680
+  EventHandlerData:
+    EventDataClassFullName: JustLogic.Core.Events.Awake
+    Condition: {fileID: 0}
+    JLScriptsLookup:
+    - {fileID: 0}
+  _ctorVariables: []
+  _ctorStaticVariables: []
+  DisableOnTriggered: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b9c3931ad21b9469641fae5312ecff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _editorUndoDataHolder:
+    UndoIndex: 0
+  _editorScriptRef: {fileID: 0}
+  EditorRelativeReferences:
+  - {fileID: 0}
+  StoredInstanceId: -62682
+  Engine:
+    Tree: {fileID: 11400004}
+    Reentrance: 0
+  CtorReentrance: 0
+  _ctorVariables: []
+  _ctorStaticVariables: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d80dc2d07bb45b4799d52bf70acff75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  On: 1
+  Value: {fileID: 11400006}
+  Then: {fileID: 11400008}
+  Else: {fileID: 0}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144d71d759029064abe30d7aea69f001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  Operands: []
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a30eb1dbb4551a4a8054b9e819ae602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  On: 1
+  Actions:
+  - {fileID: 11400010}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e6c0d5bc701e34bb42b3346c1ea7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  On: 1
+  Expression: {fileID: 11400012}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafa645216183f74ab462848cb358f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  Value: {fileID: 11400014}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503709e3019d16646bbefeb2d36a745a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Expanded: 1
+  Value: Hello world!
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

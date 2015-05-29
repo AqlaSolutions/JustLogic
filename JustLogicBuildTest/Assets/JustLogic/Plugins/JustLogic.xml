@@ -1,0 +1,609 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>JustLogic</name>
+  </assembly>
+  <members>
+    <member name="T:JustLogic.Core.EditorVariableInfoBase">
+      <tocexclude />
+      <summary>
+            A static information of one script variable
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.EventData">
+      <summary>
+            Contains the data of the handled event
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.EventData.GetArgumentOrNull(System.Int32)">
+      <summary>
+            Returns argument by the specified index or null if it does not specified or index is incorrect
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.EventData.EventInfo">
+      <summary>
+            Event description
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.EventData.Counter">
+      <summary>
+            Indicates how many times the event handler was activated
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.EventData.Handler">
+      <summary>
+            Event handler which received the event
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.EventData.Arguments">
+      <summary>
+            Event concrete arguments of the <see cref="P:JustLogic.Core.IEventDescription.Arguments" /> types
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.EventDescriptionArguments">
+      <summary>
+            A collection of event argument to be provided by the <see cref="P:JustLogic.Core.IEventDescription.Arguments" /></summary>
+      <tocexclude />
+    </member>
+    <member name="M:JustLogic.Core.IExecutionContext.GetVariable(JustLogic.Core.SelectedVariableInfoBase)">
+      <summary>
+            Retreives a reference to the variable by the specified "selected in the inspector" variable info
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IExecutionContext.ExecutorObject">
+      <summary>
+            The owner game object of the <see cref="T:JustLogic.Core.ExecutionContext" /> instance
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IExecutionContext.ExecutorBehavior">
+      <summary>
+            The owner behavior component of the <see cref="T:JustLogic.Core.ExecutionContext" /> instance
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IExecutionContext.CurrentEvent">
+      <summary>
+            Contains the event from which the execution has been raised
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.ExecutionContext">
+      <summary>
+            Execution context data container
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionContext.GetVariable(JustLogic.Core.SelectedVariableInfoBase)">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ExecutionContext.Variables">
+      <summary>
+            Local script variables
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.ExecutionContext.StaticVariables">
+      <summary>
+            Variables which data is preserved between executions
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.ExecutionContext.ExecutorObject">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ExecutionContext.ExecutorBehavior">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ExecutionContext.CurrentEvent">
+      <inheritdoc />
+    </member>
+    <member name="T:JustLogic.Core.ExecutionEngineBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.ExecutionEngineBase.ReentranceMode">
+      <summary>
+            Specifies what to do when an execution is being invoking when another execution is already in its execution process
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.ExecutionEngineBase.StartArguments">
+      <summary>
+            An execution start arguments
+            </summary>
+      <tocexclude />
+    </member>
+    <member name="F:JustLogic.Core.ExecutionEngineBase.Tree">
+      <summary>
+            Units tree
+            </summary>
+    </member>
+    <member name="F:JustLogic.Core.ExecutionEngineBase.Context">
+      <summary>
+            Holds variables and temporary data
+            </summary>
+    </member>
+    <member name="F:JustLogic.Core.ExecutionEngineBase.Reentrance">
+      <summary>
+            Specifies what to do when an execution is being invoking when the engine already is in its execution process
+            </summary>
+      <remarks>See <see cref="T:JustLogic.Core.ExecutionEngineBase.ReentranceMode" /> for details</remarks>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.Initialize(JustLogic.Core.ExecutionEngineBase.ReentranceMode)">
+      <summary>
+            Should be called after the parameterless constructor
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.Start(JustLogic.Core.ExecutionEngineBase.StartArguments)">
+      <summary>
+            Starts or enqueues an execution
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.StopAllCoroutines">
+      <summary>
+            Stops all parallel executions which are stored as coroutines
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.ClearQueuedStarts">
+      <summary>
+            Cancels all queued with <see cref="F:JustLogic.Core.ExecutionEngineBase.ReentranceMode.Queue" /> execution starts
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.HasStartedCoroutines">
+      <summary>
+            Returns true if there are started parallel executions which are stored as coroutines
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.HasQueuedStarts">
+      <summary>
+            Returns true if there are queued with <see cref="F:JustLogic.Core.ExecutionEngineBase.ReentranceMode.Queue" /> execution starts
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.ExecutionEngineBase.Continue(System.Boolean)">
+      <summary>
+            The owner of the <see cref="!:ExecutionEngine" /> instance should call this method every frame
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.GlobalVariablesStorage">
+      <summary>
+            A static container for global script variables
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.GlobalVariablesStorage.GetVariable(System.String)">
+      <summary>
+            Retrieves a variable by its global name
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.IEventDescription">
+      <summary>
+            Inherit this interface to make your custom event
+            </summary>
+      <remarks>It's recommended to make your event description as singleton</remarks>
+    </member>
+    <member name="P:JustLogic.Core.IEventDescription.Name">
+      <summary>
+            The name which should be displayed in the inspector
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IEventDescription.Arguments">
+      <summary>
+            The event parameters information
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IEventDescription.RequiredEventHandler">
+      <summary>
+            Should be typeof(your inheritor of <see cref="T:JustLogicEventHandlerCoreBase" />).FullName
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.IExpressionHolder">
+      <tocexclude />
+    </member>
+    <member name="T:JLUnitBase">
+      <summary>
+            Base class for units
+            </summary>
+      <remarks>
+            A JL Script is composed of units - <see cref="T:JLAction" /> and <see cref="T:JLExpression" />.
+            An expression differs from an action: it has returning value - the result of its work. This value can be immediately used as an argument for another unit.<br />
+            Examples of actions: move the object, load level, slow down time.<br />
+            Examples of expressions: find the main camera, compare two numbers, get the length of the string.<br /></remarks>
+    </member>
+    <member name="F:JLUnitBase.Expanded">
+      <summary>
+            Weather unit is expanded in the inspector
+            </summary>
+    </member>
+    <member name="M:JLUnitBase.CreateInstance``1">
+      <summary>
+            ScriptableObject.CreateInstance shortcut
+            </summary>
+    </member>
+    <member name="M:JLUnitBase.CreateInstance(System.Type)">
+      <summary>
+            ScriptableObject.CreateInstance shortcut
+            </summary>
+    </member>
+    <member name="M:JLUnitBase.CreateInstance(System.String)">
+      <summary>
+            ScriptableObject.CreateInstance shortcut
+            </summary>
+    </member>
+    <member name="T:JLAction">
+      <summary>
+            Base class for unit that does some action
+            </summary>
+      <remarks>
+            Actions are not available to be used as expression parameters. An action does not return a value, so it cannot be passed in the parameter.
+            </remarks>
+    </member>
+    <member name="F:JLAction.On">
+      <summary>
+            Weather the unit is enabled to be executed
+            </summary>
+    </member>
+    <member name="M:JLAction.OnExecute(JustLogic.Core.IExecutionContext)">
+      <summary>
+            Override it to provide your logic for the action
+            </summary>
+      <param name="context">Execution information</param>
+      <returns>null or <see cref="T:JustLogic.Core.YieldMode" /> to start coroutine</returns>
+    </member>
+    <member name="M:JLAction.Execute(JustLogic.Core.IExecutionContext)">
+      <summary>
+            Executes the action if it's enabled, otherwise returns null
+            </summary>
+    </member>
+    <member name="M:JLAction.Build``1(System.Action{``0})">
+      <summary>
+            Creates an action fluently
+            </summary>
+    </member>
+    <member name="M:JLActionExtensions.ExecuteSafe(JLAction,JustLogic.Core.IExecutionContext)">
+      <summary>
+            Calls <see cref="M:JLAction.Execute(JustLogic.Core.IExecutionContext)" /> if the specified <paramref name="action" /> is not null, otherwise returns null
+            </summary>
+    </member>
+    <member name="T:JLExpression">
+      <summary>
+            Base class for unit that does some action and returns a value
+            </summary>
+      <remarks>An expression differs from an action: it has returning value - the result of its work. This value can be immediately used as an argument for another unit.</remarks>
+    </member>
+    <member name="M:JLExpression.GetAnyResult(JustLogic.Core.IExecutionContext)">
+      <summary>
+            Override it to provide your logic for the expression
+            </summary>
+      <returns>Value of the specified <see cref="P:JustLogic.Core.UnitUsageAttribute.ExpressionReturnType" /> type</returns>
+    </member>
+    <member name="M:JLExpression.Build``1(System.Action{``0})">
+      <summary>
+            Creates an expression fluently
+            </summary>
+    </member>
+    <member name="M:JLExpressionExtensions.GetAnyResultSafe(JLExpression,JustLogic.Core.IExecutionContext)">
+      <summary>
+            Calls <see cref="M:JLExpression.GetAnyResult(JustLogic.Core.IExecutionContext)" /> if the specified <paramref name="expression" /> is not null, otherwise returns null
+            </summary>
+    </member>
+    <member name="M:JLExpressionExtensions.GetResult``1(JLExpression,JustLogic.Core.IExecutionContext)">
+      <summary>
+            Extension method to call the specified expression if it's not null and return its result converted to the specified <typeparamref name="T" /> type
+            </summary>
+    </member>
+    <member name="M:JLExpressionExtensions.GetResult``1(JLExpression[],JustLogic.Core.IExecutionContext)">
+      <summary>
+            Extension method to call the specified expressions array if it's not null and return the resulting array of the converted to the specified <typeparamref name="T" /> type return values
+            </summary>
+    </member>
+    <member name="M:JLExpressionExtensions.GetResult(JLExpression,System.Type,JustLogic.Core.IExecutionContext)">
+      <summary>
+            Extension method to call the specified expression if it's not null and return its result converted to the specified <paramref name="expectedType" /></summary>
+    </member>
+    <member name="M:JLExpressionExtensions.ConvertType(System.Object,System.Type,JustLogic.Core.IExecutionContext)">
+      <summary>
+            Helper method that provides conversation functionality
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.MethodInvokationArgumentBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.MethodInvokationBase">
+      <tocexclude />
+    </member>
+    <member name="F:JustLogic.Core.MethodInvokationBase.ExpressionType">
+      <summary>
+            Editor only
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.IParameterAttribute">
+      <summary>
+            Mark your unit parameters with this attribute to be shown in the inspector
+            </summary>
+      <tocexclude />
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.Name">
+      <summary>
+            Overrides parameter name
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.Description">
+      <summary>
+            Help text
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.InspectorOrder">
+      <summary>
+            Parameter sort order in the unit inspector
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.UseContainerExpressionType">
+      <summary>
+            Determinates weather an expression return type should be retrieved from the container unit return type
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.ExpressionType">
+      <summary>
+            Expression return type
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.DefaultUnitType">
+      <summary>
+            A unit to be used as a default value
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.IsOptional">
+      <summary>
+            Optional parameter names are shown in the inspector inside square brackets
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.IParameterAttribute.OverrideType">
+      <summary>
+            Overrides inspector display type
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.Name">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.Description">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.InspectorOrder">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.UseContainerExpressionType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.ExpressionType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.DefaultUnitType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.IsOptional">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterRuntimeAttribute.OverrideType">
+      <inheritdoc />
+    </member>
+    <member name="T:JustLogic.Core.ParameterAttribute.OverrideTypes">
+      <tocexclude />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.Name">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.Description">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.InspectorOrder">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.UseContainerExpressionType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.ExpressionType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.DefaultUnitType">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.DefaultUnitTypeName">
+      <summary>
+            The full name of the default unit type (specify instead of <see cref="P:JustLogic.Core.ParameterAttribute.DefaultUnitType" />)
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.IsOptional">
+      <inheritdoc />
+    </member>
+    <member name="P:JustLogic.Core.ParameterAttribute.OverrideType">
+      <inheritdoc />
+    </member>
+    <member name="T:JustLogic.Core.SelectedVariableInfoBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.SelectedVariableInfoBase.VariableScope">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.SerializableMethodBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.SerializedEnumBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.TypeInfo.CompleteMethodInfo">
+      <tocexclude />
+    </member>
+    <member name="P:JustLogic.Core.TypeInfo.MainAliasType">
+      <summary>
+            Если несколько типов выражений можно трактовать как один, то он будет здесь для таких заменяемых типов
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.JLTypeExtensions.ToCSharpString(System.Type)">
+      <summary>
+            Returns full type name
+            </summary>
+    </member>
+    <member name="M:JustLogic.Core.JLTypeExtensions.GetSimpleName(System.Type)">
+      <summary>
+            Returns short type name without generic arguments
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.TypeKey">
+      <summary>
+            For hashtables, supports aliases
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.UndoDataBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.UnitFriendlyNameAttribute">
+      <summary>
+            Specifies a unit friendly name that is shown as a unit title in the inspector
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.UnitMenuAttribute">
+      <summary>
+            Specifies menu where the unit should be shown; use multiple attribute instances to specify multiple menu items
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.UnitParameters">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.UnitParameter">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogic.Core.UnitUsageAttribute">
+      <summary>
+            Specifies unit usage information
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.EditorOrder">
+      <summary>
+            Sort order in the units selection window
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.HideExpressionInActionsList">
+      <summary>
+            Specifies weather an expression should not be shown in actions list. If false, an expression can be insert with automatic "Evaluate" action wrapper.
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.ExpressionReturnType">
+      <summary>
+            If set, indicates possible return type of an expression (can be concrete, abstract or interface)
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.ExpressionReturnTypeInfo">
+      <summary>
+            TypeInfo of the specified expression return type; can be null
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.StrictApplicability">
+      <summary>
+            Only applied to parameters of this type (not fits for base type)
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.AllowBaseAssignability">
+      <summary>
+            Can be assigned to subclass (of return type) type
+            </summary>
+    </member>
+    <member name="P:JustLogic.Core.UnitUsageAttribute.IsDefaultExpression">
+      <summary>
+            Determinates weather an expression can be created by an editor as a default value for the specified type; see also <see cref="P:JustLogic.Core.UnitUsageAttribute.EditorOrder" /></summary>
+    </member>
+    <member name="T:JustLogic.Editor.JLGUI.UseDrawerAttribute">
+      <summary>
+            Allows to specify exactly parameter drawer class to display the unit in the inspector
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.Variable">
+      <summary>
+            Variable data container
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.YieldMode">
+      <tocexclude />
+    </member>
+    <member name="T:JLCustomExpressionAssetBase">
+      <tocexclude />
+    </member>
+    <member name="T:JLCustomScriptAssetBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicScriptableContainerBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicEventHandlerCoreBase">
+      <tocexclude />
+    </member>
+    <member name="M:JustLogicEventHandlerCoreBase.Trigger(JustLogic.Core.IEventDescription)">
+      <summary>
+            Handles the specified event if its of the handling event type and the event handler is enabled
+            </summary>
+      <remarks>Adances <see cref="P:JustLogicEventHandlerCoreBase.TriggeredCounter" /></remarks>
+    </member>
+    <member name="M:JustLogicEventHandlerCoreBase.Trigger(JustLogic.Core.IEventDescription,System.Object[])">
+      <summary>
+            Handles the specified event if its of the handling event type and the event handler is enabled (with argumnets)
+            </summary>
+      <remarks>Adances <see cref="P:JustLogicEventHandlerCoreBase.TriggeredCounter" /></remarks>
+      <param name="desc">Event description object</param>
+      <param name="arguments">Concrete event arguments (should be consistent with <see cref="P:JustLogic.Core.IEventDescription.Arguments" />)</param>
+    </member>
+    <member name="T:JustLogicMarkerBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicSceneExpressionBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicScriptBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicTimerBase">
+      <tocexclude />
+    </member>
+    <member name="F:JLSwitchElement.Value">
+      <summary>
+            Compare to
+            </summary>
+    </member>
+    <member name="T:JustLogic.Core.EditorVariableInfo">
+      <tocexclude />
+      <inheritdoc />
+    </member>
+    <member name="T:JustLogic.Core.ExecutionEngine">
+      <summary>
+            An executor for units tree
+            </summary>
+    </member>
+    <member name="T:JLCustomExpressionAsset">
+      <summary>
+            An expression that is stored in the form of an asset; use the <see cref="F:JLCustomExpressionAssetBase.Value" /> field to access it
+            </summary>
+    </member>
+    <member name="T:JLCustomScriptAsset">
+      <summary>
+            An action that is stored in the form of an asset; use the <see cref="F:JLCustomScriptAssetBase.Value" /> field to access it
+            </summary>
+    </member>
+    <member name="T:JustLogicEventHandlerBase">
+      <tocexclude />
+    </member>
+    <member name="T:JustLogicMarker">
+      <summary>
+            Allows you to store the reference to a specified object into the global variable
+            </summary>
+      <remarks>Can be useful if you have one object in a one scene and want to access it from another additively loaded scene. Access the stored ("marked") object with <see cref="T:JustLogic.Core.GlobalVariablesStorage" /> or Variable units.</remarks>
+    </member>
+    <member name="T:JustLogicScript">
+      <summary>
+            A container for your JL script units, access tree through <see cref="F:JustLogicScript.Engine" />.<see cref="F:JustLogic.Core.ExecutionEngineBase.Tree" /></summary>
+      <remarks>
+            To make a new JL Script, create a new game object (Game Object / Create Empty) and add to it the component JL Script (by pressing the button “Add Component” inspector and entering the component name in the search box).
+            </remarks>
+    </member>
+    <member name="F:JustLogicScript.Engine">
+      <summary>
+            Execution engine itself, use <see cref="F:JustLogic.Core.ExecutionEngineBase.Tree" /> to access units
+            </summary>
+    </member>
+    <member name="T:JustLogicTimer">
+      <summary>
+            Starts the specified JL script (or sends "OnJLTimerTick" event) every the specified <see cref="F:JustLogicTimerBase.Interval" /></summary>
+    </member>
+  </members>
+</doc>

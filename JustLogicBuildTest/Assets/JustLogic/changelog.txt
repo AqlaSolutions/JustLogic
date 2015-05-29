@@ -1,0 +1,30 @@
+1.2.1 24-03-2014
++ added "Navigate" button to the Unit Selector to open the selected unit menu, it is used automatically if all the categories are collapsed,
++ fixed default parameter types (e.g. Compare is a default unit for If value)
++ fixed some broken in the previous version functionality
+
+1.2 24-02-2014
++ main documentation updated
++ public API documantation
++ public API fixes
++ included C# scripting examples (see Tutorials/Scripting)
++ prefabs support
++ included the source code of the units
++ custom events support (see Tutorials/Scripting)
++ added new tutorial scenes
+
+1.1.1 20-01-2014
++ Windows Phone 8 support
++ JL Marker and JL Timer now works as expected
+
+1.1 22-11-2013
++ Inspector bugfixes
++ Optimization of memory allocations
++ JL Timer
++ JL Marker
++ "About" window
++ Unity 4.3 support
++ Removed debug messages
+
+1.0.1 07-11-2013
+Release 

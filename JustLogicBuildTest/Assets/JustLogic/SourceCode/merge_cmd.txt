@@ -1,0 +1,10 @@
+cd Assets\JustLogic\Plugins
+rmdir Merged /S /Q
+mkdir Merged
+..\..\..\ILMerge /out:Merged\JustLogic.dll *.dll /lib:..\..\..\ /xmldocs /wildcards
+@if %errorlevel% neq 0 pause
+del *.dll
+del *.xml
+xcopy Merged\* Merged\.. /E /Y
+rmdir Merged /S /Q
+pause
