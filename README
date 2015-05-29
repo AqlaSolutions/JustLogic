@@ -1,17 +1,19 @@
-description: see http://aqla.net
+See http://aqla.net
 
-install:
+Contrubutions are welcome!
+
+Build requirements:
 Windows
 Sandcastle
 .NET 4
 
-put to /deployscript:
+Put to /deployscript:
 UnityEngine.dll
 UnityEditor.dll
 ILMerge.exe (download from microsoft)
 zip.exe (find in google)
 
-to build:
+Make build:
 run /deployscript/!DeployFull.bat
 open in unity "JustLogicBuildTest"
 export asset
