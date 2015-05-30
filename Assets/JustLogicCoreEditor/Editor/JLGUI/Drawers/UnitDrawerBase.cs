@@ -226,15 +226,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 }
             }
 
-            var c = GUI.color;
-            var c2 = GUI.contentColor;
-
-            //style.onNormal.textColor = style.normal.textColor = GUI.color = GUI.contentColor = changesAllowed ? Color.black : Color.green;
-
             var unitClicked = GUI.Button(rect, content, style);
-
-            GUI.color = c;
-            GUI.contentColor = c2;
 
             if (unitClicked && changesAllowed && (Event.current.button == 0))
             {
