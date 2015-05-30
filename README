@@ -13,7 +13,8 @@ UnityEditor.dll
 ILMerge.exe
 zip.exe
 
-you can get everything here https://www.dropbox.com/s/t57hsn4dpf6qqwv/jl_deployscript_files.zip?dl=1
+You can get everything here
+https://www.dropbox.com/s/t57hsn4dpf6qqwv/jl_deployscript_files.zip?dl=1
 
 Make build:
 run /deployscript/!DeployFull.bat
