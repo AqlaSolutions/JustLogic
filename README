@@ -10,10 +10,15 @@ Sandcastle
 Put to /deployscript:
 UnityEngine.dll
 UnityEditor.dll
-ILMerge.exe (download from microsoft)
-zip.exe (find in google)
+ILMerge.exe
+zip.exe
+
+you can get everything here https://www.dropbox.com/s/t57hsn4dpf6qqwv/jl_deployscript_files.zip?dl=1
 
 Make build:
 run /deployscript/!DeployFull.bat
 open in unity "JustLogicBuildTest"
 export asset
+
+
+Merging all units to core JustLogic.dll library is required for backward compatibility.

@@ -225,7 +225,17 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     Event.current.Use();
                 }
             }
+
+            var c = GUI.color;
+            var c2 = GUI.contentColor;
+
+            //style.onNormal.textColor = style.normal.textColor = GUI.color = GUI.contentColor = changesAllowed ? Color.black : Color.green;
+
             var unitClicked = GUI.Button(rect, content, style);
+
+            GUI.color = c;
+            GUI.contentColor = c2;
+
             if (unitClicked && changesAllowed && (Event.current.button == 0))
             {
                 JLUnitEditorWindow.CurrentEditingUnit = new JLUnitEditorWindow.EditingInfo(context.Inspector, options, OnReplace, OnInsert, this);
@@ -356,8 +366,10 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     Debug.LogError("Can't find Assets/JustLogic/Icons/Settings.png");
                     _settingsTexture = new Texture2D(1, 1) { hideFlags = HideFlags.HideAndDontSave };
                 }//SimplePopup
-                _unitStyle = new GUIStyle(StylesCache.boldLabel) { alignment = TextAnchor.UpperLeft, contentOffset = new Vector2(0f, -5f) };
-                _unitStyleOn = StylesCache.popup;
+                _unitStyle = new GUIStyle(StylesCache.boldLabel) { alignment = TextAnchor.UpperLeft, contentOffset = new Vector2(0f, -5f)};
+                _unitStyle.normal.textColor = _unitStyle.onNormal.textColor = Color.gray;
+                _unitStyleOn = new GUIStyle(StylesCache.popup);
+                _unitStyleOn.normal.textColor = _unitStyleOn.onNormal.textColor = EditorGUIUtility.isProSkin ? Color.white : Color.black;
                 if (!_editingUnitTexture)
                 {
                     _editingUnitTexture = new Texture2D(1, 1) { hideFlags = HideFlags.HideAndDontSave };

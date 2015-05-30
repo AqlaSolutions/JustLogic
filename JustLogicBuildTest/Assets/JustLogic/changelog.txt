@@ -1,3 +1,6 @@
+1.3.1 30-05-2015
++ Unity 5 support
+
 1.2.1 24-03-2014
 + added "Navigate" button to the Unit Selector to open the selected unit menu, it is used automatically if all the categories are collapsed,
 + fixed default parameter types (e.g. Compare is a default unit for If value)

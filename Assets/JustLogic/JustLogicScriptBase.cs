@@ -99,7 +99,7 @@ public abstract class JustLogicScriptBase : JustLogicScriptableContainerBase
     {
         if (!Application.isPlaying)
         {
-            Debug.LogError("Execution can be started only in editor mode");
+            Debug.LogError("Execution can be started only in play mode");
             return;
         }
         InitEngine();

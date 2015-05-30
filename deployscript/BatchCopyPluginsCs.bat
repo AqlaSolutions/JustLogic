@@ -5,3 +5,5 @@ xcopy "..\Assets\JustLogicCode" "..\JustLogicBuildTest\Assets\JustLogic\Plugins\
 @if %errorlevel% neq 0 pause
 copy "..\APIDocs\Help\JustLogicApiDocs.chm" "..\JustLogicBuildTest\Assets\JustLogic" /Y
 @if %errorlevel% neq 0 pause
+copy "..\LICENSE" "..\JustLogicBuildTest\Assets\JustLogic" /Y
+@if %errorlevel% neq 0 pause
