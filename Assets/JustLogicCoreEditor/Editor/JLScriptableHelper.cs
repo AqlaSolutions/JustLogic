@@ -123,7 +123,7 @@ namespace JustLogic.Editor
             }
             if (!(unit is TNeededType))
                 throw new ArgumentException();
-            return unit as TNeededType;
+            return (TNeededType) unit;
         }
 
         public static object WrapUnitIfNeed(object unit, Type neededType)
@@ -155,7 +155,7 @@ namespace JustLogic.Editor
             if (typeof(JLExpression).IsAssignableFrom(newSubtype) && typeof(JLAction).IsAssignableFrom(baseType))
             {
                 // assigning expression to action? ok!
-                var b = (unit = ReplaceUnitSubtypeInternal(unit, typeof(JLEvaluteBase))) as JLEvaluteBase;
+                var b = (JLEvaluteBase) (unit = ReplaceUnitSubtypeInternal(unit, typeof(JLEvaluteBase)));
                 if (b.Expression)
                     Destroy(b.Expression);
                 b.Expression = (JLExpression)CreateNew(newSubtype);

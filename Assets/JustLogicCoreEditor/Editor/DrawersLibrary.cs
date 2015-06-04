@@ -119,6 +119,7 @@ namespace JustLogic.Editor
             foreach (var type in Library.All)
             {
                 var drawerAttrs = Attribute.GetCustomAttributes(type, typeof(ParameterDrawerAttribute));
+                // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
                 foreach (ParameterDrawerAttribute drawerAttr in drawerAttrs)
                 {
                     List<DrawerTempInfo> drawers;

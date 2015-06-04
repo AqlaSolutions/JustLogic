@@ -95,6 +95,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
             UnitParameter parameter = InitArgs.ParameterInfo;
             Type parameterType = InitArgs.SupportedType;
             Type elementType = parameterType.GetElementType();
+            System.Diagnostics.Debug.Assert(elementType != null, "elementType != null");
             bool elementIsValueType = elementType.IsValueType;
 
             int insertIndex = -1;

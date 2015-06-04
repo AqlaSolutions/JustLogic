@@ -184,7 +184,7 @@ namespace JustLogic.Core
                         var methodInfo = methods[i];
                         if (methodInfo.ContainsGenericParameters || methodInfo.IsGenericMethodDefinition) continue;
                         SerializableMethodBase ptr = methodInfo;
-                        lstMethods.Add(_methodsBySignature[methodInfo.ToString()] = _methods[ptr] = new CompleteMethodInfo(methodInfo, ptr));
+                        lstMethods.Add(_methods[ptr] = new CompleteMethodInfo(methodInfo, ptr));
 
                     }
                     _methodsList = new ReadOnlyCollection<CompleteMethodInfo>(lstMethods);
@@ -324,7 +324,6 @@ namespace JustLogic.Core
         }
 
         readonly Dictionary<SerializableMethodBase, CompleteMethodInfo> _methods = new Dictionary<SerializableMethodBase, CompleteMethodInfo>();
-        readonly Dictionary<string, CompleteMethodInfo> _methodsBySignature = new Dictionary<string, CompleteMethodInfo>();
         private UnitParameters _justLogicParameters;
         private UnitUsageAttribute _unitUsage;
         private string[] _unitMenus;
@@ -416,7 +415,7 @@ namespace JustLogic.Core
         public static string GetSimpleName(this Type type)
         {
             string name = type.Name;
-            int index = name.IndexOf("`");
+            int index = name.IndexOf("`", StringComparison.Ordinal);
             if (index != -1) name = name.Remove(index);
             return name;
         }

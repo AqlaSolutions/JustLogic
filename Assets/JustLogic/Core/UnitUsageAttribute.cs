@@ -5,7 +5,7 @@ namespace JustLogic.Core
     /// <summary>
     /// Specifies unit usage information
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Class)]
     public sealed class UnitUsageAttribute : Attribute
     {
         /// <summary>
@@ -24,7 +24,6 @@ namespace JustLogic.Core
         public Type ExpressionReturnType { get; set; }
 
         TypeInfo _expressionReturnTypeInfo;
-        private Type[] _defaultForTypes;
         private bool _isDefaultForReturnType;
 
         /// <summary>

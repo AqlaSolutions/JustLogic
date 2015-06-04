@@ -74,6 +74,7 @@ public abstract class JustLogicScriptEditorBase : JLInspectorBase
                 o =>
                 {
                     ResetDrawers();
+                    // ReSharper disable once AccessToModifiedClosure
                     JLScriptableHelper.Destroy(tree);
                     script.EngineInstance.Tree = tree = (JLAction)o;
                 });
@@ -167,6 +168,7 @@ public abstract class JustLogicScriptEditorBase : JLInspectorBase
             }
         }
 #pragma warning disable 665
+        // ReSharper disable once AssignmentInConditionalExpression
         if (_settings = EditorGUILayout.Foldout(_settings, "Settings"))
 #pragma warning restore 665
         {

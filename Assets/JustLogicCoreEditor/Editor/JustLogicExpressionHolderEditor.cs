@@ -56,6 +56,7 @@ public class JustLogicExpressionHolderEditor : JLInspectorBase
             {
                 ResetDrawers();
 
+                // ReSharper disable once AccessToModifiedClosure
                 JLScriptableHelper.Destroy(expression);
 
                 script.Value = expression = (JLExpression)o;

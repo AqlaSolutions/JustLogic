@@ -34,7 +34,7 @@ namespace JustLogic.Editor.JLGUI
             _parameterInfo = new UnitParameter(
                 new ParameterRuntimeAttribute(name, string.Empty, 0, useContainerExpressionType, expressionType,
                     defaultUnitType, false, ParameterAttribute.OverrideTypes.None),
-                    supportedType, name, 0, null, null, drawerType, false, new List<object>[0]);
+                    supportedType, name, 0, null, null, drawerType, false, new object[0]);
         }
 
         public DrawerInitArgs(string label, IParameterDrawer container, TypeInfo supportedType, IParameterDrawersFactory factory, IList<object> containerAttributes = null, UnitParameter parameterInfo = null, bool noHeader = false, TypeInfo containerExpressionType = null)

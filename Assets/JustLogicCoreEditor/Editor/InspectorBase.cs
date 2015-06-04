@@ -97,6 +97,7 @@ public abstract class JLInspectorBase : Editor
         if (UndoableScript) UndoableScript.EditorOnReseting -= OnUndoableScriptReseting;
         if (IsTargetUndoable)
         {
+            // ReSharper disable once DelegateSubtraction
             EditorApplication.update -= ServiceUndoable;
             RegisterUndoSnapshotIfScheduled(true);
         }
@@ -149,10 +150,14 @@ public abstract class JLInspectorBase : Editor
     void CheckInitialized()
     {
         if (!this)
+        {
+            // ReSharper disable once DelegateSubtraction
             EditorApplication.update -= CheckInitialized;
+        }
         else if (Library.Initialized)
         {
             Repaint();
+            // ReSharper disable once DelegateSubtraction
             EditorApplication.update -= CheckInitialized;
         }
     }
@@ -199,6 +204,7 @@ public abstract class JLInspectorBase : Editor
         {
             if (!EditorApplication.isCompiling)
                 Library.BeginInitialize();
+            // ReSharper disable once DelegateSubtraction
             EditorApplication.update -= CheckInitialized;
             EditorApplication.update += CheckInitialized;
             GUILayout.Label("Initializing, please wait...");

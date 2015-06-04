@@ -87,7 +87,10 @@ namespace JustLogic.Editor
                     {
                         var elType = p.ParameterType;
                         if (elType.IsByRef)
+                        {
                             elType = elType.GetElementType();
+                            System.Diagnostics.Debug.Assert(elType != null, "elType != null");
+                        }
                         if (elType.IsArray)
                             elType = elType.GetElementType();
                         return IgnoreParameterTypes.Any(t => t == elType);
@@ -350,7 +353,10 @@ namespace JustLogic.Editor
                     {
                         var elType = p.ParameterType;
                         if (elType.IsByRef)
+                        {
                             elType = elType.GetElementType();
+                            System.Diagnostics.Debug.Assert(elType != null, "elType != null");
+                        }
                         if (elType.IsArray)
                             elType = elType.GetElementType();
                         return IgnoreParameterTypes.Any(t => t == elType);
@@ -680,7 +686,10 @@ namespace JustLogic.Editor
         {
             bool isArray = type.IsArray;
             if (isArray)
+            {
                 type = type.GetElementType();
+                System.Diagnostics.Debug.Assert(type != null, "type != null");
+            }
             sb.Append(TypeInfo.GenerateMemberFriendlyName(parameter).Replace(" ", ""));
             if (IsExpressionMember(parameter, type.FullName))
             {

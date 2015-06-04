@@ -25,8 +25,9 @@ public class JLCreateNew : JLExpression
             return Library.Instantiator.CreateScriptable(v);
         var args = new object[ConstructorArguments != null ? ConstructorArguments.Length : 0];
         if (args.Length != 0)
-            for (int i = 0; i < ConstructorArguments.Length; i++)
+            for (int i = 0; i < args.Length; i++)
             {
+                // ReSharper disable once PossibleNullReferenceException
                 var arg = ConstructorArguments[i];
                 args[i] = arg.GetAnyResultSafe(context);
             }

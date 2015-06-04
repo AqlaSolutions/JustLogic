@@ -133,8 +133,7 @@ public static class JLExpressionExtensions
 
         if (targetType == typeof(GameObject) && typeof(Component).IsAssignableFrom(objType))
         {
-            var c = obj as Component;
-            return c.gameObject;
+            return ((Component) obj).gameObject;
         }
 
         if ((targetType == typeof(Vector3)) && (objType == typeof(Transform)))

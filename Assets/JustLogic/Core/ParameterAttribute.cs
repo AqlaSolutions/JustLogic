@@ -94,7 +94,7 @@ namespace JustLogic.Core
         }
     }
 
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = false, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public sealed class ParameterAttribute : Attribute, IParameterAttribute
     {
         private Type _defaultUnitType;

@@ -13,7 +13,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
     {
         bool _selectedMenu;
         bool _drawersCreated;
-        bool _changed = false;
+        bool _changed;
 
         IList<UnitParameter> _parameters = new UnitParameter[0];
         IList<IParameterDrawer> _parameterDrawers = new IParameterDrawer[0];

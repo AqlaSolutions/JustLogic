@@ -17,9 +17,6 @@ namespace JustLogic.Editor
             get
             {
                 return GUI.skin;
-                if (EditorGUIUtility.isProSkin)
-                    return _darkSkin ?? (_darkSkin = (GUISkin)AssetDatabase.LoadAssetAtPath("Assets/JustLogic/DarkSkin.guiskin", typeof(GUISkin)));
-                return _whiteSkin ?? (_whiteSkin = (GUISkin)AssetDatabase.LoadAssetAtPath("Assets/JustLogic/WhiteSkin.guiskin", typeof(GUISkin)));
             }
         }
 
@@ -27,7 +24,9 @@ namespace JustLogic.Editor
 
         public static void LookLikeInspector()
         {
+#pragma warning disable 618
             EditorGUIUtility.LookLikeInspector();
+#pragma warning restore 618
             InspectorMode = true;
         }
 

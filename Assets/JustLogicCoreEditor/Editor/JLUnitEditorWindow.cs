@@ -74,7 +74,7 @@ public partial class JLUnitEditorWindow : EditorWindow
         }
     }
 
-    private static EditingInfo _currentEditingUnit = new EditingInfo();
+    private static EditingInfo _currentEditingUnit;
 
     public static EditingInfo CurrentEditingUnit
     {
@@ -215,8 +215,11 @@ public partial class JLUnitEditorWindow : EditorWindow
             foreach (var typeInfo in CurrentEditingUnit.Variants)
             {
                 if (typeInfo.UnitMenus.Length != 0)
+                {
+                    // ReSharper disable once AccessToForEachVariableInClosure
                     foreach (var addItem in typeInfo.UnitMenus.Select(unitMenu => new Unit(unitMenu, typeInfo)))
                         _allUnitsSorted.Add(addItem);
+                }
                 else _allUnitsSorted.Add(new Unit(typeInfo.FriendlyName, typeInfo));
             }
 

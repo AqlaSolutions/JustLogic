@@ -5,7 +5,7 @@ namespace JustLogic.Core
     /// <summary>
     /// Specifies a unit friendly name that is shown as a unit title in the inspector
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public sealed class UnitFriendlyNameAttribute : Attribute
     {
         public UnitFriendlyNameAttribute(string name)

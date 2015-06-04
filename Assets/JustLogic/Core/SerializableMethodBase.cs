@@ -130,6 +130,7 @@ namespace JustLogic.Core
                 {
                     _refOrOutParameters++;
                     sb.Append("ref ");
+                    // ReSharper disable once PossibleNullReferenceException
                     sb.Append(type.GetElementType().FullName);
                 }
                 else sb.Append(type.FullName);
@@ -137,6 +138,7 @@ namespace JustLogic.Core
             _signature = sb.ToString();
             _stamp = Encoding.UTF8.GetBytes(_signature);
             _hashCode = _signature.GetHashCode();
+            // ReSharper disable once PossibleNullReferenceException
             _type = method.ReflectedType.FullName;
             _isValid = true;
         }
@@ -159,6 +161,8 @@ namespace JustLogic.Core
 
         public override int GetHashCode()
         {
+            // should be serializable so can't be read only
+            // ReSharper disable once NonReadonlyMemberInGetHashCode
             return _hashCode;
         }
 

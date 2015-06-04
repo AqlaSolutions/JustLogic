@@ -198,6 +198,8 @@ public abstract class JustLogicEventHandlerEditorBase : JLInspectorBase
         if (_conditionsDrawer == null)
             CreateConditionsDrawer(f, conditions, GetDefaultConditionUnitType());
 
+        System.Diagnostics.Debug.Assert(_conditionsDrawer != null, "_conditionsDrawer != null");
+        
         if (_conditionsDrawer.SimpleDraw(_drawContext))
         {
             conditions.Operands = (JLExpression[])_conditionsDrawer.Value;
