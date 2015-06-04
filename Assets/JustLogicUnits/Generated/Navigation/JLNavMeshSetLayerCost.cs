@@ -14,7 +14,7 @@ public class JLNavMeshSetLayerCost : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        NavMesh.SetLayerCost(Layer, Cost.GetResult<System.Single>(context));
+        NavMesh.SetAreaCost(Layer, Cost.GetResult<System.Single>(context));
         return null;
     }
 }

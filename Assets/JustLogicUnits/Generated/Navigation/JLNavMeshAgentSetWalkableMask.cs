@@ -16,6 +16,6 @@ public class JLNavMeshAgentSetWalkableMask : JLExpression
     public override object GetAnyResult(IExecutionContext context)
     {
         NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
-        return opValue.walkableMask = Value.GetResult<System.Int32>(context);
+        return opValue.areaMask = Value.GetResult<System.Int32>(context);
     }
 }

@@ -12,6 +12,8 @@ public class JLInputSetEatKeyPressOnTextFieldFocus : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
+#pragma warning disable 618
         return Input.eatKeyPressOnTextFieldFocus = Value.GetResult<System.Boolean>(context);
+#pragma warning restore 618
     }
 }

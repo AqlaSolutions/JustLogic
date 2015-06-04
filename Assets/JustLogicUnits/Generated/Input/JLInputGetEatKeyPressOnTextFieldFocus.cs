@@ -9,6 +9,8 @@ public class JLInputGetEatKeyPressOnTextFieldFocus : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
+#pragma warning disable 618
         return Input.eatKeyPressOnTextFieldFocus;
+#pragma warning restore 618
     }
 }

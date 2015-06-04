@@ -16,6 +16,6 @@ public class JLNavMeshAgentGetLayerCost : JLExpression
     public override object GetAnyResult(IExecutionContext context)
     {
         NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
-        return opValue.GetLayerCost(Layer);
+        return opValue.GetAreaCost(Layer);
     }
 }

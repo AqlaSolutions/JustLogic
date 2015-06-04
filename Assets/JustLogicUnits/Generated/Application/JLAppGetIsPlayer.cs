@@ -9,6 +9,6 @@ public class JLAppGetIsPlayer : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Application.isPlayer;
+        return !Application.isEditor;
     }
 }

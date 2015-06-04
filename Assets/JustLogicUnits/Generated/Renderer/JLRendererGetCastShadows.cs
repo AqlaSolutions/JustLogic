@@ -1,6 +1,7 @@
 using JustLogic.Core;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [UnitMenu("Renderer/Get Cast Shadows")]
 [UnitFriendlyName("Renderer.Get Cast Shadows")]
@@ -13,6 +14,6 @@ public class JLRendererGetCastShadows : JLExpression
     public override object GetAnyResult(IExecutionContext context)
     {
         Renderer opValue = OperandValue.GetResult<Renderer>(context);
-        return opValue.castShadows;
+        return opValue.shadowCastingMode != ShadowCastingMode.Off;
     }
 }

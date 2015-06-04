@@ -15,6 +15,6 @@ public class JLVector3Exclude : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Vector3.Exclude(ExcludeThis.GetResult<Vector3>(context), FromThat.GetResult<Vector3>(context));
+        return Vector3.ProjectOnPlane(ExcludeThis.GetResult<Vector3>(context), FromThat.GetResult<Vector3>(context));
     }
 }
