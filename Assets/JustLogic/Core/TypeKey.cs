@@ -19,9 +19,6 @@ namespace JustLogic.Core
 
         public static Type GetMainAlias(Type type)
         {
-            /*if (typeof(UnityEngine.Object).IsAssignableFrom(type))
-                return typeof(UnityEngine.Object);
-            else*/
             if ((type == typeof(long))
               || (type == typeof(ulong))
               || (type == typeof(short))

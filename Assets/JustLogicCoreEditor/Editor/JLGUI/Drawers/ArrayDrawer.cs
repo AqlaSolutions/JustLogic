@@ -153,18 +153,12 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     }
 #endif
                 }
-                //Type drawerType = drawer.GetType();
-                //if (drawerType != typeof(UnitDrawerBase) && !drawerType.IsSubclassOf(typeof(UnitDrawerBase)))
                 {
                     if (GUILayout.Button("↑", GUILayout.Width(20f)))
                         upIndex = i;
                     if (GUILayout.Button("↓", GUILayout.Width(20f)))
                         downIndex = i;
                 }
-                //if (GUILayout.Button("⇘", GUILayout.Width(20f)))
-                //  cloneIndex = i;
-                //if (GUILayout.Button("*", GUILayout.Width(20f)))
-                //  insertIndex = i;
                 if (GUILayout.Button("-", GUILayout.Width(20f)))
                     removeIndex = i;
                 context.EndArea();

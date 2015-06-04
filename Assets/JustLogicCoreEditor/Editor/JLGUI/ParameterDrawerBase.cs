@@ -176,7 +176,7 @@ namespace JustLogic.Editor.JLGUI
                 }
                 //return (Expanded && OnDraw(context, startedAreas != 0)) || GUI.changed;
                 bool drawChanged = false;
-                if ((Expanded && (drawChanged = OnDraw(context, startedAreas != 0)))/* || GUI.changed*/)
+                if ((Expanded && (drawChanged = OnDraw(context, startedAreas != 0))))
                 {
 #if DEBUG
                     Debug.Log("changed " + this + ", draw changed " + drawChanged);

@@ -168,7 +168,6 @@ public partial class JLUnitEditorWindow : EditorWindow
         _btnStyle = new GUIStyle(StylesCache.button)
                         {
                             alignment = TextAnchor.MiddleLeft,
-                            /*normal = { background = null },*/
                             fixedHeight = 14f,
                             fontSize = 11,
                             margin = new RectOffset(),

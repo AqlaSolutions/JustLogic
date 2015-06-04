@@ -34,7 +34,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
             context.BeginLook(true);
             try
             {
-                //_typeSelector .CurrentValueIndex=
                 if (string.IsNullOrEmpty(value.TypeFullName))
                     value.TypeFullName = typeof(EmptyEnum).FullName;
                 _typeSelector.CurrentValueIndex = DrawersLibrary.EnumList.IndexOf(value.TypeFullName);

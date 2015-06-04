@@ -71,7 +71,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 if (_parameters.Any(p => IsListType(p.Type)))
                     selfLayout = layout = ParameterDrawerLayout.VerticalRoot;
 
-                //bool becameVerticalFromHorizontal = false;
                 bool verticalContainer = selfLayout == ParameterDrawerLayout.VerticalRoot;
                 var maxDepthLocal = 0;
                 bool isTriple = false;
@@ -84,8 +83,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     parameterDrawer.UpdateLayoutType(verticalContainer ? 0 : parentsFromHorizontalStart + 1, context, out horizontalChildren, out depth, out tuple);
                     if (!parameterDrawer.SelfLayout.IsHorizontal() && (horizontalChildren == 0))
                     {
-                        //if (layout.IsHorizontal())
-                        //  becameVerticalFromHorizontal = true;
                         layout = ParameterDrawerLayout.VerticalRoot;
 
                         horizontalChildren = 0;
@@ -94,8 +91,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     {
                         if (layout == ParameterDrawerLayout.HorizontalLimited)
                         {
-                            //if ((horizontalChildren == 0) && (parentsFromHorizontalStart % 2 == 0))
-                            //  horizontalChildren++;
                             horizontalChildren++;
                         }
                         if (_parameterDrawers.Count == 1 && tuple)
@@ -113,14 +108,12 @@ namespace JustLogic.Editor.JLGUI.Drawers
                         horizontalChildren = 2;
 
                     bool wantsVerticalLayout = (isStart || horizontalChildren % 2 == 0);
-                    //bool tupleImpossible = (!isStart || (hChildrenOrig >= 2) || (maxDepthLocal > hChildrenOrig));
                     bool tupleImpossible = isTriple || (maxDepthLocal > hChildrenOrig) || (hChildrenOrig >= 2);
                     if (wantsVerticalLayout)
                     {
                         if (tupleImpossible)
                         {
                             layout = ParameterDrawerLayout.VerticalRoot;
-                            //becameVerticalFromHorizontal = true;
                         }
                         else
                         {
@@ -130,12 +123,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     }
                 }
                 else horizontalChildren = 0;
-                /*if (becameVerticalFromHorizontal && (_parameterDrawers.Count == 1) && (_parameterDrawers[0] != null))
-                {
-                    int dummy;
-                    int md;
-                    _parameterDrawers[0].UpdateLayoutType(0, context, out dummy, out md);
-                }*/
                 if (isTriple) layout = ParameterDrawerLayout.Horizontal;
                 maxDepth = maxDepthLocal;
             }
@@ -169,11 +156,9 @@ namespace JustLogic.Editor.JLGUI.Drawers
 
             GUIContent content = TempContent;
             content.image = null;
-            bool needsResize = !hasVerticalOutline && (isAppendedToHorizontal || _drawingTuple);//((label != null) && !string.IsNullOrEmpty(label.text)));
+            bool needsResize = !hasVerticalOutline && (isAppendedToHorizontal || _drawingTuple);
             if (needsResize && (Screen.width < 700))
             {
-                //int chars = Screen.width / 25 + 1;
-                //TempContent.text = unitLabel.Length <= chars ? unitLabel : unitLabel.Substring(0, chars).TrimEnd() + "...";
                 content.text = unitLabel;
                 content.tooltip = unitLabel;
             }
@@ -182,12 +167,10 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 content.text = unitLabel;
                 content.tooltip = InitArgs.SupportedType.FriendlyName;
             }
-            // debug
 #if DEBUG
             content.tooltip += " (" + Layout + ", s " + SelfLayout + ")";
 #endif
             _assetsContainer = JLScriptableHelper.AssetsContainer;
-            //var unitClicked = GUILayout.Button(content, changesAllowed ? _unitStyleOn : _unitStyle, GUILayout.ExpandWidth(!isHorizontalLayout));
             var style = changesAllowed ? _unitStyleOn : _unitStyle;
             Rect rect = GUILayoutUtility.GetRect(content, style, GUILayout.ExpandWidth(!Layout.IsHorizontal()));
             if (needsResize)
@@ -233,9 +216,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 JLUnitEditorWindow.CurrentEditingUnit = new JLUnitEditorWindow.EditingInfo(context.Inspector, options, OnReplace, OnInsert, this);
                 context.ScheduleRepaint();
             }
-
-            //ShowUnitSelectionMenu(options, OnMenuSelected, _unitType, "", cacheKey);
-
+            
             bool advancedMenuClicked = (unitClicked && Event.current.button == 1);
             if (!isAppendedToHorizontal && (!(Layout == ParameterDrawerLayout.Horizontal || Layout == ParameterDrawerLayout.HorizontalLimited) || (_parameters.Count == 0)))
             {
@@ -357,7 +338,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 {
                     Debug.LogError("Can't find Assets/JustLogic/Icons/Settings.png");
                     _settingsTexture = new Texture2D(1, 1) { hideFlags = HideFlags.HideAndDontSave };
-                }//SimplePopup
+                }
                 _unitStyle = new GUIStyle(StylesCache.boldLabel) { alignment = TextAnchor.UpperLeft, contentOffset = new Vector2(0f, -5f)};
                 _unitStyle.normal.textColor = _unitStyle.onNormal.textColor = Color.gray;
                 _unitStyleOn = new GUIStyle(StylesCache.popup);
@@ -431,7 +412,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
 
         public static bool IsListType(Type type, IParameterDrawersFactory factory)
         {
-            return type.IsArray;// || (typeof(IList).IsAssignableFrom(type) && !factory.HasDrawers(type));
+            return type.IsArray;
         }
 
         private void CreateDrawers(IDrawContext context)
@@ -444,17 +425,6 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 var parameter = _parameters[i];
                 var value = parameter.Getter(Value);
                 var pType = parameter.Type;
-                /*if (!IsListType(pType) && (value == null) && !typeof(JLUnitBase).IsAssignableFrom(pType))
-                {
-                    object newInstance;
-                    try
-                    {
-                        newInstance = Activator.CreateInstance(pType);
-                    }
-                    catch (Exception e) { Debug.LogError(e); continue; }
-                    parameter.Setter(Value, newInstance);
-                    _selectedMenu = true;
-                }*/
                 _parameterDrawers[i] = InitArgs.Factory.CreateDrawer(
                      new DrawerInitArgs(!parameter.IsAutoValue ? (parameter.IsOptional ? "[" + parameter.Name + "]" : parameter.Name) : null,
                          this, pType, InitArgs.Factory, InitArgs.ParameterInfo.Attributes, parameter,

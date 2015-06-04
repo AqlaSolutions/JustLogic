@@ -465,10 +465,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 sb.Append(p.Name);
             }
             sb.Append(method.IsStatic ? "]" : ")");
-
-            //string r = sb.ToString();
-            //if (r.StartsWith("Void ", StringComparison.OrdinalIgnoreCase))
-            //   r = sb.Remove(0, "Void ".Length).ToString();
+            
             return sb.ToString();
         }
     }

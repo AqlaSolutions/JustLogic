@@ -1,11 +1,4 @@
-﻿/* TODO changes
- screenshots with text!
-сниппеты
-method searching
-JL Marker. регистрировать объекты по названию в глобальных переменных
-удалены отладочные сообщения и всплывающие подсказки
-*/
-using System;
+﻿using System;
 using System.IO;
 using JustLogic.Core;
 using JustLogic.Editor.JLGUI;

@@ -115,9 +115,6 @@ namespace JustLogic.Core
 
                         if (t.IsValueType && typeof(IEventDescription).IsAssignableFrom(t))
                             events.Add((IEventDescription)Activator.CreateInstance(t));
-                        /*
-                        if (t.IsEnum)
-                            enums.Add(t);*/
                     }
                 }
                 _expressions = new ReadOnlyCollection<TypeInfo>(expressions);
@@ -208,11 +205,6 @@ namespace JustLogic.Core
             {
                 if (typeInfo.IsExpressionResultAssignableTo(internalType))
                 {
-                    /*if (typeInfo.FriendlyName == "Current Event Handler")
-                    {
-                        Debug.Log("1");
-                        typeInfo.IsExpressionResultAssignableTo(internalType);
-                    }*/
                     lst.Add(typeInfo);
                 }
             }

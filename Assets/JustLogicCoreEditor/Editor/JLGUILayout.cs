@@ -42,22 +42,17 @@ namespace JustLogic.Editor
 
             if (current.type == EventType.Repaint)
             {
-                //if (EditorGUI.showMixedValue)
-                {
-                    var mvTemp = GUI.contentColor;
-                    GUI.contentColor = !EditorGUI.showMixedValue ? GUI.contentColor : GUI.contentColor * new Color(1f, 1f, 1f, 0.5f);
-                    string layer;
-                    if (layerMaskSelected.Length == 1)
-                        layer = layerMaskNames[layerMaskSelected[0]];
-                    else if (layerMaskSelected[layerMaskSelected.Length - 1] == 1)
-                        layer = "Everything";
-                    else
-                        layer = "—";
-                    style.Draw(position, new GUIContent(layer), controlId, false);
-                    GUI.contentColor = mvTemp;
-                }
-                //else
-                //  style.Draw(position, new GUIContent(property.layerMaskStringValue), controlId, false);
+                var mvTemp = GUI.contentColor;
+                GUI.contentColor = !EditorGUI.showMixedValue ? GUI.contentColor : GUI.contentColor * new Color(1f, 1f, 1f, 0.5f);
+                string layer;
+                if (layerMaskSelected.Length == 1)
+                    layer = layerMaskNames[layerMaskSelected[0]];
+                else if (layerMaskSelected[layerMaskSelected.Length - 1] == 1)
+                    layer = "Everything";
+                else
+                    layer = "—";
+                style.Draw(position, new GUIContent(layer), controlId, false);
+                GUI.contentColor = mvTemp;
             }
             else
             {
@@ -129,9 +124,6 @@ namespace JustLogic.Editor
                 bool hasName = !string.IsNullOrEmpty(layerName);
                 if (hasName || (!isEverything && ((mask & (1 << i)) != 0)))
                 {
-                    /*if (index == 1)
-                        mask = mask | (1 << i);
-                    else*/
                     if (ind == index)
                     {
                         return mask ^ (1 << i);

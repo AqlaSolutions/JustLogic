@@ -141,17 +141,6 @@ public abstract class JLInspectorBase : Editor
             Debug.Log("Created new current snapshot");
 #endif
         }
-
-        /*
-        GUILayout.BeginHorizontal();
-        GUILayout.Label("Undo index: " + undo.UndoIndex + ", undo count: " + undo.Snapshots.Count);
-        if (GUILayout.Button("Reset"))
-        {
-            undo.UndoIndex = undo.UndoPersistentIndex = 0;
-            undo.Snapshots.Clear();
-        }
-        GUILayout.EndHorizontal();
-         */
     }
 
     [NonSerialized]
@@ -219,10 +208,6 @@ public abstract class JLInspectorBase : Editor
         if (Event.current.type == EventType.repaint)
         {
             const string FOCUS_OUT_UID = "sfdf_focus_afkslfjlegdfgdf";
-            //Debug.Log(GUI.GetNameOfFocusedControl());
-            //Debug.Log(GUIUtility.keyboardControl);
-            //Debug.Log(GUIUtility.hotControl);
-
             GUI.SetNextControlName(FOCUS_OUT_UID);
             new GUIStyle().Draw(new Rect(-100, -100, 1, 1), new GUIContent(), FOCUS_OUT_UID.GetHashCode());
             if (GUIUtility.keyboardControl == 0)
@@ -278,8 +263,6 @@ public abstract class JLInspectorBase : Editor
 
                 if ((changed && !_repainting) || needRepaint)
                 {
-                    //if (Helper.NeedRepaint || needRepaint)
-                    //  Debug.Log("Need repaint? OK!");
                     _repainting = true;
                     Repaint();
                     Repaint();

@@ -43,7 +43,7 @@ namespace JustLogic.Editor.JLGUI
         {
             if (string.IsNullOrEmpty(currentDisplayValue))
                 currentDisplayValue = _displayCurrentFullValue ? FullValue : ShortValue;
-            float prefixLabelWidth = 100f;//StylesCache.label.CalcSize(new GUIContent(PrefixLabel)).x + 10f;
+            float prefixLabelWidth = 100f;
             if (Expanded)
             {
                 bool changed = false;

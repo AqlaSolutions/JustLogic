@@ -85,61 +85,7 @@ public class JustLogicEventHandlerLite : JustLogicEventHandlerBase, IScriptVaria
     }
 
     #endregion
-    /*
-    #region Network
-
-    public virtual void OnConnectedToServer()
-    {
-        Trigger(new OnConnectedToServer());
-    }
     
-    public virtual void OnDisconnectedFromServer(NetworkDisconnection info)
-    {
-        Trigger(new OnDisconnectedFromServer(), info);
-    }
-    
-    public virtual void OnFailedToConnect(NetworkConnectionError error)
-    {
-        Trigger(new OnFailedToConnect(), error);
-    }
-
-    public virtual void OnFailedToConnectToMasterServer(NetworkConnectionError info)
-    {
-        Trigger(new OnFailedToConnectToMasterServer(), info);
-    }
-
-    public virtual void OnMasterServerEvent(MasterServerEvent msEvent)
-    {
-        Trigger(new OnMasterServerEvent(), msEvent);
-    }
-
-    public virtual void OnPlayerConnected(NetworkPlayer player)
-    {
-        Trigger(new OnPlayerConnected(), player);
-    }
-
-    public virtual void OnNetworkInstantiate(NetworkMessageInfo info)
-    {
-        Trigger(new OnNetworkInstantiate(), info);
-    }
-
-    public virtual void OnPlayerDisconnected(NetworkPlayer player)
-    {
-        Trigger(new OnPlayerDisconnected(), player);
-    }
-
-    public virtual void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
-    {
-        Trigger(new OnSerializeNetworkView(), stream, info);
-    }
-
-    public virtual void OnServerInitialized()
-    {
-        Trigger(new OnServerInitialized());
-    }
-
-    #endregion
-    */
 #endif
 
     #region Colliders

@@ -108,9 +108,6 @@ namespace JustLogic.Editor
                     unprefixedClassName = parameters[0].ParameterType.GetSimpleName() + "To" + method.ReturnType.GetSimpleName();
                 else
                 {
-                    /*if (method.IsSpecialName && (unprefixedClassName.StartsWith("get_") || unprefixedClassName.StartsWith("set_"))
-                        && (unprefixedClassName != "get_Item") && (unprefixedClassName != "set_Item"))
-                        unprefixedClassName = unprefixedClassName.Substring(4);*/
                     unprefixedClassName = GenerateClassName(method.Name);
                 }
 
@@ -689,8 +686,6 @@ namespace JustLogic.Editor
             {
                 sb.Append(".GetResult<");
                 sb.Append(type.ToCSharpString());
-                //if (isArray)
-                //  sb.Append("[]");
                 sb.Append(">(context)");
             }
         }

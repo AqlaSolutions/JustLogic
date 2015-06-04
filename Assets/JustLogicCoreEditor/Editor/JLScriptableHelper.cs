@@ -198,36 +198,6 @@ namespace JustLogic.Editor
                     sequence.Actions = new JLAction[0];
                 ArrayUtility.Add(ref sequence.Actions, prevUnit as JLAction);
             }
-            /*
-            else if ((prevUnitPars.ValueParameter != null) && (newUnitPars.ValueParameter != null))
-            {
-                // заменяем Value значение предыдущим Value значением аналогичного типа
-                var v = prevUnitPars.ValueParameter.Getter(prevUnit);
-                if (v != null)
-                {
-                    var typeInfo = ((TypeInfo)v.GetType());
-                    if (typeInfo.IsAssignableTo(newUnitPars.ValueParameter))
-                    {
-                        newUnitPars.ValueParameter.Setter(newUnit, v);
-                        if (typeInfo.IsUnityObject)
-                            prevUnitPars.ValueParameter.Setter(prevUnit, null);
-                    }
-                }
-                JLScriptableHelper.Destroy(prevUnit);
-            }
-            else if ((newUnitPars.ValueParameter != null)
-                //&&(typeof(JLAction).IsAssignableFrom(newUnitPars.ValueParameter.Type)
-                && newUnitPars.ValueParameter.ExpressionType != null
-                && prevUnitType.UnitUsage != null
-                && prevUnitType.UnitUsage.ExpressionReturnType != null
-                && prevUnitType.IsAssignableTo(newUnitPars.ValueParameter)
-                )
-            {
-                // только для имеющих тип expressions
-                // ставим предыдущий блок в Value 
-                JLScriptableHelper.Destroy(newUnitPars.ValueParameter.Getter(newUnit));
-                newUnitPars.ValueParameter.Setter(newUnit, Copier.Duplicate(prevUnit));
-            }*/
             else
             {
                 var notUsedPrevParameters = new List<UnitParameter>(prevUnitParameters);

@@ -152,30 +152,7 @@ public static class JLExpressionExtensions
         }
         return Convert.ChangeType(obj, targetType);
     }
-
-
-
-    /*
-    readonly static Dictionary<Type, StaticReturnTypeAttribute> ReturnTypeAttributesCache = new Dictionary<Type, StaticReturnTypeAttribute>();
-    readonly static List<Type> TempList=new List<Type>();
-
-    public static Type[] GetResultTypes(this IExpression expression)
-    {
-        if (expression == null) throw new ArgumentNullException("expression");
-        Type exprType = expression.GetType();
-        StaticReturnTypeAttribute attr;
-        if (!ReturnTypeAttributesCache.TryGetValue(exprType, out attr))
-        {
-            attr = (StaticReturnTypeAttribute)Attribute.GetCustomAttribute(exprType, typeof(StaticReturnTypeAttribute));
-            ReturnTypeAttributesCache.Add(exprType, attr);
-        }
-        var types=TempList;
-        try{
-        Type rt = expression.ConcreteStaticReturnType;
-        Convert.
-        }finally {types.Clear();}
-    }
-     */
+    
 }
 
 [UnitUsage(typeof(bool))]
