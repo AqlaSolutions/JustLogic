@@ -12,6 +12,6 @@ public class JLRandomSetSeed : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Random.seed = Value.GetResult<System.Int32>(context);
+        return Random.seed = Value.GetResult<System.Int32>(context);
     }
 }

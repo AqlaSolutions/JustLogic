@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Set/Set (Vector2)")]
 [UnitFriendlyName("Set")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLVector2Set : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,7 +18,7 @@ public class JLVector2Set : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Vector2 opValue = OperandValue.GetResult<UnityEngine.Vector2>(context);
+        Vector2 opValue = OperandValue.GetResult<Vector2>(context);
         opValue.Set(NewX.GetResult<System.Single>(context), NewY.GetResult<System.Single>(context));
         return opValue;
     }

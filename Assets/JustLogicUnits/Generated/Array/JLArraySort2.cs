@@ -7,16 +7,16 @@ using System;
 [UnitUsage(typeof(Array))]
 public class JLArraySort2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression Keys;
 
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression Items;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        var r = Items.GetResult<System.Array>(context);
-        System.Array.Sort(Keys.GetResult<System.Array>(context), r);
+        var r = Items.GetResult<Array>(context);
+        Array.Sort(Keys.GetResult<Array>(context), r);
         return r;
     }
 }

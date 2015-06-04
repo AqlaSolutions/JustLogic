@@ -4,24 +4,24 @@ using UnityEngine;
 
 [UnitMenu("Animation/Play Queued Advanced")]
 [UnitFriendlyName("Animation.Play Queued Advanced")]
-[UnitUsage(typeof(UnityEngine.AnimationState))]
+[UnitUsage(typeof(AnimationState))]
 public class JLAnimationPlayQueued3 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
     public JLExpression Animation;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.QueueMode))]
+    [Parameter(ExpressionType = typeof(QueueMode))]
     public JLExpression Queue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.PlayMode))]
+    [Parameter(ExpressionType = typeof(PlayMode))]
     public JLExpression Mode;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
-        return opValue.PlayQueued(Animation.GetResult<System.String>(context), Queue.GetResult<UnityEngine.QueueMode>(context), Mode.GetResult<UnityEngine.PlayMode>(context));
+        Animation opValue = OperandValue.GetResult<Animation>(context);
+        return opValue.PlayQueued(Animation.GetResult<System.String>(context), Queue.GetResult<QueueMode>(context), Mode.GetResult<PlayMode>(context));
     }
 }

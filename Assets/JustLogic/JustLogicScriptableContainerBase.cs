@@ -26,7 +26,7 @@ public abstract class JustLogicScriptableContainerBase : JustLogicBehaviorBase, 
     protected override void Awake()
     {
         base.Awake();
-        StoredInstanceId = this.GetInstanceID();
+        StoredInstanceId = GetInstanceID();
         UndoDataAccessor = CreateUndoData();
         if (!Application.isPlaying)
         {
@@ -72,7 +72,7 @@ public abstract class JustLogicScriptableContainerBase : JustLogicBehaviorBase, 
 
     protected virtual void Update()
     {
-        StoredInstanceId = this.GetInstanceID();
+        StoredInstanceId = GetInstanceID();
         if (!Application.isPlaying)
         {
             CheckDuplicated();

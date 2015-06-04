@@ -12,6 +12,6 @@ public class JLAnimatorStringToHash : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Animator.StringToHash(Name.GetResult<System.String>(context));
+        return Animator.StringToHash(Name.GetResult<System.String>(context));
     }
 }

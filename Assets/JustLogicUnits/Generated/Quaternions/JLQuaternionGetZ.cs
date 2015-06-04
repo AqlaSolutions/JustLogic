@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLQuaternionGetZ : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Quaternion opValue = OperandValue.GetResult<UnityEngine.Quaternion>(context);
+        Quaternion opValue = OperandValue.GetResult<Quaternion>(context);
         return opValue.z;
     }
 }

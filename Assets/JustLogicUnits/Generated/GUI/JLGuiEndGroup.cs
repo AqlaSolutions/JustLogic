@@ -8,7 +8,7 @@ public class JLGuiEndGroup : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.EndGroup();
+        GUI.EndGroup();
         return null;
     }
 }

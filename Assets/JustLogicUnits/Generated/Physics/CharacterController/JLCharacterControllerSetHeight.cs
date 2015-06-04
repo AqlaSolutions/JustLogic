@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLCharacterControllerSetHeight : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.CharacterController))]
+    [Parameter(ExpressionType = typeof(CharacterController))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLCharacterControllerSetHeight : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.CharacterController opValue = OperandValue.GetResult<UnityEngine.CharacterController>(context);
+        CharacterController opValue = OperandValue.GetResult<CharacterController>(context);
         return opValue.height = Value.GetResult<System.Single>(context);
     }
 }

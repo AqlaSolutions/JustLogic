@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("Camera.Render")]
 public class JLCameraRender : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         opValue.Render();
         return null;
     }

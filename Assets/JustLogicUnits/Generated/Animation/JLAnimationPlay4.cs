@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLAnimationPlay4 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -16,16 +16,16 @@ public class JLAnimationPlay4 : JLExpression
     [Parameter]
     public float Speed = 1f;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.PlayMode))]
+    [Parameter(ExpressionType = typeof(PlayMode))]
     public JLExpression Mode;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         var clip = Animation.GetResult<System.String>(context);
         AnimationState state = opValue[clip];
         state.speed = Speed;
         state.time = Speed < -float.Epsilon ? state.length : 0f;
-        return opValue.Play(clip, Mode.GetResult<UnityEngine.PlayMode>(context));
+        return opValue.Play(clip, Mode.GetResult<PlayMode>(context));
     }
 }

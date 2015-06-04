@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Operations/Division (Vector2)")]
 [UnitFriendlyName("Op Division")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLVector2OpDivision : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression A;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,6 +15,6 @@ public class JLVector2OpDivision : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return A.GetResult<UnityEngine.Vector2>(context) / D.GetResult<System.Single>(context);
+        return A.GetResult<Vector2>(context) / D.GetResult<System.Single>(context);
     }
 }

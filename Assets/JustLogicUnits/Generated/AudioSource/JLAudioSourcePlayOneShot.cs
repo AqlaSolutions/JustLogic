@@ -6,16 +6,16 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Play One Shot")]
 public class JLAudioSourcePlayOneShot : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioClip))]
+    [Parameter(ExpressionType = typeof(AudioClip))]
     public JLExpression Clip;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
-        opValue.PlayOneShot(Clip.GetResult<UnityEngine.AudioClip>(context));
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
+        opValue.PlayOneShot(Clip.GetResult<AudioClip>(context));
         return null;
     }
 }

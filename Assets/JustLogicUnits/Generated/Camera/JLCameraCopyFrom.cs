@@ -6,16 +6,16 @@ using UnityEngine;
 [UnitFriendlyName("Camera.Copy From")]
 public class JLCameraCopyFrom : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression Other;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
-        opValue.CopyFrom(Other.GetResult<UnityEngine.Camera>(context));
+        Camera opValue = OperandValue.GetResult<Camera>(context);
+        opValue.CopyFrom(Other.GetResult<Camera>(context));
         return null;
     }
 }

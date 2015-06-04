@@ -9,6 +9,6 @@ public class JLInputGetImeIsSelected : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.imeIsSelected;
+        return Input.imeIsSelected;
     }
 }

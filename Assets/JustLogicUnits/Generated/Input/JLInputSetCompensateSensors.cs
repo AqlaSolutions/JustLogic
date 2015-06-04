@@ -12,6 +12,6 @@ public class JLInputSetCompensateSensors : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.compensateSensors = Value.GetResult<System.Boolean>(context);
+        return Input.compensateSensors = Value.GetResult<System.Boolean>(context);
     }
 }

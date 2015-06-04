@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Physics/Collision/Get Contacts")]
 [UnitFriendlyName("Collision.Get Contacts")]
-[UnitUsage(typeof(UnityEngine.ContactPoint[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(ContactPoint[]), HideExpressionInActionsList = true)]
 public class JLCollisionGetContacts : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Collision))]
+    [Parameter(ExpressionType = typeof(Collision))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Collision opValue = OperandValue.GetResult<UnityEngine.Collision>(context);
+        Collision opValue = OperandValue.GetResult<Collision>(context);
         return opValue.contacts;
     }
 }

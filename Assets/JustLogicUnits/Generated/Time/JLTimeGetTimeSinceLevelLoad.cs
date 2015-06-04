@@ -9,6 +9,6 @@ public class JLTimeGetTimeSinceLevelLoad : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.timeSinceLevelLoad;
+        return Time.timeSinceLevelLoad;
     }
 }

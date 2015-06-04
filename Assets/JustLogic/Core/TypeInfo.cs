@@ -98,9 +98,9 @@ namespace JustLogic.Core
 
         public static bool operator ==(TypeInfo t1, Type t2)
         {
-            if (object.ReferenceEquals(t1, null))
+            if (ReferenceEquals(t1, null))
             {
-                if (object.ReferenceEquals(t2, null)) return true;
+                if (ReferenceEquals(t2, null)) return true;
                 return false;
             }
             return t1.Type == t2;
@@ -115,13 +115,13 @@ namespace JustLogic.Core
         {
             {
                 var t = obj as TypeInfo;
-                if (!object.ReferenceEquals(t, null))
+                if (!ReferenceEquals(t, null))
                     return Type == t.Type;
             }
 
             {
                 var t = obj as Type;
-                if (!object.ReferenceEquals(t, null))
+                if (!ReferenceEquals(t, null))
                     return Type == t;
             }
             return false;

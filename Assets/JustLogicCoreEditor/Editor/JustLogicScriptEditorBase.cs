@@ -33,7 +33,7 @@ public abstract class JustLogicScriptEditorBase : JLInspectorBase
         base.OnUndoableScriptReseting();
         if (this)
         {
-            var script = (JustLogicScriptBase)this.target;
+            var script = (JustLogicScriptBase)target;
             JLScriptableHelper.Destroy(script.EngineInstance.Tree);
         }
     }
@@ -56,7 +56,7 @@ public abstract class JustLogicScriptEditorBase : JLInspectorBase
 
     protected override bool Draw()
     {
-        var script = (JustLogicScriptBase)this.target;
+        var script = (JustLogicScriptBase)target;
         if (EditorUtility.IsPersistent(script))
         {
             JLScriptableHelper.AssetsContainer = script;

@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Set Shared Materials")]
 [UnitFriendlyName("Renderer.Set Shared Materials")]
-[UnitUsage(typeof(UnityEngine.Material[]))]
+[UnitUsage(typeof(Material[]))]
 public class JLRendererSetSharedMaterials : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Material))]
+    [Parameter(ExpressionType = typeof(Material))]
     public JLExpression[] Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
-        return opValue.sharedMaterials = Value.GetResult<UnityEngine.Material>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
+        return opValue.sharedMaterials = Value.GetResult<Material>(context);
     }
 }

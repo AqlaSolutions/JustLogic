@@ -8,7 +8,7 @@ public class JLDebugDebugBreak : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Debug.DebugBreak();
+        Debug.DebugBreak();
         return null;
     }
 }

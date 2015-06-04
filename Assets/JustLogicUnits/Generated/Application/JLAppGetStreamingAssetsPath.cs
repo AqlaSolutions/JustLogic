@@ -9,6 +9,6 @@ public class JLAppGetStreamingAssetsPath : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.streamingAssetsPath;
+        return Application.streamingAssetsPath;
     }
 }

@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLRectOpEquality : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Lhs.GetResult<UnityEngine.Rect>(context) == Rhs.GetResult<UnityEngine.Rect>(context);
+        return Lhs.GetResult<Rect>(context) == Rhs.GetResult<Rect>(context);
     }
 }

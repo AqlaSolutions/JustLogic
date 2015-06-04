@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLVector2OpInequality : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Lhs.GetResult<UnityEngine.Vector2>(context) != Rhs.GetResult<UnityEngine.Vector2>(context);
+        return Lhs.GetResult<Vector2>(context) != Rhs.GetResult<Vector2>(context);
     }
 }

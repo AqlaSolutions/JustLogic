@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
 public class JLTransformGetChildCount : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
         return opValue.childCount;
     }
 }

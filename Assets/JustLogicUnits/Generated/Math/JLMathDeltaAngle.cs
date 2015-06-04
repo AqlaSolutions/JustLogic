@@ -15,6 +15,6 @@ public class JLMathDeltaAngle : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.DeltaAngle(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context));
+        return Mathf.DeltaAngle(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context));
     }
 }

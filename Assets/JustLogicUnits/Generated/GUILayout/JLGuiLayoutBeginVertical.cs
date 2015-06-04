@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUILayout.BeginVertical")]
 public class JLGuiLayoutBeginVertical : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.BeginVertical(Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        GUILayout.BeginVertical(Options.GetResult<GUILayoutOption>(context));
         return null;
     }
 }

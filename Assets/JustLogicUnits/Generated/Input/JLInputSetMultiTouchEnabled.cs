@@ -12,6 +12,6 @@ public class JLInputSetMultiTouchEnabled : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.multiTouchEnabled = Value.GetResult<System.Boolean>(context);
+        return Input.multiTouchEnabled = Value.GetResult<System.Boolean>(context);
     }
 }

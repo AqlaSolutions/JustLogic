@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Audio/Get Clip")]
 [UnitFriendlyName("Audio.Get Clip")]
-[UnitUsage(typeof(UnityEngine.AudioClip), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AudioClip), HideExpressionInActionsList = true)]
 public class JLAudioSourceGetClip : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         return opValue.clip;
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Color/Get Grey")]
 [UnitFriendlyName("Color.Get Grey")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorGetGrey : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Color.grey;
+        return Color.grey;
     }
 }

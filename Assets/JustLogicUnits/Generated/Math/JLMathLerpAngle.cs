@@ -18,6 +18,6 @@ public class JLMathLerpAngle : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.LerpAngle(A.GetResult<System.Single>(context), B.GetResult<System.Single>(context), T.GetResult<System.Single>(context));
+        return Mathf.LerpAngle(A.GetResult<System.Single>(context), B.GetResult<System.Single>(context), T.GetResult<System.Single>(context));
     }
 }

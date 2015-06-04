@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLBehaviorGetEnabled : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Behaviour))]
+    [Parameter(ExpressionType = typeof(Behaviour))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Behaviour opValue = OperandValue.GetResult<UnityEngine.Behaviour>(context);
+        Behaviour opValue = OperandValue.GetResult<Behaviour>(context);
         return opValue.enabled;
     }
 }

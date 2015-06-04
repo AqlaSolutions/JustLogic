@@ -9,6 +9,6 @@ public class JLAppGetDataPath : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.dataPath;
+        return Application.dataPath;
     }
 }

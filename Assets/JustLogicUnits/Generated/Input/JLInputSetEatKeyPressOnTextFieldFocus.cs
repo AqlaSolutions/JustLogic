@@ -12,6 +12,6 @@ public class JLInputSetEatKeyPressOnTextFieldFocus : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.eatKeyPressOnTextFieldFocus = Value.GetResult<System.Boolean>(context);
+        return Input.eatKeyPressOnTextFieldFocus = Value.GetResult<System.Boolean>(context);
     }
 }

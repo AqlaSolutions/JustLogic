@@ -9,6 +9,6 @@ public class JLRandomGetSeed : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Random.seed;
+        return Random.seed;
     }
 }

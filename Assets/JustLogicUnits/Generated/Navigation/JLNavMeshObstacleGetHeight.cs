@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLNavMeshObstacleGetHeight : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshObstacle))]
+    [Parameter(ExpressionType = typeof(NavMeshObstacle))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshObstacle opValue = OperandValue.GetResult<UnityEngine.NavMeshObstacle>(context);
+        NavMeshObstacle opValue = OperandValue.GetResult<NavMeshObstacle>(context);
         return opValue.height;
     }
 }

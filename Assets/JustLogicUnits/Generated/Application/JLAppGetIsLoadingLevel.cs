@@ -9,6 +9,6 @@ public class JLAppGetIsLoadingLevel : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.isLoadingLevel;
+        return Application.isLoadingLevel;
     }
 }

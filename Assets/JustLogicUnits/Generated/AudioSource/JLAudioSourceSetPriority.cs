@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32))]
 public class JLAudioSourceSetPriority : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLAudioSourceSetPriority : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         return opValue.priority = Value.GetResult<System.Int32>(context);
     }
 }

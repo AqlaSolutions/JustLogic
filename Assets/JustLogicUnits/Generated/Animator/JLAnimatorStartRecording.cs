@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Start Recording")]
 public class JLAnimatorStartRecording : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -14,7 +14,7 @@ public class JLAnimatorStartRecording : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.StartRecording(FrameCount.GetResult<System.Int32>(context));
         return null;
     }

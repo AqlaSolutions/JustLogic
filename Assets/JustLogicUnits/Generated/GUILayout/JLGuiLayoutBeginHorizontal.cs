@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUILayout.BeginHorizontal")]
 public class JLGuiLayoutBeginHorizontal : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.BeginHorizontal(Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        GUILayout.BeginHorizontal(Options.GetResult<GUILayoutOption>(context));
         return null;
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("WWW/Get Audio Clip")]
 [UnitFriendlyName("WWW.Get Audio Clip")]
-[UnitUsage(typeof(UnityEngine.AudioClip), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AudioClip), HideExpressionInActionsList = true)]
 public class JLWwwGetAudioClip4 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -16,12 +16,12 @@ public class JLWwwGetAudioClip4 : JLExpression
     [Parameter(ExpressionType = typeof(System.Boolean))]
     public JLExpression Stream;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioType))]
+    [Parameter(ExpressionType = typeof(AudioType))]
     public JLExpression AudioType;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
-        return opValue.GetAudioClip(ThreeD.GetResult<System.Boolean>(context), Stream.GetResult<System.Boolean>(context), AudioType.GetResult<UnityEngine.AudioType>(context));
+        WWW opValue = OperandValue.GetResult<WWW>(context);
+        return opValue.GetAudioClip(ThreeD.GetResult<System.Boolean>(context), Stream.GetResult<System.Boolean>(context), AudioType.GetResult<AudioType>(context));
     }
 }

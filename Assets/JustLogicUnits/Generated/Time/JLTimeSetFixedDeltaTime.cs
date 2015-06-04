@@ -12,6 +12,6 @@ public class JLTimeSetFixedDeltaTime : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.fixedDeltaTime = Value.GetResult<System.Single>(context);
+        return Time.fixedDeltaTime = Value.GetResult<System.Single>(context);
     }
 }

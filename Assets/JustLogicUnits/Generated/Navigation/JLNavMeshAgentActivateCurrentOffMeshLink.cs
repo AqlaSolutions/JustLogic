@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("NavMeshAgent.Activate Current Off Mesh Link")]
 public class JLNavMeshAgentActivateCurrentOffMeshLink : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -14,7 +14,7 @@ public class JLNavMeshAgentActivateCurrentOffMeshLink : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
         opValue.ActivateCurrentOffMeshLink(Activated.GetResult<System.Boolean>(context));
         return null;
     }

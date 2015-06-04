@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLNavMeshAgentSetAutoBraking : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLNavMeshAgentSetAutoBraking : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
         return opValue.autoBraking = Value.GetResult<System.Boolean>(context);
     }
 }

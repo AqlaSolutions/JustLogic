@@ -9,6 +9,6 @@ public class JLGuiGetNameOfFocusedControl : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.GetNameOfFocusedControl();
+        return GUI.GetNameOfFocusedControl();
     }
 }

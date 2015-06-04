@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("NavMeshAgent.Set Layer Cost")]
 public class JLNavMeshAgentSetLayerCost : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
     [Parameter(OverrideType = ParameterAttribute.OverrideTypes.Layer)]
@@ -17,7 +17,7 @@ public class JLNavMeshAgentSetLayerCost : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
         opValue.SetLayerCost(Layer, Cost.GetResult<System.Single>(context));
         return null;
     }

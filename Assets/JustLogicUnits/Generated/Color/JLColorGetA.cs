@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLColorGetA : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Color opValue = OperandValue.GetResult<UnityEngine.Color>(context);
+        Color opValue = OperandValue.GetResult<Color>(context);
         return opValue.a;
     }
 }

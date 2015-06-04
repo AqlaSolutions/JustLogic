@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Physics/Overlap Sphere")]
 [UnitFriendlyName("Overlap Sphere")]
-[UnitUsage(typeof(UnityEngine.Collider[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Collider[]), HideExpressionInActionsList = true)]
 public class JLPhysicsOverlapSphere2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLPhysicsOverlapSphere2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.OverlapSphere(Position.GetResult<UnityEngine.Vector3>(context), Radius.GetResult<System.Single>(context), LayerMask);
+        return Physics.OverlapSphere(Position.GetResult<Vector3>(context), Radius.GetResult<System.Single>(context), LayerMask);
     }
 }

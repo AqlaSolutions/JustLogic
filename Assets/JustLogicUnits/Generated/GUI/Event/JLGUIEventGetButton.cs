@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
 public class JLGUIEventGetButton : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Event))]
+    [Parameter(ExpressionType = typeof(Event))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Event opValue = OperandValue.GetResult<UnityEngine.Event>(context);
+        Event opValue = OperandValue.GetResult<Event>(context);
         return opValue.button;
     }
 }

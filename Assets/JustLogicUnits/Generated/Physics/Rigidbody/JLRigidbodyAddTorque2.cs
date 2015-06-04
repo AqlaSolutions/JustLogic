@@ -6,13 +6,13 @@ using UnityEngine;
 [UnitFriendlyName("Rigidbody.Add Torque")]
 public class JLRigidbodyAddTorque2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Torque;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.ForceMode))]
+    [Parameter(ExpressionType = typeof(ForceMode))]
     public JLExpression Mode;
 
     [Parameter]
@@ -20,11 +20,11 @@ public class JLRigidbodyAddTorque2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
         if (Relative)
-        opValue.AddTorque(Torque.GetResult<UnityEngine.Vector3>(context), Mode.GetResult<UnityEngine.ForceMode>(context));
+        opValue.AddTorque(Torque.GetResult<Vector3>(context), Mode.GetResult<ForceMode>(context));
         else
-            opValue.AddRelativeTorque(Torque.GetResult<UnityEngine.Vector3>(context), Mode.GetResult<UnityEngine.ForceMode>(context));
+            opValue.AddRelativeTorque(Torque.GetResult<Vector3>(context), Mode.GetResult<ForceMode>(context));
         return null;
     }
 }

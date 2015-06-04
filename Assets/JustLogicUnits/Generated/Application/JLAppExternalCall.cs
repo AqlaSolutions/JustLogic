@@ -15,6 +15,6 @@ public class JLAppExternalCall : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Application.ExternalCall(FunctionName.GetResult<System.String>(context), Args.GetResult<object>(context));
+        Application.ExternalCall(FunctionName.GetResult<System.String>(context), Args.GetResult<object>(context));
         return null;    }
 }

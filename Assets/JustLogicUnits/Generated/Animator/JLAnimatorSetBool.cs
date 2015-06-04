@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Bool")]
 public class JLAnimatorSetBool : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -17,7 +17,7 @@ public class JLAnimatorSetBool : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.SetBool(Name.GetResult<System.String>(context), Value.GetResult<System.Boolean>(context));
         return null;
     }

@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLPhysicsRaycast6 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Ray))]
+    [Parameter(ExpressionType = typeof(Ray))]
     public JLExpression Ray;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLPhysicsRaycast6 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.Raycast(Ray.GetResult<UnityEngine.Ray>(context), Distance.GetResult<System.Single>(context), LayerMask);
+        return Physics.Raycast(Ray.GetResult<Ray>(context), Distance.GetResult<System.Single>(context), LayerMask);
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Hinge Joint")]
 [UnitFriendlyName("Get Hinge Joint")]
-[UnitUsage(typeof(UnityEngine.HingeJoint), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(HingeJoint), HideExpressionInActionsList = true)]
 public class JLGameObjectGetHingeJoint : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<HingeJoint>();
     }
 }

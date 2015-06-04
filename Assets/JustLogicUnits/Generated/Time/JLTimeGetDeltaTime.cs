@@ -9,6 +9,6 @@ public class JLTimeGetDeltaTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.deltaTime;
+        return Time.deltaTime;
     }
 }

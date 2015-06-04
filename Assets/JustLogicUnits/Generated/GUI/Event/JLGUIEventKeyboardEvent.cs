@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUI/Event/Keyboard Event")]
 [UnitFriendlyName("GUIEvent.Keyboard Event")]
-[UnitUsage(typeof(UnityEngine.Event), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Event), HideExpressionInActionsList = true)]
 public class JLGUIEventKeyboardEvent : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLGUIEventKeyboardEvent : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Event.KeyboardEvent(Key.GetResult<System.String>(context));
+        return Event.KeyboardEvent(Key.GetResult<System.String>(context));
     }
 }

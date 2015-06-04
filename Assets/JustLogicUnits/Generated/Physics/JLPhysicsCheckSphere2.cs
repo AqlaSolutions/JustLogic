@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLPhysicsCheckSphere2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLPhysicsCheckSphere2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.CheckSphere(Position.GetResult<UnityEngine.Vector3>(context), Radius.GetResult<System.Single>(context), LayerMask);
+        return Physics.CheckSphere(Position.GetResult<Vector3>(context), Radius.GetResult<System.Single>(context), LayerMask);
     }
 }

@@ -6,19 +6,19 @@ using UnityEngine;
 [UnitFriendlyName("Camera.Set Target Buffers")]
 public class JLCameraSetTargetBuffers : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.RenderBuffer))]
+    [Parameter(ExpressionType = typeof(RenderBuffer))]
     public JLExpression ColorBuffer;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.RenderBuffer))]
+    [Parameter(ExpressionType = typeof(RenderBuffer))]
     public JLExpression DepthBuffer;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
-        opValue.SetTargetBuffers(ColorBuffer.GetResult<UnityEngine.RenderBuffer>(context), DepthBuffer.GetResult<UnityEngine.RenderBuffer>(context));
+        Camera opValue = OperandValue.GetResult<Camera>(context);
+        opValue.SetTargetBuffers(ColorBuffer.GetResult<RenderBuffer>(context), DepthBuffer.GetResult<RenderBuffer>(context));
         return null;
     }
 }

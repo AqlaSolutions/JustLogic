@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("GUI.Box")]
 public class JLGuiBox : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -14,7 +14,7 @@ public class JLGuiBox : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.Box(Position.GetResult<UnityEngine.Rect>(context), Text.GetResult<System.String>(context));
+        GUI.Box(Position.GetResult<Rect>(context), Text.GetResult<System.String>(context));
         return null;
     }
 }

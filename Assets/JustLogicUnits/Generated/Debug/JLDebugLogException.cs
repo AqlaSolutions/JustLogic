@@ -11,7 +11,7 @@ public class JLDebugLogException : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Debug.LogException(Exception.GetResult<System.Exception>(context));
+        Debug.LogException(Exception.GetResult<System.Exception>(context));
         return null;
     }
 }

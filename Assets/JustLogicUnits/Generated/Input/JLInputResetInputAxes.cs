@@ -8,7 +8,7 @@ public class JLInputResetInputAxes : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Input.ResetInputAxes();
+        Input.ResetInputAxes();
         return null;
     }
 }

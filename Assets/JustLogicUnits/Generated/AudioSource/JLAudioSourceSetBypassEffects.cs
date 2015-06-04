@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLAudioSourceSetBypassEffects : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLAudioSourceSetBypassEffects : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         return opValue.bypassEffects = Value.GetResult<System.Boolean>(context);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Vectors/New Vector4")]
 [UnitFriendlyName("New Vector4")]
-[UnitUsage(typeof(UnityEngine.Vector4), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector4), HideExpressionInActionsList = true)]
 public class JLVector4NewVector43 : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -21,6 +21,6 @@ public class JLVector4NewVector43 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return new UnityEngine.Vector4(X.GetResult<System.Single>(context), Y.GetResult<System.Single>(context), Z.GetResult<System.Single>(context), W.GetResult<System.Single>(context));
+        return new Vector4(X.GetResult<System.Single>(context), Y.GetResult<System.Single>(context), Z.GetResult<System.Single>(context), W.GetResult<System.Single>(context));
     }
 }

@@ -9,6 +9,6 @@ public class JLAppGetStreamedBytes : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.streamedBytes;
+        return Application.streamedBytes;
     }
 }

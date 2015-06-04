@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Physics/Get Attached Rigidbody (Character Controller)")]
 [UnitFriendlyName("Get Attached Rigidbody")]
-[UnitUsage(typeof(UnityEngine.Rigidbody), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Rigidbody), HideExpressionInActionsList = true)]
 public class JLCharacterControllerGetAttachedRigidbody : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.CharacterController))]
+    [Parameter(ExpressionType = typeof(CharacterController))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.CharacterController opValue = OperandValue.GetResult<UnityEngine.CharacterController>(context);
+        CharacterController opValue = OperandValue.GetResult<CharacterController>(context);
         return opValue.attachedRigidbody;
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Transform/Get Child")]
 [UnitFriendlyName("Get Child")]
-[UnitUsage(typeof(UnityEngine.Transform), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Transform), HideExpressionInActionsList = true)]
 public class JLTransformGetChild : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLTransformGetChild : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
         return opValue.GetChild(Index.GetResult<System.Int32>(context));
     }
 }

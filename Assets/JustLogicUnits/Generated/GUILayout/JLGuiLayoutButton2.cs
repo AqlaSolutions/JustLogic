@@ -10,11 +10,11 @@ public class JLGuiLayoutButton2 : JLExpression
     [Parameter(ExpressionType = typeof(System.String))]
     public JLExpression Text;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.Button(Text.GetResult<System.String>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.Button(Text.GetResult<System.String>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

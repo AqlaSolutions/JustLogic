@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("WWW/Set Thread Priority")]
 [UnitFriendlyName("WWW.Set Thread Priority")]
-[UnitUsage(typeof(UnityEngine.ThreadPriority))]
+[UnitUsage(typeof(ThreadPriority))]
 public class JLWwwSetThreadPriority : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.ThreadPriority))]
+    [Parameter(ExpressionType = typeof(ThreadPriority))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
-        return opValue.threadPriority = Value.GetResult<UnityEngine.ThreadPriority>(context);
+        WWW opValue = OperandValue.GetResult<WWW>(context);
+        return opValue.threadPriority = Value.GetResult<ThreadPriority>(context);
     }
 }

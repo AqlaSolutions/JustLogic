@@ -4,15 +4,15 @@ using System;
 
 [UnitMenu("String/To Upper")]
 [UnitFriendlyName("String.To Upper")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringToUpper : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
+        String opValue = OperandValue.GetResult<String>(context);
         return opValue.ToUpper();
     }
 }

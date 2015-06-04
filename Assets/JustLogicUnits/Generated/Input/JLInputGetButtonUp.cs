@@ -12,6 +12,6 @@ public class JLInputGetButtonUp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetButtonUp(ButtonName.GetResult<System.String>(context));
+        return Input.GetButtonUp(ButtonName.GetResult<System.String>(context));
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Input/Set Composition Cursor Pos")]
 [UnitFriendlyName("Set Composition Cursor Pos")]
-[UnitUsage(typeof(UnityEngine.Vector2))]
+[UnitUsage(typeof(Vector2))]
 public class JLInputSetCompositionCursorPos : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.compositionCursorPos = Value.GetResult<UnityEngine.Vector2>(context);
+        return Input.compositionCursorPos = Value.GetResult<Vector2>(context);
     }
 }

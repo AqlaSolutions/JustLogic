@@ -6,18 +6,18 @@ using UnityEngine;
 [UnitFriendlyName("GUI.DrawTexture")]
 public class JLGuiDrawTexture : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Texture))]
+    [Parameter(ExpressionType = typeof(Texture))]
     public JLExpression Image;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.ScaleMode))]
+    [Parameter(ExpressionType = typeof(ScaleMode))]
     public JLExpression ScaleMode;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.DrawTexture(Position.GetResult<UnityEngine.Rect>(context), Image.GetResult<UnityEngine.Texture>(context), ScaleMode.GetResult<UnityEngine.ScaleMode>(context));
+        GUI.DrawTexture(Position.GetResult<Rect>(context), Image.GetResult<Texture>(context), ScaleMode.GetResult<ScaleMode>(context));
         return null;
     }
 }

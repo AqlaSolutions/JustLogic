@@ -4,21 +4,21 @@ using System;
 
 [UnitMenu("String/Split")]
 [UnitFriendlyName("String.Split")]
-[UnitUsage(typeof(System.String[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String[]), HideExpressionInActionsList = true)]
 public class JLStringSplit4 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression[] Separator;
 
-    [Parameter(ExpressionType = typeof(System.StringSplitOptions))]
+    [Parameter(ExpressionType = typeof(StringSplitOptions))]
     public JLExpression Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Split(Separator.GetResult<System.String>(context), Options.GetResult<System.StringSplitOptions>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Split(Separator.GetResult<String>(context), Options.GetResult<StringSplitOptions>(context));
     }
 }

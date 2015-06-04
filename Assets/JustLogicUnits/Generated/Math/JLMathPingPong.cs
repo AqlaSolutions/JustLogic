@@ -15,6 +15,6 @@ public class JLMathPingPong : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.PingPong(T.GetResult<System.Single>(context), Length.GetResult<System.Single>(context));
+        return Mathf.PingPong(T.GetResult<System.Single>(context), Length.GetResult<System.Single>(context));
     }
 }

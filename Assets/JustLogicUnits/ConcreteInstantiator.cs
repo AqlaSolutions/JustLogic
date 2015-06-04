@@ -30,7 +30,7 @@ namespace JustLogic.Core
             return new SelectedVariableInfo();
         }
 
-        public override UnityEngine.ScriptableObject CreateScriptable(System.Type type)
+        public override ScriptableObject CreateScriptable(System.Type type)
         {
             if (type == typeof(JLAndBase)) return ScriptableObject.CreateInstance<JLAnd>();
             if (type == typeof(JLEvaluteBase)) return ScriptableObject.CreateInstance<JLEvalute>();

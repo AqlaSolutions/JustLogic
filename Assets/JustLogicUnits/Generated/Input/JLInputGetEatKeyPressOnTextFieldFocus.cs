@@ -9,6 +9,6 @@ public class JLInputGetEatKeyPressOnTextFieldFocus : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.eatKeyPressOnTextFieldFocus;
+        return Input.eatKeyPressOnTextFieldFocus;
     }
 }

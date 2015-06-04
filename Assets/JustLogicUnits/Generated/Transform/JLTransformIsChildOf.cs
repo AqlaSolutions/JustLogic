@@ -7,15 +7,15 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLTransformIsChildOf : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression Parent;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        return opValue.IsChildOf(Parent.GetResult<UnityEngine.Transform>(context));
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        return opValue.IsChildOf(Parent.GetResult<Transform>(context));
     }
 }

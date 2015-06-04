@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Animator/Set Body Rotation")]
 [UnitFriendlyName("Animator.Set Body Rotation")]
-[UnitUsage(typeof(UnityEngine.Quaternion))]
+[UnitUsage(typeof(Quaternion))]
 public class JLAnimatorSetBodyRotation : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        return opValue.bodyRotation = Value.GetResult<UnityEngine.Quaternion>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        return opValue.bodyRotation = Value.GetResult<Quaternion>(context);
     }
 }

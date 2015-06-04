@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Physics/Set Velocity (Rigidbody)")]
 [UnitFriendlyName("Rigidbody.Set Velocity")]
-[UnitUsage(typeof(UnityEngine.Vector3))]
+[UnitUsage(typeof(Vector3))]
 public class JLRigidbodySetVelocity : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
-        return opValue.velocity = Value.GetResult<UnityEngine.Vector3>(context);
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
+        return opValue.velocity = Value.GetResult<Vector3>(context);
     }
 }

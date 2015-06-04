@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLAudioSourceGetIgnoreListenerVolume : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         return opValue.ignoreListenerVolume;
     }
 }

@@ -9,6 +9,6 @@ public class JLAppGetPersistentDataPath : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.persistentDataPath;
+        return Application.persistentDataPath;
     }
 }

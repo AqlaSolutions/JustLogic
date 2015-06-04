@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLAnimatorSetLayersAffectMassCenter : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLAnimatorSetLayersAffectMassCenter : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         return opValue.layersAffectMassCenter = Value.GetResult<System.Boolean>(context);
     }
 }

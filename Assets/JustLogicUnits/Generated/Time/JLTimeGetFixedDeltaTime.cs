@@ -9,6 +9,6 @@ public class JLTimeGetFixedDeltaTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.fixedDeltaTime;
+        return Time.fixedDeltaTime;
     }
 }

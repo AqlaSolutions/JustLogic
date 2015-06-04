@@ -4,20 +4,20 @@ using UnityEngine;
 
 [UnitMenu("GUI/BeginScrollView")]
 [UnitFriendlyName("GUI.BeginScrollView")]
-[UnitUsage(typeof(UnityEngine.Vector2))]
+[UnitUsage(typeof(Vector2))]
 public class JLGuiBeginScrollView : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression ScrollPosition;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression ViewRect;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.BeginScrollView(Position.GetResult<UnityEngine.Rect>(context), ScrollPosition.GetResult<UnityEngine.Vector2>(context), ViewRect.GetResult<UnityEngine.Rect>(context));
+        return GUI.BeginScrollView(Position.GetResult<Rect>(context), ScrollPosition.GetResult<Vector2>(context), ViewRect.GetResult<Rect>(context));
     }
 }

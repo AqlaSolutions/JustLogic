@@ -73,7 +73,7 @@ namespace JustLogic.Editor
             var unit = scriptable as JLUnitBase;
             if (!unit)
             {
-                ScriptableObject.DestroyImmediate(scriptable, true);
+                Object.DestroyImmediate(scriptable, true);
                 return;
             }
 
@@ -84,7 +84,7 @@ namespace JustLogic.Editor
                 if (scriptableObject)
                 {
                     //Debug.Log("destroying " + scriptableObject.GetType().Name);
-                    ScriptableObject.DestroyImmediate(scriptableObject, true);
+                    Object.DestroyImmediate(scriptableObject, true);
                 }
             }
         }
@@ -113,10 +113,10 @@ namespace JustLogic.Editor
             var newTType = unit.GetType();
             if (typeof(JLExpression).IsAssignableFrom(newTType) && typeof(JLAction).IsAssignableFrom(typeof(TNeededType)))
             {
-                var b = JLScriptableHelper.CreateNew<JLEvaluteBase>();
+                var b = CreateNew<JLEvaluteBase>();
                 if (b.Expression)
-                    JLScriptableHelper.Destroy(b.Expression);
-                b.Expression = (JLExpression)JLScriptableHelper.CreateNew(newTType);
+                    Destroy(b.Expression);
+                b.Expression = (JLExpression)CreateNew(newTType);
                 if (!(b is TNeededType))
                     throw new ArgumentException();
                 return b as TNeededType;
@@ -131,10 +131,10 @@ namespace JustLogic.Editor
             var newTType = unit.GetType();
             if (typeof(JLExpression).IsAssignableFrom(newTType) && typeof(JLAction).IsAssignableFrom(neededType))
             {
-                var b = JLScriptableHelper.CreateNew<JLEvaluteBase>();
+                var b = CreateNew<JLEvaluteBase>();
                 if (b.Expression)
-                    JLScriptableHelper.Destroy(b.Expression);
-                b.Expression = (JLExpression)JLScriptableHelper.CreateNew(newTType);
+                    Destroy(b.Expression);
+                b.Expression = (JLExpression)CreateNew(newTType);
                 return b;
             }
             return unit;
@@ -157,8 +157,8 @@ namespace JustLogic.Editor
                 // assigning expression to action? ok!
                 var b = (unit = ReplaceUnitSubtypeInternal(unit, typeof(JLEvaluteBase))) as JLEvaluteBase;
                 if (b.Expression)
-                    JLScriptableHelper.Destroy(b.Expression);
-                b.Expression = (JLExpression)JLScriptableHelper.CreateNew(newSubtype);
+                    Destroy(b.Expression);
+                b.Expression = (JLExpression)CreateNew(newSubtype);
                 return unit;
             }
             return ReplaceUnitSubtypeInternal(unit, newSubtype);
@@ -172,7 +172,7 @@ namespace JustLogic.Editor
             if (unit && (unit.GetType() != neededSubtype.Type))
                 return ReplaceUnit(unit, neededSubtype);
             else if (!unit)
-                unit = JLScriptableHelper.CreateNew(neededSubtype);
+                unit = CreateNew(neededSubtype);
             return unit;
         }
 
@@ -184,7 +184,7 @@ namespace JustLogic.Editor
         private static TUnitType ReplaceUnit<TUnitType>(TUnitType unit, Type neededSubtype) where TUnitType : JLScriptable
         {
             TUnitType prevUnit = unit;
-            var newUnit = (TUnitType)JLScriptableHelper.CreateNew(neededSubtype);
+            var newUnit = (TUnitType)CreateNew(neededSubtype);
             var newUnitPars = UnitParameters.Get(neededSubtype);
             var newUnitParameters = newUnitPars.List;
             TypeInfo prevUnitType = prevUnit.GetType();
@@ -259,7 +259,7 @@ namespace JustLogic.Editor
                     notUsedNewParameters.Remove(match);
                 }
 
-                JLScriptableHelper.Destroy(prevUnit);
+                Destroy(prevUnit);
             }
             return newUnit;
         }
@@ -267,7 +267,7 @@ namespace JustLogic.Editor
         private static void MoveParameterReferenceValue(object value, TypeInfo valueTypeInfo, object prevUnit, UnitParameter prevParameter, object newUnit, UnitParameter newParameter)
         {
             if (valueTypeInfo.IsUnityObject)
-                JLScriptableHelper.Destroy(newParameter.Getter(newUnit));
+                Destroy(newParameter.Getter(newUnit));
 
             newParameter.Setter(newUnit, value);
 

@@ -6,16 +6,16 @@ using UnityEngine;
 [UnitFriendlyName("NavMeshAgent.Move")]
 public class JLNavMeshAgentMove : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Offset;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
-        opValue.Move(Offset.GetResult<UnityEngine.Vector3>(context));
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
+        opValue.Move(Offset.GetResult<Vector3>(context));
         return null;
     }
 }

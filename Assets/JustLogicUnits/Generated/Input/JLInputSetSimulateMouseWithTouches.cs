@@ -12,6 +12,6 @@ public class JLInputSetSimulateMouseWithTouches : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.simulateMouseWithTouches = Value.GetResult<System.Boolean>(context);
+        return Input.simulateMouseWithTouches = Value.GetResult<System.Boolean>(context);
     }
 }

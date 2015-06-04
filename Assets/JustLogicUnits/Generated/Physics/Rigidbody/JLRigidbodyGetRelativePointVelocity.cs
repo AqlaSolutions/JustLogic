@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Physics/Get Relative Point Velocity (Rigidbody)")]
 [UnitFriendlyName("Rigidbody.Get Relative Point Velocity")]
-[UnitUsage(typeof(UnityEngine.Vector3), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector3), HideExpressionInActionsList = true)]
 public class JLRigidbodyGetRelativePointVelocity : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression RelativePoint;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
-        return opValue.GetRelativePointVelocity(RelativePoint.GetResult<UnityEngine.Vector3>(context));
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
+        return opValue.GetRelativePointVelocity(RelativePoint.GetResult<Vector3>(context));
     }
 }

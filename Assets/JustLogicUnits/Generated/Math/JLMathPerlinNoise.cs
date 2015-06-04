@@ -15,6 +15,6 @@ public class JLMathPerlinNoise : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.PerlinNoise(X.GetResult<System.Single>(context), Y.GetResult<System.Single>(context));
+        return Mathf.PerlinNoise(X.GetResult<System.Single>(context), Y.GetResult<System.Single>(context));
     }
 }

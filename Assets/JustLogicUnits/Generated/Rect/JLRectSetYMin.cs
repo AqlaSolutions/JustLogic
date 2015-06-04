@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Rect/Set YMin")]
 [UnitFriendlyName("Rect.Set YMin")]
-[UnitUsage(typeof(UnityEngine.Rect))]
+[UnitUsage(typeof(Rect))]
 public class JLRectSetYMin : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLRectSetYMin : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rect opValue = OperandValue.GetResult<UnityEngine.Rect>(context);
+        Rect opValue = OperandValue.GetResult<Rect>(context);
         opValue.yMin = Value.GetResult<System.Single>(context);
         return opValue;
     }

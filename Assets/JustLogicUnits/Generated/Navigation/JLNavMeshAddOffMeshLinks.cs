@@ -8,7 +8,7 @@ public class JLNavMeshAddOffMeshLinks : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMesh.AddOffMeshLinks();
+        NavMesh.AddOffMeshLinks();
         return null;
     }
 }

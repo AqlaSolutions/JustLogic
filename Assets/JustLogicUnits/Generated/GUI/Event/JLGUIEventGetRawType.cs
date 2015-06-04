@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("GUI/Event/Get Raw Type")]
 [UnitFriendlyName("GUIEvent.Get Raw Type")]
-[UnitUsage(typeof(UnityEngine.EventType), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(EventType), HideExpressionInActionsList = true)]
 public class JLGUIEventGetRawType : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Event))]
+    [Parameter(ExpressionType = typeof(Event))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Event opValue = OperandValue.GetResult<UnityEngine.Event>(context);
+        Event opValue = OperandValue.GetResult<Event>(context);
         return opValue.rawType;
     }
 }

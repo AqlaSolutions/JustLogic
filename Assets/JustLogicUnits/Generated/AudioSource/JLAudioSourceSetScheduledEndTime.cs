@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Set Scheduled End Time")]
 public class JLAudioSourceSetScheduledEndTime : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Double))]
@@ -14,7 +14,7 @@ public class JLAudioSourceSetScheduledEndTime : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         opValue.SetScheduledEndTime(Time.GetResult<System.Double>(context));
         return null;
     }

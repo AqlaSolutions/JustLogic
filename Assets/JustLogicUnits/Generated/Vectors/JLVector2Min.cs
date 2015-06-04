@@ -4,17 +4,17 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Min (Vector2)")]
 [UnitFriendlyName("Min")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLVector2Min : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector2.Min(Lhs.GetResult<UnityEngine.Vector2>(context), Rhs.GetResult<UnityEngine.Vector2>(context));
+        return Vector2.Min(Lhs.GetResult<Vector2>(context), Rhs.GetResult<Vector2>(context));
     }
 }

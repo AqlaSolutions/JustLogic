@@ -7,15 +7,15 @@ using System;
 [UnitUsage(typeof(object), HideExpressionInActionsList = true)]
 public class JLArrayGetValue4 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Index;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.Array opValue = OperandValue.GetResult<System.Array>(context);
-        return opValue.GetValue(Index.GetResult<System.Int32>(context));
+        Array opValue = OperandValue.GetResult<Array>(context);
+        return opValue.GetValue(Index.GetResult<Int32>(context));
     }
 }

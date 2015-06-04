@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLAnimationStateSetTime : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLAnimationStateSetTime : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
         return opValue.time = Value.GetResult<System.Single>(context);
     }
 }

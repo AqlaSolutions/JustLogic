@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("WWW/Get Asset Bundle")]
 [UnitFriendlyName("WWW.Get Asset Bundle")]
-[UnitUsage(typeof(UnityEngine.AssetBundle), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AssetBundle), HideExpressionInActionsList = true)]
 public class JLWwwGetAssetBundle : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
+        WWW opValue = OperandValue.GetResult<WWW>(context);
         return opValue.assetBundle;
     }
 }

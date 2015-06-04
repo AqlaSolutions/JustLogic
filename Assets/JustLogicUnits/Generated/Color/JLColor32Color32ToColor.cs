@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Color/Color32 To Color")]
 [UnitFriendlyName("Color32.Color32ToColor")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColor32Color32ToColor : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color32))]
+    [Parameter(ExpressionType = typeof(Color32))]
     public JLExpression C;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return (UnityEngine.Color)C.GetResult<UnityEngine.Color32>(context);
+        return (Color)C.GetResult<Color32>(context);
     }
 }

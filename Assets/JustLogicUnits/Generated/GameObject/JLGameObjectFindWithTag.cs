@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Object/Find With Tag")]
 [UnitFriendlyName("Find With Tag")]
-[UnitUsage(typeof(UnityEngine.GameObject), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GameObject), HideExpressionInActionsList = true)]
 public class JLGameObjectFindWithTag : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLGameObjectFindWithTag : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GameObject.FindWithTag(Tag.GetResult<System.String>(context));
+        return GameObject.FindWithTag(Tag.GetResult<System.String>(context));
     }
 }

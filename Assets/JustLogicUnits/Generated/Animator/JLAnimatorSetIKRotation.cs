@@ -6,19 +6,19 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set IKRotation")]
 public class JLAnimatorSetIKRotation : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AvatarIKGoal))]
+    [Parameter(ExpressionType = typeof(AvatarIKGoal))]
     public JLExpression Goal;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression GoalRotation;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        opValue.SetIKRotation(Goal.GetResult<UnityEngine.AvatarIKGoal>(context), GoalRotation.GetResult<UnityEngine.Quaternion>(context));
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        opValue.SetIKRotation(Goal.GetResult<AvatarIKGoal>(context), GoalRotation.GetResult<Quaternion>(context));
         return null;
     }
 }

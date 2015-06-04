@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("GUI.Label")]
 public class JLGuiLabel : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -14,7 +14,7 @@ public class JLGuiLabel : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.Label(Position.GetResult<UnityEngine.Rect>(context), Text.GetResult<System.String>(context));
+        GUI.Label(Position.GetResult<Rect>(context), Text.GetResult<System.String>(context));
         return null;
     }
 }

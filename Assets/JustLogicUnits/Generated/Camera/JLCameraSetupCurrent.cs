@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("Camera.Setup Current")]
 public class JLCameraSetupCurrent : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression Cur;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Camera.SetupCurrent(Cur.GetResult<UnityEngine.Camera>(context));
+        Camera.SetupCurrent(Cur.GetResult<Camera>(context));
         return null;
     }
 }

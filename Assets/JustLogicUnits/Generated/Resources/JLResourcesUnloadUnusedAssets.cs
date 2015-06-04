@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Object/Resources/Unload Unused Assets")]
 [UnitFriendlyName("Resources.Unload Unused Assets")]
-[UnitUsage(typeof(UnityEngine.AsyncOperation))]
+[UnitUsage(typeof(AsyncOperation))]
 public class JLResourcesUnloadUnusedAssets : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Resources.UnloadUnusedAssets();
+        return Resources.UnloadUnusedAssets();
     }
 }

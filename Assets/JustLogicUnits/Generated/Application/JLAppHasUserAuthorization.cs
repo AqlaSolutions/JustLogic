@@ -7,11 +7,11 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLAppHasUserAuthorization : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.UserAuthorization))]
+    [Parameter(ExpressionType = typeof(UserAuthorization))]
     public JLExpression Mode;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.HasUserAuthorization(Mode.GetResult<UnityEngine.UserAuthorization>(context));
+        return Application.HasUserAuthorization(Mode.GetResult<UserAuthorization>(context));
     }
 }

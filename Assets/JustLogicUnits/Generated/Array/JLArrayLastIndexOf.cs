@@ -4,10 +4,10 @@ using System;
 
 [UnitMenu("Array/Last Index Of")]
 [UnitFriendlyName("Array.Last Index Of")]
-[UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Int32), HideExpressionInActionsList = true)]
 public class JLArrayLastIndexOf : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression Array;
 
     [Parameter(ExpressionType = typeof(object))]
@@ -15,6 +15,6 @@ public class JLArrayLastIndexOf : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return System.Array.LastIndexOf(Array.GetResult<System.Array>(context), Value.GetResult<object>(context));
+        return System.Array.LastIndexOf(Array.GetResult<Array>(context), Value.GetResult<object>(context));
     }
 }

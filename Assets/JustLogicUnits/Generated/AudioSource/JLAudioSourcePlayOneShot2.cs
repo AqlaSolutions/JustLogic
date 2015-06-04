@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Play One Shot")]
 public class JLAudioSourcePlayOneShot2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioClip))]
+    [Parameter(ExpressionType = typeof(AudioClip))]
     public JLExpression Clip;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -17,8 +17,8 @@ public class JLAudioSourcePlayOneShot2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
-        opValue.PlayOneShot(Clip.GetResult<UnityEngine.AudioClip>(context), VolumeScale.GetResult<System.Single>(context));
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
+        opValue.PlayOneShot(Clip.GetResult<AudioClip>(context), VolumeScale.GetResult<System.Single>(context));
         return null;
     }
 }

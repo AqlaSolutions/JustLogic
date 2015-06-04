@@ -12,6 +12,6 @@ public class JLWwwEscapeURL : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.WWW.EscapeURL(S.GetResult<System.String>(context));
+        return WWW.EscapeURL(S.GetResult<System.String>(context));
     }
 }

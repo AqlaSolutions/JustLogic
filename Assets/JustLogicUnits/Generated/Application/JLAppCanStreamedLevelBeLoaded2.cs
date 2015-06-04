@@ -12,6 +12,6 @@ public class JLAppCanStreamedLevelBeLoaded2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.CanStreamedLevelBeLoaded(LevelName.GetResult<System.String>(context));
+        return Application.CanStreamedLevelBeLoaded(LevelName.GetResult<System.String>(context));
     }
 }

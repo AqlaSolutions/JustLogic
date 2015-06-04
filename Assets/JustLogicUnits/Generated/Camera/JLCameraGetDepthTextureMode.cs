@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Camera/Get Depth Texture Mode")]
 [UnitFriendlyName("Camera.Get Depth Texture Mode")]
-[UnitUsage(typeof(UnityEngine.DepthTextureMode), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(DepthTextureMode), HideExpressionInActionsList = true)]
 public class JLCameraGetDepthTextureMode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         return opValue.depthTextureMode;
     }
 }

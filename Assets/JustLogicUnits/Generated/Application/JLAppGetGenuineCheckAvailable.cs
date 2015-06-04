@@ -9,6 +9,6 @@ public class JLAppGetGenuineCheckAvailable : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.genuineCheckAvailable;
+        return Application.genuineCheckAvailable;
     }
 }

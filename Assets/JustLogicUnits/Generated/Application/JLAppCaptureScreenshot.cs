@@ -11,6 +11,6 @@ public class JLAppCaptureScreenshot : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Application.CaptureScreenshot(Filename.GetResult<System.String>(context));
+        Application.CaptureScreenshot(Filename.GetResult<System.String>(context));
         return null;    }
 }

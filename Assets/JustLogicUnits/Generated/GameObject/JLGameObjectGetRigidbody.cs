@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Rigidbody")]
 [UnitFriendlyName("Get Rigidbody")]
-[UnitUsage(typeof(UnityEngine.Rigidbody), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Rigidbody), HideExpressionInActionsList = true)]
 public class JLGameObjectGetRigidbody : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<Rigidbody>();
     }
 }

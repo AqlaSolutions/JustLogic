@@ -17,7 +17,7 @@ public class JLPhysicsIgnoreLayerCollision2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Physics.IgnoreLayerCollision(Layer1, Layer2, Ignore.GetResult<System.Boolean>(context));
+        Physics.IgnoreLayerCollision(Layer1, Layer2, Ignore.GetResult<System.Boolean>(context));
         return null;
     }
 }

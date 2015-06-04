@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Audio/Set Velocity Update Mode")]
 [UnitFriendlyName("Audio.Set Velocity Update Mode")]
-[UnitUsage(typeof(UnityEngine.AudioVelocityUpdateMode))]
+[UnitUsage(typeof(AudioVelocityUpdateMode))]
 public class JLAudioSourceSetVelocityUpdateMode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioVelocityUpdateMode))]
+    [Parameter(ExpressionType = typeof(AudioVelocityUpdateMode))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
-        return opValue.velocityUpdateMode = Value.GetResult<UnityEngine.AudioVelocityUpdateMode>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
+        return opValue.velocityUpdateMode = Value.GetResult<AudioVelocityUpdateMode>(context);
     }
 }

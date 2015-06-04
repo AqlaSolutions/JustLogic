@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLColorSetR : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression Target;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLColorSetR : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Color opValue = Target.GetResult<UnityEngine.Color>(context);
+        Color opValue = Target.GetResult<Color>(context);
         return opValue.r = Value.GetResult<System.Single>(context);
     }
 }

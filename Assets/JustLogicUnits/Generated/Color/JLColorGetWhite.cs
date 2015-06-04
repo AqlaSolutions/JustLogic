@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Color/Get White")]
 [UnitFriendlyName("Color.Get White")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorGetWhite : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Color.white;
+        return Color.white;
     }
 }

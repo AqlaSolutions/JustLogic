@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Set Materials")]
 [UnitFriendlyName("Renderer.Set Materials")]
-[UnitUsage(typeof(UnityEngine.Material[]))]
+[UnitUsage(typeof(Material[]))]
 public class JLRendererSetMaterials : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Material))]
+    [Parameter(ExpressionType = typeof(Material))]
     public JLExpression[] Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
-        return opValue.materials = Value.GetResult<UnityEngine.Material>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
+        return opValue.materials = Value.GetResult<Material>(context);
     }
 }

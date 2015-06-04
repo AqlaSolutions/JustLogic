@@ -9,6 +9,6 @@ public class JLAppGetWebSecurityEnabled : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.webSecurityEnabled;
+        return Application.webSecurityEnabled;
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Physics/Get Attached Rigidbody (Collider)")]
 [UnitFriendlyName("Collider.Get Attached Rigidbody")]
-[UnitUsage(typeof(UnityEngine.Rigidbody), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Rigidbody), HideExpressionInActionsList = true)]
 public class JLColliderGetAttachedRigidbody : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Collider))]
+    [Parameter(ExpressionType = typeof(Collider))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Collider opValue = OperandValue.GetResult<UnityEngine.Collider>(context);
+        Collider opValue = OperandValue.GetResult<Collider>(context);
         return opValue.attachedRigidbody;
     }
 }

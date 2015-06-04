@@ -12,6 +12,6 @@ public class JLMathSign : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Sign(F.GetResult<System.Single>(context));
+        return Mathf.Sign(F.GetResult<System.Single>(context));
     }
 }

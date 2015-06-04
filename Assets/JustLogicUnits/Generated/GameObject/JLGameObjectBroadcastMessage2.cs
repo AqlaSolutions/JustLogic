@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Broadcast Message")]
 public class JLGameObjectBroadcastMessage2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -20,7 +20,7 @@ public class JLGameObjectBroadcastMessage2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         if (WithArgument)
             opValue.BroadcastMessage(MethodName.GetResult<System.String>(context), Argument.GetResult<object>(context), SendMessageOptions.DontRequireReceiver);
         else

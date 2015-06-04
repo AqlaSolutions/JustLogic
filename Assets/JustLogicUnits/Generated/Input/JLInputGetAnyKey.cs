@@ -9,6 +9,6 @@ public class JLInputGetAnyKey : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.anyKey;
+        return Input.anyKey;
     }
 }

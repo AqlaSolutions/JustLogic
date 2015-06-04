@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Transform/Get World To Local Matrix")]
 [UnitFriendlyName("Get World To Local Matrix")]
-[UnitUsage(typeof(UnityEngine.Matrix4x4), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Matrix4x4), HideExpressionInActionsList = true)]
 public class JLTransformGetWorldToLocalMatrix : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
         return opValue.worldToLocalMatrix;
     }
 }

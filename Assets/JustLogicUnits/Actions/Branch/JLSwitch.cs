@@ -15,7 +15,7 @@ public class JLSwitch : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        var compare = JLUnitBase.CreateInstance<JLCompareBase2>();
+        var compare = CreateInstance<JLCompareBase2>();
         compare.Operand1 = CompareValue;
 
         for (int i = 0; i < Branches.Length; i++)

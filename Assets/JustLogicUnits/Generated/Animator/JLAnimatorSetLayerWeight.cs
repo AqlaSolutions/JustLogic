@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Layer Weight")]
 public class JLAnimatorSetLayerWeight : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -17,7 +17,7 @@ public class JLAnimatorSetLayerWeight : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.SetLayerWeight(LayerIndex.GetResult<System.Int32>(context), Weight.GetResult<System.Single>(context));
         return null;
     }

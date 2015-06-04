@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Get Particle System")]
 [UnitFriendlyName("Renderer.Get Particle System")]
-[UnitUsage(typeof(UnityEngine.ParticleSystem), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(ParticleSystem), HideExpressionInActionsList = true)]
 public class JLRendererGetParticleSystem : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
         return opValue.GetComponent<ParticleSystem>();
     }
 }

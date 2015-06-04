@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Application/Request User Authorization")]
 [UnitFriendlyName("Request User Authorization")]
-[UnitUsage(typeof(UnityEngine.AsyncOperation))]
+[UnitUsage(typeof(AsyncOperation))]
 public class JLAppRequestUserAuthorization : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.UserAuthorization))]
+    [Parameter(ExpressionType = typeof(UserAuthorization))]
     public JLExpression Mode;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.RequestUserAuthorization(Mode.GetResult<UnityEngine.UserAuthorization>(context));
+        return Application.RequestUserAuthorization(Mode.GetResult<UserAuthorization>(context));
     }
 }

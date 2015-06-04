@@ -6,16 +6,16 @@ using System.Collections;
 [UnitFriendlyName("ArrayList.Add Range")]
 public class JLArrayListAddRange : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Collections.ICollection))]
+    [Parameter(ExpressionType = typeof(ICollection))]
     public JLExpression C;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
-        opValue.AddRange(C.GetResult<System.Collections.ICollection>(context));
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
+        opValue.AddRange(C.GetResult<ICollection>(context));
         return null;
     }
 }

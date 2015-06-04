@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLVector3OpInequality : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Lhs.GetResult<UnityEngine.Vector3>(context) != Rhs.GetResult<UnityEngine.Vector3>(context);
+        return Lhs.GetResult<Vector3>(context) != Rhs.GetResult<Vector3>(context);
     }
 }

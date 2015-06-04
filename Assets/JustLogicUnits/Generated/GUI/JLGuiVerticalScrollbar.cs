@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLGuiVerticalScrollbar : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -24,6 +24,6 @@ public class JLGuiVerticalScrollbar : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.VerticalScrollbar(Position.GetResult<UnityEngine.Rect>(context), Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), TopValue.GetResult<System.Single>(context), BottomValue.GetResult<System.Single>(context));
+        return GUI.VerticalScrollbar(Position.GetResult<Rect>(context), Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), TopValue.GetResult<System.Single>(context), BottomValue.GetResult<System.Single>(context));
     }
 }

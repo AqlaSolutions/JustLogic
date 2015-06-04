@@ -4,14 +4,14 @@ using System;
 
 [UnitMenu("String/Concat")]
 [UnitFriendlyName("String.Concat")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringConcat3 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression[] Values;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return System.String.Concat(Values.GetResult<System.String>(context));
+        return String.Concat(Values.GetResult<String>(context));
     }
 }

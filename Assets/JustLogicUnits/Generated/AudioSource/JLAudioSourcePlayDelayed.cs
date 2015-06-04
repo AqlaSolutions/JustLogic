@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Play Delayed")]
 public class JLAudioSourcePlayDelayed : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -14,7 +14,7 @@ public class JLAudioSourcePlayDelayed : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
         opValue.PlayDelayed(Delay.GetResult<System.Single>(context));
         return null;
     }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Physics/Constant Force/Set Relative Torque")]
 [UnitFriendlyName("ConstantForce.Set Relative Torque")]
-[UnitUsage(typeof(UnityEngine.Vector3))]
+[UnitUsage(typeof(Vector3))]
 public class JLConstantForceSetRelativeTorque : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.ConstantForce))]
+    [Parameter(ExpressionType = typeof(ConstantForce))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.ConstantForce opValue = OperandValue.GetResult<UnityEngine.ConstantForce>(context);
-        return opValue.relativeTorque = Value.GetResult<UnityEngine.Vector3>(context);
+        ConstantForce opValue = OperandValue.GetResult<ConstantForce>(context);
+        return opValue.relativeTorque = Value.GetResult<Vector3>(context);
     }
 }

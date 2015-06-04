@@ -12,6 +12,6 @@ public class JLAppSetTargetFrameRate : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.targetFrameRate = Value.GetResult<System.Int32>(context);
+        return Application.targetFrameRate = Value.GetResult<System.Int32>(context);
     }
 }

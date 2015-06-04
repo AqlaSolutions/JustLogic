@@ -9,12 +9,12 @@ public class JLGuiLayoutLabel : JLAction
     [Parameter(ExpressionType = typeof(System.String))]
     public JLExpression Text;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.Label(Text.GetResult<System.String>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        GUILayout.Label(Text.GetResult<System.String>(context), Options.GetResult<GUILayoutOption>(context));
         return null;
     }
 }

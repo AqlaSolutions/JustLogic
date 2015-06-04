@@ -12,6 +12,6 @@ public class JLMathAsin : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Asin(F.GetResult<System.Single>(context));
+        return Mathf.Asin(F.GetResult<System.Single>(context));
     }
 }

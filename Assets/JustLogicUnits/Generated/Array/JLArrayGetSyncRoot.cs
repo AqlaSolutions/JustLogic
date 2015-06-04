@@ -7,12 +7,12 @@ using System;
 [UnitUsage(typeof(object), HideExpressionInActionsList = true)]
 public class JLArrayGetSyncRoot : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.Array opValue = OperandValue.GetResult<System.Array>(context);
+        Array opValue = OperandValue.GetResult<Array>(context);
         return opValue.SyncRoot;
     }
 }

@@ -9,6 +9,6 @@ public class JLAppGetTemporaryCachePath : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.temporaryCachePath;
+        return Application.temporaryCachePath;
     }
 }

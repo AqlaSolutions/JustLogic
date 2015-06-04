@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Animation/State/Set Blend Mode")]
 [UnitFriendlyName("AnimationState.Set Blend Mode")]
-[UnitUsage(typeof(UnityEngine.AnimationBlendMode))]
+[UnitUsage(typeof(AnimationBlendMode))]
 public class JLAnimationStateSetBlendMode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationBlendMode))]
+    [Parameter(ExpressionType = typeof(AnimationBlendMode))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
-        return opValue.blendMode = Value.GetResult<UnityEngine.AnimationBlendMode>(context);
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
+        return opValue.blendMode = Value.GetResult<AnimationBlendMode>(context);
     }
 }

@@ -12,6 +12,6 @@ public class JLInputGetAxisRaw : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetAxisRaw(AxisName.GetResult<System.String>(context));
+        return Input.GetAxisRaw(AxisName.GetResult<System.String>(context));
     }
 }

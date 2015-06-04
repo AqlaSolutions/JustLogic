@@ -9,6 +9,6 @@ public class JLAppGetLevelCount : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.levelCount;
+        return Application.levelCount;
     }
 }

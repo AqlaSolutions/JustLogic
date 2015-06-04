@@ -8,7 +8,7 @@ public class JLNavMeshRestoreNavMesh : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMesh.RestoreNavMesh();
+        NavMesh.RestoreNavMesh();
         return null;
     }
 }

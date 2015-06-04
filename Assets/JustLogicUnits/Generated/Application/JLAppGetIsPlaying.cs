@@ -9,6 +9,6 @@ public class JLAppGetIsPlaying : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.isPlaying;
+        return Application.isPlaying;
     }
 }

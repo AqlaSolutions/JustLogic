@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Animation/Clip/Set Local Bounds")]
 [UnitFriendlyName("AnimationClip.Set Local Bounds")]
-[UnitUsage(typeof(UnityEngine.Bounds))]
+[UnitUsage(typeof(Bounds))]
 public class JLAnimationClipSetLocalBounds : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationClip))]
+    [Parameter(ExpressionType = typeof(AnimationClip))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Bounds))]
+    [Parameter(ExpressionType = typeof(Bounds))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationClip opValue = OperandValue.GetResult<UnityEngine.AnimationClip>(context);
-        return opValue.localBounds = Value.GetResult<UnityEngine.Bounds>(context);
+        AnimationClip opValue = OperandValue.GetResult<AnimationClip>(context);
+        return opValue.localBounds = Value.GetResult<Bounds>(context);
     }
 }

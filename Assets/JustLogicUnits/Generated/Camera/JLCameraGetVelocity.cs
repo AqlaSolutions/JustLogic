@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Camera/Get Velocity")]
 [UnitFriendlyName("Camera.Get Velocity")]
-[UnitUsage(typeof(UnityEngine.Vector3), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector3), HideExpressionInActionsList = true)]
 public class JLCameraGetVelocity : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         return opValue.velocity;
     }
 }

@@ -9,6 +9,6 @@ public class JLInputGetCompensateSensors : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.compensateSensors;
+        return Input.compensateSensors;
     }
 }

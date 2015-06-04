@@ -12,6 +12,6 @@ public class JLMathLog : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Log(F.GetResult<System.Single>(context));
+        return Mathf.Log(F.GetResult<System.Single>(context));
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Application/Get Background Loading Priority")]
 [UnitFriendlyName("Get Background Loading Priority")]
-[UnitUsage(typeof(UnityEngine.ThreadPriority), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(ThreadPriority), HideExpressionInActionsList = true)]
 public class JLAppGetBackgroundLoadingPriority : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.backgroundLoadingPriority;
+        return Application.backgroundLoadingPriority;
     }
 }

@@ -21,7 +21,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 GUI.color = Color.red;
             Object newV = EditorGUILayout.ObjectField(obj, objType, true);
             GUI.color = bg;
-            if (!object.ReferenceEquals(newV, obj))
+            if (!ReferenceEquals(newV, obj))
             {
                 Value = newV;
                 changed = true;
@@ -31,7 +31,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                 GenericMenu.MenuFunction2 selectFunc =
                             v =>
                             {
-                                if (!object.ReferenceEquals(v, obj))
+                                if (!ReferenceEquals(v, obj))
                                 {
                                     Value = v;
                                     _changed = true;

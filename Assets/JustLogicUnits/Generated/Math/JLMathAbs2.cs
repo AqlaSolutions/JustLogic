@@ -12,6 +12,6 @@ public class JLMathAbs2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Abs(Value.GetResult<System.Int32>(context));
+        return Mathf.Abs(Value.GetResult<System.Int32>(context));
     }
 }

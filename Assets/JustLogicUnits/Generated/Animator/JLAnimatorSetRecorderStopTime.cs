@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLAnimatorSetRecorderStopTime : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLAnimatorSetRecorderStopTime : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         return opValue.recorderStopTime = Value.GetResult<System.Single>(context);
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Transform/Get Game Object")]
 [UnitFriendlyName("Get Game Object")]
-[UnitUsage(typeof(UnityEngine.GameObject), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GameObject), HideExpressionInActionsList = true)]
 public class JLTransformGetGameObject : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
         return opValue.gameObject;
     }
 }

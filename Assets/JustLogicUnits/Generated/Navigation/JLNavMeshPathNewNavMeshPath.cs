@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Navigation/Path/New Nav Mesh Path")]
 [UnitFriendlyName("NavMeshPath.New Nav Mesh Path")]
-[UnitUsage(typeof(UnityEngine.NavMeshPath), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(NavMeshPath), HideExpressionInActionsList = true)]
 public class JLNavMeshPathNewNavMeshPath : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return new UnityEngine.NavMeshPath();
+        return new NavMeshPath();
     }
 }

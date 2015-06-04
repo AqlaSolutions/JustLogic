@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLQuaternionSetW : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Target;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLQuaternionSetW : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Quaternion opValue = Target.GetResult<UnityEngine.Quaternion>(context);
+        Quaternion opValue = Target.GetResult<Quaternion>(context);
         return opValue.w = Value.GetResult<System.Single>(context);
     }
 }

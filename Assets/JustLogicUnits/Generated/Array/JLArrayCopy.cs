@@ -6,18 +6,18 @@ using System;
 [UnitFriendlyName("Array.Copy")]
 public class JLArrayCopy : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression SourceArray;
 
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression DestinationArray;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Length;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Array.Copy(SourceArray.GetResult<System.Array>(context), DestinationArray.GetResult<System.Array>(context), Length.GetResult<System.Int32>(context));
+        Array.Copy(SourceArray.GetResult<Array>(context), DestinationArray.GetResult<Array>(context), Length.GetResult<Int32>(context));
         return null;
     }
 }

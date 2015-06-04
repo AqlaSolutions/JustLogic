@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Animator/Set Root Rotation")]
 [UnitFriendlyName("Animator.Set Root Rotation")]
-[UnitUsage(typeof(UnityEngine.Quaternion))]
+[UnitUsage(typeof(Quaternion))]
 public class JLAnimatorSetRootRotation : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        return opValue.rootRotation = Value.GetResult<UnityEngine.Quaternion>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        return opValue.rootRotation = Value.GetResult<Quaternion>(context);
     }
 }

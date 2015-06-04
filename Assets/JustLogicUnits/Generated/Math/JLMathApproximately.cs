@@ -15,6 +15,6 @@ public class JLMathApproximately : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Approximately(A.GetResult<System.Single>(context), B.GetResult<System.Single>(context));
+        return Mathf.Approximately(A.GetResult<System.Single>(context), B.GetResult<System.Single>(context));
     }
 }

@@ -15,6 +15,6 @@ public class JLMathRepeat : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Repeat(T.GetResult<System.Single>(context), Length.GetResult<System.Single>(context));
+        return Mathf.Repeat(T.GetResult<System.Single>(context), Length.GetResult<System.Single>(context));
     }
 }

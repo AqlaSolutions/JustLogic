@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLAnimationStateSetEnabled : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLAnimationStateSetEnabled : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
         return opValue.enabled = Value.GetResult<System.Boolean>(context);
     }
 }

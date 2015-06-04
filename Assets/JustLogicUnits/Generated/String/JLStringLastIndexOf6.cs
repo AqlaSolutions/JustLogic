@@ -4,24 +4,24 @@ using System;
 
 [UnitMenu("String/Last Index Of")]
 [UnitFriendlyName("String.Last Index Of")]
-[UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Int32), HideExpressionInActionsList = true)]
 public class JLStringLastIndexOf6 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression Value;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression StartIndex;
 
-    [Parameter(ExpressionType = typeof(System.StringComparison))]
+    [Parameter(ExpressionType = typeof(StringComparison))]
     public JLExpression ComparisonType;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.LastIndexOf(Value.GetResult<System.String>(context), StartIndex.GetResult<System.Int32>(context), ComparisonType.GetResult<System.StringComparison>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.LastIndexOf(Value.GetResult<String>(context), StartIndex.GetResult<Int32>(context), ComparisonType.GetResult<StringComparison>(context));
     }
 }

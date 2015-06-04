@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLGameObjectSetIsStatic : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLGameObjectSetIsStatic : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.isStatic = Value.GetResult<System.Boolean>(context);
     }
 }

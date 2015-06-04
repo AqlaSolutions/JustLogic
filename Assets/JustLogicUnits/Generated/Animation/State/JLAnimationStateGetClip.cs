@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Animation/State/Get Clip")]
 [UnitFriendlyName("AnimationState.Get Clip")]
-[UnitUsage(typeof(UnityEngine.AnimationClip), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AnimationClip), HideExpressionInActionsList = true)]
 public class JLAnimationStateGetClip : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
         return opValue.clip;
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Navigation/Path/Get Corners")]
 [UnitFriendlyName("NavMeshPath.Get Corners")]
-[UnitUsage(typeof(UnityEngine.Vector3[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector3[]), HideExpressionInActionsList = true)]
 public class JLNavMeshPathGetCorners : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshPath))]
+    [Parameter(ExpressionType = typeof(NavMeshPath))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshPath opValue = OperandValue.GetResult<UnityEngine.NavMeshPath>(context);
+        NavMeshPath opValue = OperandValue.GetResult<NavMeshPath>(context);
         return opValue.corners;
     }
 }

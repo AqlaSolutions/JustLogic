@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("WWW/New WWW")]
 [UnitFriendlyName("WWW.New WWW")]
-[UnitUsage(typeof(UnityEngine.WWW), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(WWW), HideExpressionInActionsList = true)]
 public class JLWwwNewWWW : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLWwwNewWWW : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return new UnityEngine.WWW(Url.GetResult<System.String>(context));
+        return new WWW(Url.GetResult<System.String>(context));
     }
 }

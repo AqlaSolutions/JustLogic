@@ -17,14 +17,14 @@ public abstract class JLCompareBase : JLBoolExpression
         object value1 = GetOperand1(context);
         object value2 = GetOperand2(context);
 
-        if (object.ReferenceEquals(value1, value2)) return GetComparsionResult(0, context);
-        if (object.ReferenceEquals(value1, null))
+        if (ReferenceEquals(value1, value2)) return GetComparsionResult(0, context);
+        if (ReferenceEquals(value1, null))
         {
             if (value2 is UnityEngine.Object)
                 return !(bool)(value2 as UnityEngine.Object);
             return GetComparsionResult(-1, context);
         }
-        if (object.ReferenceEquals(value2, null))
+        if (ReferenceEquals(value2, null))
         {
             if (value1 is UnityEngine.Object)
                 return !(bool)(value1 as UnityEngine.Object);

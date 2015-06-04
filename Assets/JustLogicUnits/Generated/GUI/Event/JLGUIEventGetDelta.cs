@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("GUI/Event/Get Delta")]
 [UnitFriendlyName("GUIEvent.Get Delta")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLGUIEventGetDelta : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Event))]
+    [Parameter(ExpressionType = typeof(Event))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Event opValue = OperandValue.GetResult<UnityEngine.Event>(context);
+        Event opValue = OperandValue.GetResult<Event>(context);
         return opValue.delta;
     }
 }

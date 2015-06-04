@@ -12,6 +12,6 @@ public class JLNavMeshGetNavMeshLayerFromName : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.NavMesh.GetNavMeshLayerFromName(LayerName.GetResult<System.String>(context));
+        return NavMesh.GetNavMeshLayerFromName(LayerName.GetResult<System.String>(context));
     }
 }

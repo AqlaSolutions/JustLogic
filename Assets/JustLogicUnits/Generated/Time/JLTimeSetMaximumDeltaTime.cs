@@ -12,6 +12,6 @@ public class JLTimeSetMaximumDeltaTime : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.maximumDeltaTime = Value.GetResult<System.Single>(context);
+        return Time.maximumDeltaTime = Value.GetResult<System.Single>(context);
     }
 }

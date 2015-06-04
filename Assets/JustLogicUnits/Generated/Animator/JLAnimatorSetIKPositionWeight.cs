@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set IKPosition Weight")]
 public class JLAnimatorSetIKPositionWeight : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AvatarIKGoal))]
+    [Parameter(ExpressionType = typeof(AvatarIKGoal))]
     public JLExpression Goal;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -17,8 +17,8 @@ public class JLAnimatorSetIKPositionWeight : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        opValue.SetIKPositionWeight(Goal.GetResult<UnityEngine.AvatarIKGoal>(context), Value.GetResult<System.Single>(context));
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        opValue.SetIKPositionWeight(Goal.GetResult<AvatarIKGoal>(context), Value.GetResult<System.Single>(context));
         return null;
     }
 }

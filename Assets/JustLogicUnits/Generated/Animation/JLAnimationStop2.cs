@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animation.Stop Clip")]
 public class JLAnimationStop2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -14,7 +14,7 @@ public class JLAnimationStop2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         opValue.Stop(Name.GetResult<System.String>(context));
         return null;
     }

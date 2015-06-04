@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/MaxHeight")]
 [UnitFriendlyName("GUILayout.MaxHeight")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutMaxHeight : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutMaxHeight : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.MaxHeight(MaxHeight.GetResult<System.Single>(context));
+        return GUILayout.MaxHeight(MaxHeight.GetResult<System.Single>(context));
     }
 }

@@ -7,15 +7,15 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLCharacterControllerSimpleMove : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.CharacterController))]
+    [Parameter(ExpressionType = typeof(CharacterController))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Speed;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.CharacterController opValue = OperandValue.GetResult<UnityEngine.CharacterController>(context);
-        return opValue.SimpleMove(Speed.GetResult<UnityEngine.Vector3>(context));
+        CharacterController opValue = OperandValue.GetResult<CharacterController>(context);
+        return opValue.SimpleMove(Speed.GetResult<Vector3>(context));
     }
 }

@@ -4,15 +4,15 @@ using System;
 
 [UnitMenu("String/Get Length")]
 [UnitFriendlyName("String.Get Length")]
-[UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Int32), HideExpressionInActionsList = true)]
 public class JLStringGetLength : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
+        String opValue = OperandValue.GetResult<String>(context);
         return opValue.Length;
     }
 }

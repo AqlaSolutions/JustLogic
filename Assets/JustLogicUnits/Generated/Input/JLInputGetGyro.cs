@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Input/Get Gyro")]
 [UnitFriendlyName("Get Gyro")]
-[UnitUsage(typeof(UnityEngine.Gyroscope), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Gyroscope), HideExpressionInActionsList = true)]
 public class JLInputGetGyro : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.gyro;
+        return Input.gyro;
     }
 }

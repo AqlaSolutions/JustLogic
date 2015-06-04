@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Input/Get Location")]
 [UnitFriendlyName("Get Location")]
-[UnitUsage(typeof(UnityEngine.LocationService), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(LocationService), HideExpressionInActionsList = true)]
 public class JLInputGetLocation : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.location;
+        return Input.location;
     }
 }

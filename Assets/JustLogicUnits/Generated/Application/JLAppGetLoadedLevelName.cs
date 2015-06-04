@@ -9,6 +9,6 @@ public class JLAppGetLoadedLevelName : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.loadedLevelName;
+        return Application.loadedLevelName;
     }
 }

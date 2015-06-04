@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Transform/Set Local Rotation")]
 [UnitFriendlyName("Set Local Rotation")]
-[UnitUsage(typeof(UnityEngine.Quaternion))]
+[UnitUsage(typeof(Quaternion))]
 public class JLTransformSetLocalRotation : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        return opValue.localRotation = Value.GetResult<UnityEngine.Quaternion>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        return opValue.localRotation = Value.GetResult<Quaternion>(context);
     }
 }

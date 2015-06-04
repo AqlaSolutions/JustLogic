@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Color/Op Division")]
 [UnitFriendlyName("Color.Op Division")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorOpDivision : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression A;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,6 +15,6 @@ public class JLColorOpDivision : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return A.GetResult<UnityEngine.Color>(context) / B.GetResult<System.Single>(context);
+        return A.GetResult<Color>(context) / B.GetResult<System.Single>(context);
     }
 }

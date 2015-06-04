@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32))]
 public class JLCameraSetEventMask : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLCameraSetEventMask : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         return opValue.eventMask = Value.GetResult<System.Int32>(context);
     }
 }

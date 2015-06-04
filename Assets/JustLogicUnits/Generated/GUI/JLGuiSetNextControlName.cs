@@ -11,7 +11,7 @@ public class JLGuiSetNextControlName : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.SetNextControlName(Name.GetResult<System.String>(context));
+        GUI.SetNextControlName(Name.GetResult<System.String>(context));
         return null;
     }
 }

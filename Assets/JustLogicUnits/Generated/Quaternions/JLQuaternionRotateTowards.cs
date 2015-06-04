@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Quaternion/Rotate Towards")]
 [UnitFriendlyName("Rotate Towards")]
-[UnitUsage(typeof(UnityEngine.Quaternion), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Quaternion), HideExpressionInActionsList = true)]
 public class JLQuaternionRotateTowards : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression From;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression To;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLQuaternionRotateTowards : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Quaternion.RotateTowards(From.GetResult<UnityEngine.Quaternion>(context), To.GetResult<UnityEngine.Quaternion>(context), MaxDegreesDelta.GetResult<System.Single>(context));
+        return Quaternion.RotateTowards(From.GetResult<Quaternion>(context), To.GetResult<Quaternion>(context), MaxDegreesDelta.GetResult<System.Single>(context));
     }
 }

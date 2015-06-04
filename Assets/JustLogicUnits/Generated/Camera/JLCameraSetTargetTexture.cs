@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Camera/Set Target Texture")]
 [UnitFriendlyName("Camera.Set Target Texture")]
-[UnitUsage(typeof(UnityEngine.RenderTexture))]
+[UnitUsage(typeof(RenderTexture))]
 public class JLCameraSetTargetTexture : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.RenderTexture))]
+    [Parameter(ExpressionType = typeof(RenderTexture))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
-        return opValue.targetTexture = Value.GetResult<UnityEngine.RenderTexture>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
+        return opValue.targetTexture = Value.GetResult<RenderTexture>(context);
     }
 }

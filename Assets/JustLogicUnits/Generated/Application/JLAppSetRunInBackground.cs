@@ -12,6 +12,6 @@ public class JLAppSetRunInBackground : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.runInBackground = Value.GetResult<System.Boolean>(context);
+        return Application.runInBackground = Value.GetResult<System.Boolean>(context);
     }
 }

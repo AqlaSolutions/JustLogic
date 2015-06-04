@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32))]
 public class JLGameObjectSetLayer : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLGameObjectSetLayer : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.layer = Value.GetResult<System.Int32>(context);
     }
 }

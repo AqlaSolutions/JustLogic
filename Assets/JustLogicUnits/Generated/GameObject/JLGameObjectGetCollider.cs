@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Collider")]
 [UnitFriendlyName("Get Collider")]
-[UnitUsage(typeof(UnityEngine.Collider), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Collider), HideExpressionInActionsList = true)]
 public class JLGameObjectGetCollider : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<Collider>();
     }
 }

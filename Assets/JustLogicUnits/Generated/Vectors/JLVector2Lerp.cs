@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Lerp (Vector2)")]
 [UnitFriendlyName("Lerp")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLVector2Lerp : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression From;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression To;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLVector2Lerp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector2.Lerp(From.GetResult<UnityEngine.Vector2>(context), To.GetResult<UnityEngine.Vector2>(context), T.GetResult<System.Single>(context));
+        return Vector2.Lerp(From.GetResult<Vector2>(context), To.GetResult<Vector2>(context), T.GetResult<System.Single>(context));
     }
 }

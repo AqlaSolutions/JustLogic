@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Camera.Set Replacement Shader")]
 public class JLCameraSetReplacementShader : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Shader))]
+    [Parameter(ExpressionType = typeof(Shader))]
     public JLExpression Shader;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -17,8 +17,8 @@ public class JLCameraSetReplacementShader : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
-        opValue.SetReplacementShader(Shader.GetResult<UnityEngine.Shader>(context), ReplacementTag.GetResult<System.String>(context));
+        Camera opValue = OperandValue.GetResult<Camera>(context);
+        opValue.SetReplacementShader(Shader.GetResult<Shader>(context), ReplacementTag.GetResult<System.String>(context));
         return null;
     }
 }

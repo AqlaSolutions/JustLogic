@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Object/Resources/Load")]
 [UnitFriendlyName("Resources.Load")]
-[UnitUsage(typeof(UnityEngine.Object), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Object), HideExpressionInActionsList = true)]
 public class JLResourcesLoad : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLResourcesLoad : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Resources.Load(Path.GetResult<System.String>(context));
+        return Resources.Load(Path.GetResult<System.String>(context));
     }
 }

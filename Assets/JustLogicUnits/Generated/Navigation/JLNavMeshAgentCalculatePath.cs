@@ -7,18 +7,18 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLNavMeshAgentCalculatePath : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression TargetPosition;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshPath))]
+    [Parameter(ExpressionType = typeof(NavMeshPath))]
     public JLExpression Path;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
-        return opValue.CalculatePath(TargetPosition.GetResult<UnityEngine.Vector3>(context), Path.GetResult<UnityEngine.NavMeshPath>(context));
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
+        return opValue.CalculatePath(TargetPosition.GetResult<Vector3>(context), Path.GetResult<NavMeshPath>(context));
     }
 }

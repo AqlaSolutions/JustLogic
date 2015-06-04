@@ -6,15 +6,15 @@ using UnityEngine;
 [UnitFriendlyName("Translate")]
 public class JLTransformTranslate : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Translation;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        opValue.Translate(Translation.GetResult<UnityEngine.Vector3>(context));
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        opValue.Translate(Translation.GetResult<Vector3>(context));
         return null;    }
 }

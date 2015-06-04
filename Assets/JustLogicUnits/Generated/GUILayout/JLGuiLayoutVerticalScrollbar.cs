@@ -19,11 +19,11 @@ public class JLGuiLayoutVerticalScrollbar : JLExpression
     [Parameter(ExpressionType = typeof(System.Single))]
     public JLExpression BottomValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.VerticalScrollbar(Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), TopValue.GetResult<System.Single>(context), BottomValue.GetResult<System.Single>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.VerticalScrollbar(Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), TopValue.GetResult<System.Single>(context), BottomValue.GetResult<System.Single>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

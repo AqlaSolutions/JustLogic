@@ -6,15 +6,15 @@ using UnityEngine;
 [UnitFriendlyName("Look At Position")]
 public class JLTransformLookAt2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression WorldPosition;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        opValue.LookAt(WorldPosition.GetResult<UnityEngine.Vector3>(context));
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        opValue.LookAt(WorldPosition.GetResult<Vector3>(context));
         return null;    }
 }

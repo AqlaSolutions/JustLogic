@@ -12,6 +12,6 @@ public class JLMathGammaToLinearSpace : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.GammaToLinearSpace(Value.GetResult<System.Single>(context));
+        return Mathf.GammaToLinearSpace(Value.GetResult<System.Single>(context));
     }
 }

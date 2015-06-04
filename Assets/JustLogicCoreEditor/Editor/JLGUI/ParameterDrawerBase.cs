@@ -276,7 +276,7 @@ namespace JustLogic.Editor.JLGUI
 
         public virtual void Dispose()
         {
-            if (_disposed) throw new ObjectDisposedException(this.GetType().Name);
+            if (_disposed) throw new ObjectDisposedException(GetType().Name);
             _disposed = true;
         }
     }

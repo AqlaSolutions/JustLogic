@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.String))]
 public class JLGuiTextField : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,6 +15,6 @@ public class JLGuiTextField : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.TextField(Position.GetResult<UnityEngine.Rect>(context), Text.GetResult<System.String>(context));
+        return GUI.TextField(Position.GetResult<Rect>(context), Text.GetResult<System.String>(context));
     }
 }

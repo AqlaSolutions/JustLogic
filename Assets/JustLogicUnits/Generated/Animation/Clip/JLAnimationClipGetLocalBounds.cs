@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Animation/Clip/Get Local Bounds")]
 [UnitFriendlyName("AnimationClip.Get Local Bounds")]
-[UnitUsage(typeof(UnityEngine.Bounds), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Bounds), HideExpressionInActionsList = true)]
 public class JLAnimationClipGetLocalBounds : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationClip))]
+    [Parameter(ExpressionType = typeof(AnimationClip))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationClip opValue = OperandValue.GetResult<UnityEngine.AnimationClip>(context);
+        AnimationClip opValue = OperandValue.GetResult<AnimationClip>(context);
         return opValue.localBounds;
     }
 }

@@ -9,6 +9,6 @@ public class JLInputGetTouchCount : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.touchCount;
+        return Input.touchCount;
     }
 }

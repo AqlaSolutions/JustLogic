@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Quaternion/Slerp")]
 [UnitFriendlyName("Slerp")]
-[UnitUsage(typeof(UnityEngine.Quaternion), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Quaternion), HideExpressionInActionsList = true)]
 public class JLQuaternionSlerp : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression From;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression To;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLQuaternionSlerp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Quaternion.Slerp(From.GetResult<UnityEngine.Quaternion>(context), To.GetResult<UnityEngine.Quaternion>(context), T.GetResult<System.Single>(context));
+        return Quaternion.Slerp(From.GetResult<Quaternion>(context), To.GetResult<Quaternion>(context), T.GetResult<System.Single>(context));
     }
 }

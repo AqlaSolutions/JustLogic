@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Clamp Magnitude (Vector2)")]
 [UnitFriendlyName("Clamp Magnitude")]
-[UnitUsage(typeof(UnityEngine.Vector2), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector2), HideExpressionInActionsList = true)]
 public class JLVector2ClampMagnitude : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression Vector;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,6 +15,6 @@ public class JLVector2ClampMagnitude : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector2.ClampMagnitude(Vector.GetResult<UnityEngine.Vector2>(context), MaxLength.GetResult<System.Single>(context));
+        return Vector2.ClampMagnitude(Vector.GetResult<Vector2>(context), MaxLength.GetResult<System.Single>(context));
     }
 }

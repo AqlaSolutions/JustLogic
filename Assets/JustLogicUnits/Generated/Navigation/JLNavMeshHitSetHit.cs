@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Navigation/Hit/Set Hit")]
 [UnitFriendlyName("JLNavMeshHit.Set Hit")]
-[UnitUsage(typeof(UnityEngine.NavMeshHit))]
+[UnitUsage(typeof(NavMeshHit))]
 public class JLNavMeshHitSetHit : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshHit))]
+    [Parameter(ExpressionType = typeof(NavMeshHit))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -15,7 +15,7 @@ public class JLNavMeshHitSetHit : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshHit opValue = OperandValue.GetResult<UnityEngine.NavMeshHit>(context);
+        NavMeshHit opValue = OperandValue.GetResult<NavMeshHit>(context);
         opValue.hit = Value.GetResult<System.Boolean>(context);
         return opValue;
     }

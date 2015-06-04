@@ -9,6 +9,6 @@ public class JLInputGetMousePresent : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.mousePresent;
+        return Input.mousePresent;
     }
 }

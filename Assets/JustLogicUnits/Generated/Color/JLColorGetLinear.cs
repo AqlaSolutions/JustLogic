@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Color/Get Linear")]
 [UnitFriendlyName("Color.Get Linear")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorGetLinear : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Color opValue = OperandValue.GetResult<UnityEngine.Color>(context);
+        Color opValue = OperandValue.GetResult<Color>(context);
         return opValue.linear;
     }
 }

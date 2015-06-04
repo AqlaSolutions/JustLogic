@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUI.ScrollTo")]
 public class JLGuiScrollTo : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.ScrollTo(Position.GetResult<UnityEngine.Rect>(context));
+        GUI.ScrollTo(Position.GetResult<Rect>(context));
         return null;
     }
 }

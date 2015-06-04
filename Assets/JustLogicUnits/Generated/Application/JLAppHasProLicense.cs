@@ -9,6 +9,6 @@ public class JLAppHasProLicense : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.HasProLicense();
+        return Application.HasProLicense();
     }
 }

@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("Resources.Unload Asset")]
 public class JLResourcesUnloadAsset : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Object))]
+    [Parameter(ExpressionType = typeof(Object))]
     public JLExpression AssetToUnload;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Resources.UnloadAsset(AssetToUnload.GetResult<UnityEngine.Object>(context));
+        Resources.UnloadAsset(AssetToUnload.GetResult<Object>(context));
         return null;
     }
 }

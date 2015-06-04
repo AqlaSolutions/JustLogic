@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("Animation.Sample")]
 public class JLAnimationSample : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         opValue.Sample();
         return null;
     }

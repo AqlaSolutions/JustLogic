@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Input/Get Compass")]
 [UnitFriendlyName("Get Compass")]
-[UnitUsage(typeof(UnityEngine.Compass), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Compass), HideExpressionInActionsList = true)]
 public class JLInputGetCompass : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.compass;
+        return Input.compass;
     }
 }

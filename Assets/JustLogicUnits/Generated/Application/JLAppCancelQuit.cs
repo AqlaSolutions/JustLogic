@@ -8,6 +8,6 @@ public class JLAppCancelQuit : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Application.CancelQuit();
+        Application.CancelQuit();
         return null;    }
 }

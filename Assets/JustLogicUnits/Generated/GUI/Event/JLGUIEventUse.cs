@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUIEvent.Use")]
 public class JLGUIEventUse : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Event))]
+    [Parameter(ExpressionType = typeof(Event))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Event opValue = OperandValue.GetResult<UnityEngine.Event>(context);
+        Event opValue = OperandValue.GetResult<Event>(context);
         opValue.Use();
         return null;
     }

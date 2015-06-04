@@ -7,11 +7,11 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLVector3Magnitude : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression A;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector3.Magnitude(A.GetResult<UnityEngine.Vector3>(context));
+        return Vector3.Magnitude(A.GetResult<Vector3>(context));
     }
 }

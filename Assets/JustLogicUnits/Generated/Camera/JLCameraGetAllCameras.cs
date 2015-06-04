@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Camera/Get All Cameras")]
 [UnitFriendlyName("Camera.Get All Cameras")]
-[UnitUsage(typeof(UnityEngine.Camera[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Camera[]), HideExpressionInActionsList = true)]
 public class JLCameraGetAllCameras : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Camera.allCameras;
+        return Camera.allCameras;
     }
 }

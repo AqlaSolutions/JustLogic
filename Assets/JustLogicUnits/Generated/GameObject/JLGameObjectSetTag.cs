@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.String))]
 public class JLGameObjectSetTag : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,7 +15,7 @@ public class JLGameObjectSetTag : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.tag = Value.GetResult<System.String>(context);
     }
 }

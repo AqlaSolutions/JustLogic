@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLAnimatorGetFloat : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,7 +15,7 @@ public class JLAnimatorGetFloat : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         return opValue.GetFloat(Name.GetResult<System.String>(context));
     }
 }

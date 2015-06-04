@@ -11,6 +11,6 @@ public class JLAppOpenURL : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Application.OpenURL(Url.GetResult<System.String>(context));
+        Application.OpenURL(Url.GetResult<System.String>(context));
         return null;    }
 }

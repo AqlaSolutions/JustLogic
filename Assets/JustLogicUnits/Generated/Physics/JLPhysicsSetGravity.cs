@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Physics/Settings/Set Gravity")]
 [UnitFriendlyName("Physics.Set Gravity")]
-[UnitUsage(typeof(UnityEngine.Vector3))]
+[UnitUsage(typeof(Vector3))]
 public class JLPhysicsSetGravity : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.gravity = Value.GetResult<UnityEngine.Vector3>(context);
+        return Physics.gravity = Value.GetResult<Vector3>(context);
     }
 }

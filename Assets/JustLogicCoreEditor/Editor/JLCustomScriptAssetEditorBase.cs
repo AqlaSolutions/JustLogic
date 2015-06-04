@@ -35,7 +35,7 @@ public class JLCustomScriptAssetEditorBase : JLInspectorBase
 
     protected override bool Draw()
     {
-        var script = (JLCustomScriptAssetBase)this.target;
+        var script = (JLCustomScriptAssetBase)target;
 
         var prevAssetsContainer = JLScriptableHelper.AssetsContainer;
         JLScriptableHelper.AssetsContainer = script;

@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Physics/Set Center (Character Controller)")]
 [UnitFriendlyName("Set Center")]
-[UnitUsage(typeof(UnityEngine.Vector3))]
+[UnitUsage(typeof(Vector3))]
 public class JLCharacterControllerSetCenter : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.CharacterController))]
+    [Parameter(ExpressionType = typeof(CharacterController))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.CharacterController opValue = OperandValue.GetResult<UnityEngine.CharacterController>(context);
-        return opValue.center = Value.GetResult<UnityEngine.Vector3>(context);
+        CharacterController opValue = OperandValue.GetResult<CharacterController>(context);
+        return opValue.center = Value.GetResult<Vector3>(context);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/MinHeight")]
 [UnitFriendlyName("GUILayout.MinHeight")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutMinHeight : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutMinHeight : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.MinHeight(MinHeight.GetResult<System.Single>(context));
+        return GUILayout.MinHeight(MinHeight.GetResult<System.Single>(context));
     }
 }

@@ -6,19 +6,19 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Vector")]
 public class JLAnimatorSetVector : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
     public JLExpression Name;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        opValue.SetVector(Name.GetResult<System.String>(context), Value.GetResult<UnityEngine.Vector3>(context));
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        opValue.SetVector(Name.GetResult<System.String>(context), Value.GetResult<Vector3>(context));
         return null;
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Color/Get Clear")]
 [UnitFriendlyName("Color.Get Clear")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorGetClear : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Color.clear;
+        return Color.clear;
     }
 }

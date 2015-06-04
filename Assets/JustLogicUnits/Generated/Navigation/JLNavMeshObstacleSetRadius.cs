@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLNavMeshObstacleSetRadius : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshObstacle))]
+    [Parameter(ExpressionType = typeof(NavMeshObstacle))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLNavMeshObstacleSetRadius : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshObstacle opValue = OperandValue.GetResult<UnityEngine.NavMeshObstacle>(context);
+        NavMeshObstacle opValue = OperandValue.GetResult<NavMeshObstacle>(context);
         return opValue.radius = Value.GetResult<System.Single>(context);
     }
 }

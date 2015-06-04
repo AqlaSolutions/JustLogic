@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLRigidbodyGetIsKinematic : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
         return opValue.isKinematic;
     }
 }

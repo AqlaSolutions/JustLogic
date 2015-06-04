@@ -25,7 +25,7 @@ public abstract class JustLogicEventHandlerEditorBase : JLInspectorBase
     {
         _drawContext = new DrawContext();
 
-        var script = (JustLogicEventHandlerCoreBase)this.target;
+        var script = (JustLogicEventHandlerCoreBase)target;
         if (script != null)
             script.OnRuntimeInspectorFieldsChanged += script_OnRuntimeInspectorFieldsChanged;
 
@@ -45,7 +45,7 @@ public abstract class JustLogicEventHandlerEditorBase : JLInspectorBase
         base.OnUndoableScriptReseting();
         if (this)
         {
-            var data = ((JustLogicEventHandlerCoreBase)this.target).EventHandlerData;
+            var data = ((JustLogicEventHandlerCoreBase)target).EventHandlerData;
             DestroyData(data);
         }
     }
@@ -65,7 +65,7 @@ public abstract class JustLogicEventHandlerEditorBase : JLInspectorBase
 
     protected override void OnDisable()
     {
-        var script = (JustLogicEventHandlerCoreBase)this.target;
+        var script = (JustLogicEventHandlerCoreBase)target;
         if (script != null)
             script.OnRuntimeInspectorFieldsChanged -= script_OnRuntimeInspectorFieldsChanged;
 
@@ -88,7 +88,7 @@ public abstract class JustLogicEventHandlerEditorBase : JLInspectorBase
 
     protected override bool Draw()
     {
-        var script = (JustLogicEventHandlerCoreBase)this.target;
+        var script = (JustLogicEventHandlerCoreBase)target;
 
         var data = script.EventHandlerData;
 

@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Get/Get One (Vector4)")]
 [UnitFriendlyName("Get One")]
-[UnitUsage(typeof(UnityEngine.Vector4), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector4), HideExpressionInActionsList = true)]
 public class JLVector4GetOne : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector4.one;
+        return Vector4.one;
     }
 }

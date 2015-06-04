@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Get/Get Left (Vector3)")]
 [UnitFriendlyName("Get Left")]
-[UnitUsage(typeof(UnityEngine.Vector3), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector3), HideExpressionInActionsList = true)]
 public class JLVector3GetLeft : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector3.left;
+        return Vector3.left;
     }
 }

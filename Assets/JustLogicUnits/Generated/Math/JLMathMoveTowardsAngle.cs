@@ -18,6 +18,6 @@ public class JLMathMoveTowardsAngle : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.MoveTowardsAngle(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context), MaxDelta.GetResult<System.Single>(context));
+        return Mathf.MoveTowardsAngle(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context), MaxDelta.GetResult<System.Single>(context));
     }
 }

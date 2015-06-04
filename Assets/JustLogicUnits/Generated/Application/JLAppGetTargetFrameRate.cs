@@ -9,6 +9,6 @@ public class JLAppGetTargetFrameRate : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.targetFrameRate;
+        return Application.targetFrameRate;
     }
 }

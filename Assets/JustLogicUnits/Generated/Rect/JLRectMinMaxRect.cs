@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Rect/Min Max Rect")]
 [UnitFriendlyName("Rect.Min Max Rect")]
-[UnitUsage(typeof(UnityEngine.Rect), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Rect), HideExpressionInActionsList = true)]
 public class JLRectMinMaxRect : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -21,6 +21,6 @@ public class JLRectMinMaxRect : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Rect.MinMaxRect(Left.GetResult<System.Single>(context), Top.GetResult<System.Single>(context), Right.GetResult<System.Single>(context), Bottom.GetResult<System.Single>(context));
+        return Rect.MinMaxRect(Left.GetResult<System.Single>(context), Top.GetResult<System.Single>(context), Right.GetResult<System.Single>(context), Bottom.GetResult<System.Single>(context));
     }
 }

@@ -7,15 +7,15 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLRectContains2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Point;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rect opValue = OperandValue.GetResult<UnityEngine.Rect>(context);
-        return opValue.Contains(Point.GetResult<UnityEngine.Vector3>(context));
+        Rect opValue = OperandValue.GetResult<Rect>(context);
+        return opValue.Contains(Point.GetResult<Vector3>(context));
     }
 }

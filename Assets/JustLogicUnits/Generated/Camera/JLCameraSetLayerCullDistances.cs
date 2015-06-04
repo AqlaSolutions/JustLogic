@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single[]))]
 public class JLCameraSetLayerCullDistances : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLCameraSetLayerCullDistances : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         return opValue.layerCullDistances = Value.GetResult<System.Single>(context);
     }
 }

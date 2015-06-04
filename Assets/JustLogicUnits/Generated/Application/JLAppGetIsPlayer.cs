@@ -9,6 +9,6 @@ public class JLAppGetIsPlayer : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.isPlayer;
+        return Application.isPlayer;
     }
 }

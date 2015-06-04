@@ -12,6 +12,6 @@ public class JLMathSqrt : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Sqrt(F.GetResult<System.Single>(context));
+        return Mathf.Sqrt(F.GetResult<System.Single>(context));
     }
 }

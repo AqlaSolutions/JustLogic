@@ -4,21 +4,21 @@ using System;
 
 [UnitMenu("String/Insert")]
 [UnitFriendlyName("String.Insert")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringInsert : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression StartIndex;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Insert(StartIndex.GetResult<System.Int32>(context), Value.GetResult<System.String>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Insert(StartIndex.GetResult<Int32>(context), Value.GetResult<String>(context));
     }
 }

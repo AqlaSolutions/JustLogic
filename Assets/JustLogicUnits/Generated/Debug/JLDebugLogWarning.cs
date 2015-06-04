@@ -11,7 +11,7 @@ public class JLDebugLogWarning : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Debug.LogWarning(Message.GetResult<object>(context));
+        Debug.LogWarning(Message.GetResult<object>(context));
         return null;
     }
 }

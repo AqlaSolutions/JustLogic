@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
 public class JLWwwGetSize : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
+        WWW opValue = OperandValue.GetResult<WWW>(context);
         return opValue.size;
     }
 }

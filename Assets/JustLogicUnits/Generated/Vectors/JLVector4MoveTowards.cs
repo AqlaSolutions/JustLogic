@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Vectors/Move Towards (Vector4)")]
 [UnitFriendlyName("Move Towards")]
-[UnitUsage(typeof(UnityEngine.Vector4), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector4), HideExpressionInActionsList = true)]
 public class JLVector4MoveTowards : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector4))]
+    [Parameter(ExpressionType = typeof(Vector4))]
     public JLExpression Current;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector4))]
+    [Parameter(ExpressionType = typeof(Vector4))]
     public JLExpression Target;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLVector4MoveTowards : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector4.MoveTowards(Current.GetResult<UnityEngine.Vector4>(context), Target.GetResult<UnityEngine.Vector4>(context), MaxDistanceDelta.GetResult<System.Single>(context));
+        return Vector4.MoveTowards(Current.GetResult<Vector4>(context), Target.GetResult<Vector4>(context), MaxDistanceDelta.GetResult<System.Single>(context));
     }
 }

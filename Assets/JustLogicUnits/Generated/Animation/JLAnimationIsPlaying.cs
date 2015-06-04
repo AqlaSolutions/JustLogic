@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLAnimationIsPlaying : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,7 +15,7 @@ public class JLAnimationIsPlaying : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         return opValue.IsPlaying(Name.GetResult<System.String>(context));
     }
 }

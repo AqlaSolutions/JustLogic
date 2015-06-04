@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Input/Get Device Orientation")]
 [UnitFriendlyName("Get Device Orientation")]
-[UnitUsage(typeof(UnityEngine.DeviceOrientation), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(DeviceOrientation), HideExpressionInActionsList = true)]
 public class JLInputGetDeviceOrientation : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.deviceOrientation;
+        return Input.deviceOrientation;
     }
 }

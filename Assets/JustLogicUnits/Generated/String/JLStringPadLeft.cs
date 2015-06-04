@@ -4,18 +4,18 @@ using System;
 
 [UnitMenu("String/Pad Left")]
 [UnitFriendlyName("String.Pad Left")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringPadLeft : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression TotalWidth;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.PadLeft(TotalWidth.GetResult<System.Int32>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.PadLeft(TotalWidth.GetResult<Int32>(context));
     }
 }

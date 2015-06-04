@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Physics/Get Collision Flags (Character Controller)")]
 [UnitFriendlyName("Get Collision Flags")]
-[UnitUsage(typeof(UnityEngine.CollisionFlags), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(CollisionFlags), HideExpressionInActionsList = true)]
 public class JLCharacterControllerGetCollisionFlags : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.CharacterController))]
+    [Parameter(ExpressionType = typeof(CharacterController))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.CharacterController opValue = OperandValue.GetResult<UnityEngine.CharacterController>(context);
+        CharacterController opValue = OperandValue.GetResult<CharacterController>(context);
         return opValue.collisionFlags;
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32))]
 public class JLGuiSelectionGrid : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -21,6 +21,6 @@ public class JLGuiSelectionGrid : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.SelectionGrid(Position.GetResult<UnityEngine.Rect>(context), Selected.GetResult<System.Int32>(context), Texts.GetResult<System.String>(context), XCount.GetResult<System.Int32>(context));
+        return GUI.SelectionGrid(Position.GetResult<Rect>(context), Selected.GetResult<System.Int32>(context), Texts.GetResult<System.String>(context), XCount.GetResult<System.Int32>(context));
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Interrupt Match Target")]
 public class JLAnimatorInterruptMatchTarget2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -14,7 +14,7 @@ public class JLAnimatorInterruptMatchTarget2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.InterruptMatchTarget(CompleteMatch.GetResult<System.Boolean>(context));
         return null;
     }

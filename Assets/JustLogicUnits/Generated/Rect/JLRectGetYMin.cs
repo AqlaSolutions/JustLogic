@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLRectGetYMin : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rect opValue = OperandValue.GetResult<UnityEngine.Rect>(context);
+        Rect opValue = OperandValue.GetResult<Rect>(context);
         return opValue.yMin;
     }
 }

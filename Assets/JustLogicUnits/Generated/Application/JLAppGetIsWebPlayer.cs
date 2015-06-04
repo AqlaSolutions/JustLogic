@@ -9,6 +9,6 @@ public class JLAppGetIsWebPlayer : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.isWebPlayer;
+        return Application.isWebPlayer;
     }
 }

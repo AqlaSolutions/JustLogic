@@ -9,6 +9,6 @@ public class JLAppGetUnityVersion : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.unityVersion;
+        return Application.unityVersion;
     }
 }

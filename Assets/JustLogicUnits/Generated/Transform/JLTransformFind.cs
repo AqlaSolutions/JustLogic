@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Transform/Find")]
 [UnitFriendlyName("Find")]
-[UnitUsage(typeof(UnityEngine.Transform), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Transform), HideExpressionInActionsList = true)]
 public class JLTransformFind : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,7 +15,7 @@ public class JLTransformFind : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
         return opValue.Find(Name.GetResult<System.String>(context));
     }
 }

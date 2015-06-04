@@ -10,17 +10,17 @@ public class JLGuiLayoutSelectionGrid2 : JLExpression
     [Parameter(ExpressionType = typeof(System.Int32))]
     public JLExpression Selected;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Texture))]
+    [Parameter(ExpressionType = typeof(Texture))]
     public JLExpression[] Images;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
     public JLExpression XCount;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.SelectionGrid(Selected.GetResult<System.Int32>(context), Images.GetResult<UnityEngine.Texture>(context), XCount.GetResult<System.Int32>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.SelectionGrid(Selected.GetResult<System.Int32>(context), Images.GetResult<Texture>(context), XCount.GetResult<System.Int32>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

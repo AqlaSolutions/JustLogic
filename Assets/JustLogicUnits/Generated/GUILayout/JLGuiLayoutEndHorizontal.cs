@@ -8,7 +8,7 @@ public class JLGuiLayoutEndHorizontal : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.EndHorizontal();
+        GUILayout.EndHorizontal();
         return null;
     }
 }

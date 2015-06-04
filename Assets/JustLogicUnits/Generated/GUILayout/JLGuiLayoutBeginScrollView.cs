@@ -4,17 +4,17 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/BeginScrollView")]
 [UnitFriendlyName("GUILayout.BeginScrollView")]
-[UnitUsage(typeof(UnityEngine.Vector2))]
+[UnitUsage(typeof(Vector2))]
 public class JLGuiLayoutBeginScrollView : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression ScrollPosition;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.BeginScrollView(ScrollPosition.GetResult<UnityEngine.Vector2>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.BeginScrollView(ScrollPosition.GetResult<Vector2>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

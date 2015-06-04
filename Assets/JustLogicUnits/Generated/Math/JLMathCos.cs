@@ -12,6 +12,6 @@ public class JLMathCos : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Cos(F.GetResult<System.Single>(context));
+        return Mathf.Cos(F.GetResult<System.Single>(context));
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Light")]
 [UnitFriendlyName("Get Light")]
-[UnitUsage(typeof(UnityEngine.Light), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Light), HideExpressionInActionsList = true)]
 public class JLGameObjectGetLight : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<Light>();
     }
 }

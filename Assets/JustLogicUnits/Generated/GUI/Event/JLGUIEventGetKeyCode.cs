@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("GUI/Event/Get Key Code")]
 [UnitFriendlyName("GUIEvent.Get Key Code")]
-[UnitUsage(typeof(UnityEngine.KeyCode), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(KeyCode), HideExpressionInActionsList = true)]
 public class JLGUIEventGetKeyCode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Event))]
+    [Parameter(ExpressionType = typeof(Event))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Event opValue = OperandValue.GetResult<UnityEngine.Event>(context);
+        Event opValue = OperandValue.GetResult<Event>(context);
         return opValue.keyCode;
     }
 }

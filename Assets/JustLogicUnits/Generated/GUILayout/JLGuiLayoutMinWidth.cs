@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/MinWidth")]
 [UnitFriendlyName("GUILayout.MinWidth")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutMinWidth : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutMinWidth : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.MinWidth(MinWidth.GetResult<System.Single>(context));
+        return GUILayout.MinWidth(MinWidth.GetResult<System.Single>(context));
     }
 }

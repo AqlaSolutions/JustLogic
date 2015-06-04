@@ -12,6 +12,6 @@ public class JLAppGetStreamProgressForLevel : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.GetStreamProgressForLevel(LevelIndex.GetResult<System.Int32>(context));
+        return Application.GetStreamProgressForLevel(LevelIndex.GetResult<System.Int32>(context));
     }
 }

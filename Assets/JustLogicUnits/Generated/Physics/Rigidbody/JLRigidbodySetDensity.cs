@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Rigidbody.Set Density")]
 public class JLRigidbodySetDensity : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -14,7 +14,7 @@ public class JLRigidbodySetDensity : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
         opValue.SetDensity(Density.GetResult<System.Single>(context));
         return null;
     }

@@ -12,6 +12,6 @@ public class JLMathCeilToInt : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.CeilToInt(F.GetResult<System.Single>(context));
+        return Mathf.CeilToInt(F.GetResult<System.Single>(context));
     }
 }

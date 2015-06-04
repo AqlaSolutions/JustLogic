@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Object/Find")]
 [UnitFriendlyName("Find")]
-[UnitUsage(typeof(UnityEngine.GameObject), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GameObject), HideExpressionInActionsList = true)]
 public class JLGameObjectFind : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLGameObjectFind : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GameObject.Find(Name.GetResult<System.String>(context));
+        return GameObject.Find(Name.GetResult<System.String>(context));
     }
 }

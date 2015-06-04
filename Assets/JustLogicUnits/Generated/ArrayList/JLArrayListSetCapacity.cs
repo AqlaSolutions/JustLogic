@@ -7,7 +7,7 @@ using System.Collections;
 [UnitUsage(typeof(System.Int32))]
 public class JLArrayListSetCapacity : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLArrayListSetCapacity : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
         return opValue.Capacity = Value.GetResult<System.Int32>(context);
     }
 }

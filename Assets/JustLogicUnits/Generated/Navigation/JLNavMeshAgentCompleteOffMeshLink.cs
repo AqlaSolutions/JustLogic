@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("NavMeshAgent.Complete Off Mesh Link")]
 public class JLNavMeshAgentCompleteOffMeshLink : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
         opValue.CompleteOffMeshLink();
         return null;
     }

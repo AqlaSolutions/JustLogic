@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("AnimationState.Add Mixing Transform")]
 public class JLAnimationStateAddMixingTransform2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression Mix;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -17,8 +17,8 @@ public class JLAnimationStateAddMixingTransform2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
-        opValue.AddMixingTransform(Mix.GetResult<UnityEngine.Transform>(context), Recursive.GetResult<System.Boolean>(context));
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
+        opValue.AddMixingTransform(Mix.GetResult<Transform>(context), Recursive.GetResult<System.Boolean>(context));
         return null;
     }
 }

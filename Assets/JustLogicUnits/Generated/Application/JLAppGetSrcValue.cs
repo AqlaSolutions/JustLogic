@@ -9,6 +9,6 @@ public class JLAppGetSrcValue : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.srcValue;
+        return Application.srcValue;
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Camera/Get Actual Rendering Path")]
 [UnitFriendlyName("Camera.Get Actual Rendering Path")]
-[UnitUsage(typeof(UnityEngine.RenderingPath), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(RenderingPath), HideExpressionInActionsList = true)]
 public class JLCameraGetActualRenderingPath : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
         return opValue.actualRenderingPath;
     }
 }

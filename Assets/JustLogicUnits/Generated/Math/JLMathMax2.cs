@@ -12,6 +12,6 @@ public class JLMathMax2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Max(Values.GetResult<System.Int32>(context));
+        return Mathf.Max(Values.GetResult<System.Int32>(context));
     }
 }

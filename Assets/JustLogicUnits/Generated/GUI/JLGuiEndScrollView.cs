@@ -8,7 +8,7 @@ public class JLGuiEndScrollView : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.EndScrollView();
+        GUI.EndScrollView();
         return null;
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Physics/Raycast All")]
 [UnitFriendlyName("Raycast All")]
-[UnitUsage(typeof(UnityEngine.RaycastHit[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(RaycastHit[]), HideExpressionInActionsList = true)]
 public class JLPhysicsRaycastAll4 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Ray))]
+    [Parameter(ExpressionType = typeof(Ray))]
     public JLExpression Ray;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLPhysicsRaycastAll4 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.RaycastAll(Ray.GetResult<UnityEngine.Ray>(context), Distance.GetResult<System.Single>(context), LayerMask);
+        return Physics.RaycastAll(Ray.GetResult<Ray>(context), Distance.GetResult<System.Single>(context), LayerMask);
     }
 }

@@ -18,7 +18,7 @@ namespace JustLogic.Core
         MethodInfo _methodCache;
 
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         string _type;
 
         public MethodInfo MethodInfo
@@ -32,15 +32,15 @@ namespace JustLogic.Core
             }
         }
 
-        IList<System.Reflection.ParameterInfo> _parametersCache;
-        public IList<System.Reflection.ParameterInfo> Parameters
+        IList<ParameterInfo> _parametersCache;
+        public IList<ParameterInfo> Parameters
         {
             get
             {
                 if (_parametersCache != null) return _parametersCache;
                 var method = MethodInfo;
                 if (method == null) return null;
-                return _parametersCache = new ReadOnlyCollection<System.Reflection.ParameterInfo>(method.GetParameters());
+                return _parametersCache = new ReadOnlyCollection<ParameterInfo>(method.GetParameters());
             }
         }
 
@@ -48,25 +48,25 @@ namespace JustLogic.Core
         public int RefOrOutParameters { get { return _refOrOutParameters; } }
 
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         int _refOrOutParameters;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         int _typeArguments;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         bool _isValid;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         string _methodName;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         string _signature;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         int _hashCode;
         [SerializeField]
-        [System.Reflection.ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
+        [ObfuscationAttribute(Feature = "renaming", Exclude = true, StripAfterObfuscation = true)]
         byte[] _stamp;
 
         public SerializableMethodBase()

@@ -9,6 +9,6 @@ public class JLAppGetGenuine : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.genuine;
+        return Application.genuine;
     }
 }

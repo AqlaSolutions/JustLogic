@@ -12,6 +12,6 @@ public class JLMathExp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Exp(Power.GetResult<System.Single>(context));
+        return Mathf.Exp(Power.GetResult<System.Single>(context));
     }
 }

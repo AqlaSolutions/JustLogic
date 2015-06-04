@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Float With Damping")]
 public class JLAnimatorSetFloat3 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -23,7 +23,7 @@ public class JLAnimatorSetFloat3 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.SetFloat(Name.GetResult<System.String>(context), Value.GetResult<System.Single>(context), DampTime.GetResult<System.Single>(context), DeltaTime.GetResult<System.Single>(context));
         return null;
     }

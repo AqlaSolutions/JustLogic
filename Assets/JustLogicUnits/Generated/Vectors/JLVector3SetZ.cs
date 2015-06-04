@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLVector3SetZ : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Target;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLVector3SetZ : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Vector3 opValue = Target.GetResult<UnityEngine.Vector3>(context);
+        Vector3 opValue = Target.GetResult<Vector3>(context);
         return opValue.z = Value.GetResult<System.Single>(context);
     }
 }

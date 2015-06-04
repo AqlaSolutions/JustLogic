@@ -6,16 +6,16 @@ using UnityEngine;
 [UnitFriendlyName("Renderer.Set Property Block")]
 public class JLRendererSetPropertyBlock : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.MaterialPropertyBlock))]
+    [Parameter(ExpressionType = typeof(MaterialPropertyBlock))]
     public JLExpression Properties;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
-        opValue.SetPropertyBlock(Properties.GetResult<UnityEngine.MaterialPropertyBlock>(context));
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
+        opValue.SetPropertyBlock(Properties.GetResult<MaterialPropertyBlock>(context));
         return null;
     }
 }

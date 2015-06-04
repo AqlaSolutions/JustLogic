@@ -6,18 +6,18 @@ using System;
 [UnitFriendlyName("Array.Clear")]
 public class JLArrayClear : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression Array;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Index;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Length;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Array.Clear(Array.GetResult<System.Array>(context), Index.GetResult<System.Int32>(context), Length.GetResult<System.Int32>(context));
+        System.Array.Clear(Array.GetResult<Array>(context), Index.GetResult<Int32>(context), Length.GetResult<Int32>(context));
         return null;
     }
 }

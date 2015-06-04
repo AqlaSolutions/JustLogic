@@ -25,7 +25,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
             get { return (JLUnitBase)base.Value; }
             protected set
             {
-                if (object.ReferenceEquals(base.Value, value)) return;
+                if (ReferenceEquals(base.Value, value)) return;
                 JLScriptableHelper.Destroy(base.Value);
                 base.Value = value;
                 _unitType = value ? value.GetType() : null;

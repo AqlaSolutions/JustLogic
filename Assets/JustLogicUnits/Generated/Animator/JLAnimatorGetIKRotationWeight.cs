@@ -7,15 +7,15 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLAnimatorGetIKRotationWeight : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AvatarIKGoal))]
+    [Parameter(ExpressionType = typeof(AvatarIKGoal))]
     public JLExpression Goal;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        return opValue.GetIKRotationWeight(Goal.GetResult<UnityEngine.AvatarIKGoal>(context));
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        return opValue.GetIKRotationWeight(Goal.GetResult<AvatarIKGoal>(context));
     }
 }

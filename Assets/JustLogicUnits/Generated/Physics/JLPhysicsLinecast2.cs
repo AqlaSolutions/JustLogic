@@ -7,10 +7,10 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLPhysicsLinecast2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Start;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression End;
 
     [Parameter(OverrideType = ParameterAttribute.OverrideTypes.LayerMask)]
@@ -18,6 +18,6 @@ public class JLPhysicsLinecast2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.Linecast(Start.GetResult<UnityEngine.Vector3>(context), End.GetResult<UnityEngine.Vector3>(context), LayerMask);
+        return Physics.Linecast(Start.GetResult<Vector3>(context), End.GetResult<Vector3>(context), LayerMask);
     }
 }

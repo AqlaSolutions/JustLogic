@@ -4,21 +4,21 @@ using System;
 
 [UnitMenu("String/Remove")]
 [UnitFriendlyName("String.Remove")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringRemove2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression StartIndex;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Count;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Remove(StartIndex.GetResult<System.Int32>(context), Count.GetResult<System.Int32>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Remove(StartIndex.GetResult<Int32>(context), Count.GetResult<Int32>(context));
     }
 }

@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Int32), HideExpressionInActionsList = true)]
 public class JLNavMeshHitGetMask : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshHit))]
+    [Parameter(ExpressionType = typeof(NavMeshHit))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshHit opValue = OperandValue.GetResult<UnityEngine.NavMeshHit>(context);
+        NavMeshHit opValue = OperandValue.GetResult<NavMeshHit>(context);
         return opValue.mask;
     }
 }

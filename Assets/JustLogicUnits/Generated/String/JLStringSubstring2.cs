@@ -4,21 +4,21 @@ using System;
 
 [UnitMenu("String/Substring")]
 [UnitFriendlyName("String.Substring")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringSubstring2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression StartIndex;
 
-    [Parameter(ExpressionType = typeof(System.Int32))]
+    [Parameter(ExpressionType = typeof(Int32))]
     public JLExpression Length;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Substring(StartIndex.GetResult<System.Int32>(context), Length.GetResult<System.Int32>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Substring(StartIndex.GetResult<Int32>(context), Length.GetResult<Int32>(context));
     }
 }

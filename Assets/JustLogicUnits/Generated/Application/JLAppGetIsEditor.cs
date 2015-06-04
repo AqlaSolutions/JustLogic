@@ -9,6 +9,6 @@ public class JLAppGetIsEditor : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.isEditor;
+        return Application.isEditor;
     }
 }

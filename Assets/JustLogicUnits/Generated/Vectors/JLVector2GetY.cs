@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLVector2GetY : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector2))]
+    [Parameter(ExpressionType = typeof(Vector2))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Vector2 opValue = OperandValue.GetResult<UnityEngine.Vector2>(context);
+        Vector2 opValue = OperandValue.GetResult<Vector2>(context);
         return opValue.y;
     }
 }

@@ -9,6 +9,6 @@ public class JLTimeGetRealtimeSinceStartup : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.realtimeSinceStartup;
+        return Time.realtimeSinceStartup;
     }
 }

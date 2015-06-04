@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Navigation/Agent/Get Path")]
 [UnitFriendlyName("NavMeshAgent.Get Path")]
-[UnitUsage(typeof(UnityEngine.NavMeshPath), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(NavMeshPath), HideExpressionInActionsList = true)]
 public class JLNavMeshAgentGetPath : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.NavMeshAgent))]
+    [Parameter(ExpressionType = typeof(NavMeshAgent))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.NavMeshAgent opValue = OperandValue.GetResult<UnityEngine.NavMeshAgent>(context);
+        NavMeshAgent opValue = OperandValue.GetResult<NavMeshAgent>(context);
         return opValue.path;
     }
 }

@@ -4,21 +4,21 @@ using System;
 
 [UnitMenu("String/Replace")]
 [UnitFriendlyName("String.Replace")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringReplace2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OldValue;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression NewValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Replace(OldValue.GetResult<System.String>(context), NewValue.GetResult<System.String>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Replace(OldValue.GetResult<String>(context), NewValue.GetResult<String>(context));
     }
 }

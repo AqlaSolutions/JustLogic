@@ -12,6 +12,6 @@ public class JLMathClamp01 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Clamp01(Value.GetResult<System.Single>(context));
+        return Mathf.Clamp01(Value.GetResult<System.Single>(context));
     }
 }

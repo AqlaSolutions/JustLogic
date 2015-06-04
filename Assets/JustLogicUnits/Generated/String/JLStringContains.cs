@@ -4,18 +4,18 @@ using System;
 
 [UnitMenu("String/Contains")]
 [UnitFriendlyName("String.Contains")]
-[UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Boolean), HideExpressionInActionsList = true)]
 public class JLStringContains : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.String opValue = OperandValue.GetResult<System.String>(context);
-        return opValue.Contains(Value.GetResult<System.String>(context));
+        String opValue = OperandValue.GetResult<String>(context);
+        return opValue.Contains(Value.GetResult<String>(context));
     }
 }

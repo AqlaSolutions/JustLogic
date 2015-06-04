@@ -9,6 +9,6 @@ public class JLAppGetWebSecurityHostUrl : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.webSecurityHostUrl;
+        return Application.webSecurityHostUrl;
     }
 }

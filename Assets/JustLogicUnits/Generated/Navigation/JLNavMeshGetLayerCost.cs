@@ -12,6 +12,6 @@ public class JLNavMeshGetLayerCost : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.NavMesh.GetLayerCost(Layer);
+        return NavMesh.GetLayerCost(Layer);
     }
 }

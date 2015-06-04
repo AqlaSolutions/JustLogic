@@ -12,6 +12,6 @@ public class JLInputGetButtonDown : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetButtonDown(ButtonName.GetResult<System.String>(context));
+        return Input.GetButtonDown(ButtonName.GetResult<System.String>(context));
     }
 }

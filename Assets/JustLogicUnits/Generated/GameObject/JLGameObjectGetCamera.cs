@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Camera")]
 [UnitFriendlyName("Get Camera")]
-[UnitUsage(typeof(UnityEngine.Camera), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Camera), HideExpressionInActionsList = true)]
 public class JLGameObjectGetCamera : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<Camera>();
     }
 }

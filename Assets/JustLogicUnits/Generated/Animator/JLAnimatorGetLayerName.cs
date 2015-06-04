@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
 public class JLAnimatorGetLayerName : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLAnimatorGetLayerName : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         return opValue.GetLayerName(LayerIndex.GetResult<System.Int32>(context));
     }
 }

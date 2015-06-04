@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Get Spectrum Data")]
 public class JLAudioSourceGetSpectrumData : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioSource))]
+    [Parameter(ExpressionType = typeof(AudioSource))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,13 +15,13 @@ public class JLAudioSourceGetSpectrumData : JLAction
     [Parameter(ExpressionType = typeof(System.Int32))]
     public JLExpression Channel;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.FFTWindow))]
+    [Parameter(ExpressionType = typeof(FFTWindow))]
     public JLExpression Window;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource opValue = OperandValue.GetResult<UnityEngine.AudioSource>(context);
-        opValue.GetSpectrumData(Samples.GetResult<System.Single>(context), Channel.GetResult<System.Int32>(context), Window.GetResult<UnityEngine.FFTWindow>(context));
+        AudioSource opValue = OperandValue.GetResult<AudioSource>(context);
+        opValue.GetSpectrumData(Samples.GetResult<System.Single>(context), Channel.GetResult<System.Int32>(context), Window.GetResult<FFTWindow>(context));
         return null;
     }
 }

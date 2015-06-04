@@ -9,6 +9,6 @@ public class JLTimeGetSmoothDeltaTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.smoothDeltaTime;
+        return Time.smoothDeltaTime;
     }
 }

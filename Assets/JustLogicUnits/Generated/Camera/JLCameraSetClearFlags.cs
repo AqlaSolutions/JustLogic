@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Camera/Set Clear Flags")]
 [UnitFriendlyName("Camera.Set Clear Flags")]
-[UnitUsage(typeof(UnityEngine.CameraClearFlags))]
+[UnitUsage(typeof(CameraClearFlags))]
 public class JLCameraSetClearFlags : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Camera))]
+    [Parameter(ExpressionType = typeof(Camera))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.CameraClearFlags))]
+    [Parameter(ExpressionType = typeof(CameraClearFlags))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Camera opValue = OperandValue.GetResult<UnityEngine.Camera>(context);
-        return opValue.clearFlags = Value.GetResult<UnityEngine.CameraClearFlags>(context);
+        Camera opValue = OperandValue.GetResult<Camera>(context);
+        return opValue.clearFlags = Value.GetResult<CameraClearFlags>(context);
     }
 }

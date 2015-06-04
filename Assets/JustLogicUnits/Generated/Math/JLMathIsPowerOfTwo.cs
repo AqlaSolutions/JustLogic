@@ -12,6 +12,6 @@ public class JLMathIsPowerOfTwo : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.IsPowerOfTwo(Value.GetResult<System.Int32>(context));
+        return Mathf.IsPowerOfTwo(Value.GetResult<System.Int32>(context));
     }
 }

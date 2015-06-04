@@ -12,6 +12,6 @@ public class JLMathAcos : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Acos(F.GetResult<System.Single>(context));
+        return Mathf.Acos(F.GetResult<System.Single>(context));
     }
 }

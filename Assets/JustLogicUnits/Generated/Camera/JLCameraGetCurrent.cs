@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Camera/Get Current")]
 [UnitFriendlyName("Camera.Get Current")]
-[UnitUsage(typeof(UnityEngine.Camera), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Camera), HideExpressionInActionsList = true)]
 public class JLCameraGetCurrent : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Camera.current;
+        return Camera.current;
     }
 }

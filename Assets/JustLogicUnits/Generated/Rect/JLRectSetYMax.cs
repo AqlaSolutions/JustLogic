@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Rect/Set YMax")]
 [UnitFriendlyName("Rect.Set YMax")]
-[UnitUsage(typeof(UnityEngine.Rect))]
+[UnitUsage(typeof(Rect))]
 public class JLRectSetYMax : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -15,7 +15,7 @@ public class JLRectSetYMax : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rect opValue = OperandValue.GetResult<UnityEngine.Rect>(context);
+        Rect opValue = OperandValue.GetResult<Rect>(context);
         opValue.yMax = Value.GetResult<System.Single>(context);
         return opValue;
     }

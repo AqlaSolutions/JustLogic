@@ -8,7 +8,7 @@ public class JLGuiLayoutEndArea : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.EndArea();
+        GUILayout.EndArea();
         return null;
     }
 }

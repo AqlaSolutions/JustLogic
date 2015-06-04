@@ -15,6 +15,6 @@ public class JLPhysicsGetIgnoreLayerCollision : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.GetIgnoreLayerCollision(Layer1, Layer2);
+        return Physics.GetIgnoreLayerCollision(Layer1, Layer2);
     }
 }

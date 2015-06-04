@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Get Light Probe Anchor")]
 [UnitFriendlyName("Renderer.Get Light Probe Anchor")]
-[UnitUsage(typeof(UnityEngine.Transform), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Transform), HideExpressionInActionsList = true)]
 public class JLRendererGetLightProbeAnchor : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
         return opValue.probeAnchor;
     }
 }

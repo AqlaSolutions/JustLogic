@@ -15,6 +15,6 @@ public class JLRandomRange : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Random.Range(Min.GetResult<System.Single>(context), Max.GetResult<System.Single>(context));
+        return Random.Range(Min.GetResult<System.Single>(context), Max.GetResult<System.Single>(context));
     }
 }

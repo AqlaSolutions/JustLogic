@@ -9,6 +9,6 @@ public class JLAppGetRunInBackground : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.runInBackground;
+        return Application.runInBackground;
     }
 }

@@ -7,7 +7,7 @@ using System.Collections;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLArrayListContains : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(object))]
@@ -15,7 +15,7 @@ public class JLArrayListContains : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
         return opValue.Contains(Item.GetResult<object>(context));
     }
 }

@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUI.BeginGroup")]
 public class JLGuiBeginGroup : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.BeginGroup(Position.GetResult<UnityEngine.Rect>(context));
+        GUI.BeginGroup(Position.GetResult<Rect>(context));
         return null;
     }
 }

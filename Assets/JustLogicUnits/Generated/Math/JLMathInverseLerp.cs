@@ -18,6 +18,6 @@ public class JLMathInverseLerp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.InverseLerp(From.GetResult<System.Single>(context), To.GetResult<System.Single>(context), Value.GetResult<System.Single>(context));
+        return Mathf.InverseLerp(From.GetResult<System.Single>(context), To.GetResult<System.Single>(context), Value.GetResult<System.Single>(context));
     }
 }

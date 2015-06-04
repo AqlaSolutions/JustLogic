@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLColorGetItem : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLColorGetItem : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Color opValue = OperandValue.GetResult<UnityEngine.Color>(context);
+        Color opValue = OperandValue.GetResult<Color>(context);
         return opValue[Index.GetResult<System.Int32>(context)];
     }
 }

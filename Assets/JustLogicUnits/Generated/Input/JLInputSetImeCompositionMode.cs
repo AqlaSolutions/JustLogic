@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Input/Set Ime Composition Mode")]
 [UnitFriendlyName("Set Ime Composition Mode")]
-[UnitUsage(typeof(UnityEngine.IMECompositionMode))]
+[UnitUsage(typeof(IMECompositionMode))]
 public class JLInputSetImeCompositionMode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.IMECompositionMode))]
+    [Parameter(ExpressionType = typeof(IMECompositionMode))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.imeCompositionMode = Value.GetResult<UnityEngine.IMECompositionMode>(context);
+        return Input.imeCompositionMode = Value.GetResult<IMECompositionMode>(context);
     }
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Get Lightmap Tiling Offset")]
 [UnitFriendlyName("Renderer.Get Lightmap Tiling Offset")]
-[UnitUsage(typeof(UnityEngine.Vector4), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Vector4), HideExpressionInActionsList = true)]
 public class JLRendererGetLightmapTilingOffset : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
         return opValue.lightmapScaleOffset;
     }
 }

@@ -13,11 +13,11 @@ public class JLGuiLayoutPasswordField : JLExpression
     [Parameter(ExpressionType = typeof(System.Char))]
     public JLExpression MaskChar;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.PasswordField(Password.GetResult<System.String>(context), MaskChar.GetResult<System.Char>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.PasswordField(Password.GetResult<System.String>(context), MaskChar.GetResult<System.Char>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

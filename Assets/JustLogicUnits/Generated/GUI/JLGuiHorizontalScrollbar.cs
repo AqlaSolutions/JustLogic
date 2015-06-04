@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single))]
 public class JLGuiHorizontalScrollbar : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -24,6 +24,6 @@ public class JLGuiHorizontalScrollbar : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.HorizontalScrollbar(Position.GetResult<UnityEngine.Rect>(context), Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), LeftValue.GetResult<System.Single>(context), RightValue.GetResult<System.Single>(context));
+        return GUI.HorizontalScrollbar(Position.GetResult<Rect>(context), Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), LeftValue.GetResult<System.Single>(context), RightValue.GetResult<System.Single>(context));
     }
 }

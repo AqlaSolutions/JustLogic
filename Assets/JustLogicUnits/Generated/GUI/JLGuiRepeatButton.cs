@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean))]
 public class JLGuiRepeatButton : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,6 +15,6 @@ public class JLGuiRepeatButton : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.RepeatButton(Position.GetResult<UnityEngine.Rect>(context), Text.GetResult<System.String>(context));
+        return GUI.RepeatButton(Position.GetResult<Rect>(context), Text.GetResult<System.String>(context));
     }
 }

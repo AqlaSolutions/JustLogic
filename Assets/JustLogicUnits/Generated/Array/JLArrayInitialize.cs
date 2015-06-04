@@ -6,12 +6,12 @@ using System;
 [UnitFriendlyName("Array.Initialize")]
 public class JLArrayInitialize : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Array opValue = OperandValue.GetResult<System.Array>(context);
+        Array opValue = OperandValue.GetResult<Array>(context);
         opValue.Initialize();
         return null;
     }

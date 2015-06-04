@@ -301,7 +301,7 @@ namespace JustLogic.Editor.JLGUI.Drawers
                     }
                 }
                 var argumentsCount = args.Length;
-                if (!object.ReferenceEquals(_argumentsCache.Method, methodData))
+                if (!ReferenceEquals(_argumentsCache.Method, methodData))
                 {
                     if (_argumentsCache.ArgumentDrawers != null)
                         foreach (var drawer in _argumentsCache.ArgumentDrawers)

@@ -9,6 +9,6 @@ public class JLDebugGetIsDebugBuild : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Debug.isDebugBuild;
+        return Debug.isDebugBuild;
     }
 }

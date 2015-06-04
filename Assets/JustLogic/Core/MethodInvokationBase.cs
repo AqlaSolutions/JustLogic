@@ -56,7 +56,7 @@ namespace JustLogic.Core
         }
 
         MethodInfo _methodCache;
-        System.Reflection.ParameterInfo[] _parametersCache;
+        ParameterInfo[] _parametersCache;
         TypeInfo _staticTypeCache;
 
         public object Invoke(IExecutionContext context)

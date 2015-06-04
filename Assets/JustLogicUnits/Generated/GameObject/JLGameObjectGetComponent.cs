@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Component")]
 [UnitFriendlyName("Get Component")]
-[UnitUsage(typeof(UnityEngine.Component), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Component), HideExpressionInActionsList = true)]
 public class JLGameObjectGetComponent : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Type))]
@@ -15,7 +15,7 @@ public class JLGameObjectGetComponent : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent(Type.GetResult<System.Type>(context));
     }
 }

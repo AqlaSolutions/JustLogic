@@ -18,6 +18,6 @@ public class JLMathSmoothStep : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.SmoothStep(From.GetResult<System.Single>(context), To.GetResult<System.Single>(context), T.GetResult<System.Single>(context));
+        return Mathf.SmoothStep(From.GetResult<System.Single>(context), To.GetResult<System.Single>(context), T.GetResult<System.Single>(context));
     }
 }

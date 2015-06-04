@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("WWW.Dispose")]
 public class JLWwwDispose : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
+        WWW opValue = OperandValue.GetResult<WWW>(context);
         opValue.Dispose();
         return null;
     }

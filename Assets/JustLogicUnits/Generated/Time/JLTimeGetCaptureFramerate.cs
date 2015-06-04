@@ -9,6 +9,6 @@ public class JLTimeGetCaptureFramerate : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.captureFramerate;
+        return Time.captureFramerate;
     }
 }

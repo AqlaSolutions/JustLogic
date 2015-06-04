@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Application/Set Background Loading Priority")]
 [UnitFriendlyName("Set Background Loading Priority")]
-[UnitUsage(typeof(UnityEngine.ThreadPriority))]
+[UnitUsage(typeof(ThreadPriority))]
 public class JLAppSetBackgroundLoadingPriority : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.ThreadPriority))]
+    [Parameter(ExpressionType = typeof(ThreadPriority))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Application.backgroundLoadingPriority = Value.GetResult<UnityEngine.ThreadPriority>(context);
+        return Application.backgroundLoadingPriority = Value.GetResult<ThreadPriority>(context);
     }
 }

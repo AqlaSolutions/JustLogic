@@ -6,16 +6,16 @@ using UnityEngine;
 [UnitFriendlyName("AnimationState.Remove Mixing Transform")]
 public class JLAnimationStateRemoveMixingTransform : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationState))]
+    [Parameter(ExpressionType = typeof(AnimationState))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression Mix;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AnimationState opValue = OperandValue.GetResult<UnityEngine.AnimationState>(context);
-        opValue.RemoveMixingTransform(Mix.GetResult<UnityEngine.Transform>(context));
+        AnimationState opValue = OperandValue.GetResult<AnimationState>(context);
+        opValue.RemoveMixingTransform(Mix.GetResult<Transform>(context));
         return null;
     }
 }

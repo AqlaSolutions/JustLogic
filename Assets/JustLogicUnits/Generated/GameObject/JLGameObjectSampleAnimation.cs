@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Sample Animation")]
 public class JLGameObjectSampleAnimation : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationClip))]
+    [Parameter(ExpressionType = typeof(AnimationClip))]
     public JLExpression Animation;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -17,7 +17,7 @@ public class JLGameObjectSampleAnimation : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
-        Animation.GetResult<UnityEngine.AnimationClip>(context).SampleAnimation(opValue, Time.GetResult<System.Single>(context));
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
+        Animation.GetResult<AnimationClip>(context).SampleAnimation(opValue, Time.GetResult<System.Single>(context));
         return null;    }
 }

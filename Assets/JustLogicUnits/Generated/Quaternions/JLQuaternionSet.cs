@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Quaternion/Set")]
 [UnitFriendlyName("Set")]
-[UnitUsage(typeof(UnityEngine.Quaternion), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Quaternion), HideExpressionInActionsList = true)]
 public class JLQuaternionSet : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -24,7 +24,7 @@ public class JLQuaternionSet : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Quaternion opValue = OperandValue.GetResult<UnityEngine.Quaternion>(context);
+        Quaternion opValue = OperandValue.GetResult<Quaternion>(context);
         opValue.Set(NewX.GetResult<System.Single>(context), NewY.GetResult<System.Single>(context), NewZ.GetResult<System.Single>(context), NewW.GetResult<System.Single>(context));
         return opValue;
     }

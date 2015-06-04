@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLVector3Dot : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector3.Dot(Lhs.GetResult<UnityEngine.Vector3>(context), Rhs.GetResult<UnityEngine.Vector3>(context));
+        return Vector3.Dot(Lhs.GetResult<Vector3>(context), Rhs.GetResult<Vector3>(context));
     }
 }

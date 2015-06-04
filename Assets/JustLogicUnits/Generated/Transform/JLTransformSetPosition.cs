@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Transform/Set Position")]
 [UnitFriendlyName("Set Position")]
-[UnitUsage(typeof(UnityEngine.Vector3))]
+[UnitUsage(typeof(Vector3))]
 public class JLTransformSetPosition : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        return opValue.position = Value.GetResult<UnityEngine.Vector3>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        return opValue.position = Value.GetResult<Vector3>(context);
     }
 }

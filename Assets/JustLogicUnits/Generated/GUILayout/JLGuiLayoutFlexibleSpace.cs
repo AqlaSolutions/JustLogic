@@ -8,7 +8,7 @@ public class JLGuiLayoutFlexibleSpace : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.FlexibleSpace();
+        GUILayout.FlexibleSpace();
         return null;
     }
 }

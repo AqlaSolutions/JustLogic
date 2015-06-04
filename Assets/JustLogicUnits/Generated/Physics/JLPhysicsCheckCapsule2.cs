@@ -7,10 +7,10 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLPhysicsCheckCapsule2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Start;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression End;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -21,6 +21,6 @@ public class JLPhysicsCheckCapsule2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.CheckCapsule(Start.GetResult<UnityEngine.Vector3>(context), End.GetResult<UnityEngine.Vector3>(context), Radius.GetResult<System.Single>(context), Layermask);
+        return Physics.CheckCapsule(Start.GetResult<Vector3>(context), End.GetResult<Vector3>(context), Radius.GetResult<System.Single>(context), Layermask);
     }
 }

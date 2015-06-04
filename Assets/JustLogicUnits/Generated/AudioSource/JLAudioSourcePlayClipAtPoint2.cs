@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Audio.Play Clip At Point")]
 public class JLAudioSourcePlayClipAtPoint2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AudioClip))]
+    [Parameter(ExpressionType = typeof(AudioClip))]
     public JLExpression Clip;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -17,7 +17,7 @@ public class JLAudioSourcePlayClipAtPoint2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.AudioSource.PlayClipAtPoint(Clip.GetResult<UnityEngine.AudioClip>(context), Position.GetResult<UnityEngine.Vector3>(context), Volume.GetResult<System.Single>(context));
+        AudioSource.PlayClipAtPoint(Clip.GetResult<AudioClip>(context), Position.GetResult<Vector3>(context), Volume.GetResult<System.Single>(context));
         return null;
     }
 }

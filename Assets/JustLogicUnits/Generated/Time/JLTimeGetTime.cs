@@ -9,6 +9,6 @@ public class JLTimeGetTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.time;
+        return Time.time;
     }
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 [UnitFriendlyName("Draw Line")]
 public class JLDebugDrawLine3 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Start;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression End;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression Color;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -20,7 +20,7 @@ public class JLDebugDrawLine3 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Debug.DrawLine(Start.GetResult<UnityEngine.Vector3>(context), End.GetResult<UnityEngine.Vector3>(context), Color.GetResult<UnityEngine.Color>(context), Duration.GetResult<System.Single>(context));
+        Debug.DrawLine(Start.GetResult<Vector3>(context), End.GetResult<Vector3>(context), Color.GetResult<Color>(context), Duration.GetResult<System.Single>(context));
         return null;
     }
 }

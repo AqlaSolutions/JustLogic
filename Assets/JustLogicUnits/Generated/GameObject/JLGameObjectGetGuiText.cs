@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Gui Text")]
 [UnitFriendlyName("Get Gui Text")]
-[UnitUsage(typeof(UnityEngine.GUIText), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUIText), HideExpressionInActionsList = true)]
 public class JLGameObjectGetGuiText : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<GUIText>();
     }
 }

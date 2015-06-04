@@ -9,6 +9,6 @@ public class JLInputGetMultiTouchEnabled : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.multiTouchEnabled;
+        return Input.multiTouchEnabled;
     }
 }

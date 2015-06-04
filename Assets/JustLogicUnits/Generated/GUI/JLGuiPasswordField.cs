@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.String))]
 public class JLGuiPasswordField : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression Position;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -18,6 +18,6 @@ public class JLGuiPasswordField : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUI.PasswordField(Position.GetResult<UnityEngine.Rect>(context), Password.GetResult<System.String>(context), MaskChar.GetResult<System.Char>(context));
+        return GUI.PasswordField(Position.GetResult<Rect>(context), Password.GetResult<System.String>(context), MaskChar.GetResult<System.Char>(context));
     }
 }

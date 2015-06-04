@@ -6,10 +6,10 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Target")]
 public class JLAnimatorSetTarget : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.AvatarTarget))]
+    [Parameter(ExpressionType = typeof(AvatarTarget))]
     public JLExpression TargetIndex;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -17,8 +17,8 @@ public class JLAnimatorSetTarget : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
-        opValue.SetTarget(TargetIndex.GetResult<UnityEngine.AvatarTarget>(context), TargetNormalizedTime.GetResult<System.Single>(context));
+        Animator opValue = OperandValue.GetResult<Animator>(context);
+        opValue.SetTarget(TargetIndex.GetResult<AvatarTarget>(context), TargetNormalizedTime.GetResult<System.Single>(context));
         return null;
     }
 }

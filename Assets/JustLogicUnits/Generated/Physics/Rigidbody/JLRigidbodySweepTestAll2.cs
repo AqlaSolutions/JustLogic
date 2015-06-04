@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Physics/Sweep Test All (Rigidbody)")]
 [UnitFriendlyName("Rigidbody.Sweep Test All")]
-[UnitUsage(typeof(UnityEngine.RaycastHit[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(RaycastHit[]), HideExpressionInActionsList = true)]
 public class JLRigidbodySweepTestAll2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rigidbody))]
+    [Parameter(ExpressionType = typeof(Rigidbody))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression Direction;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,7 +18,7 @@ public class JLRigidbodySweepTestAll2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Rigidbody opValue = OperandValue.GetResult<UnityEngine.Rigidbody>(context);
-        return opValue.SweepTestAll(Direction.GetResult<UnityEngine.Vector3>(context), Distance.GetResult<System.Single>(context));
+        Rigidbody opValue = OperandValue.GetResult<Rigidbody>(context);
+        return opValue.SweepTestAll(Direction.GetResult<Vector3>(context), Distance.GetResult<System.Single>(context));
     }
 }

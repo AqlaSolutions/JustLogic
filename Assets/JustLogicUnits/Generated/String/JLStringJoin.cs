@@ -4,17 +4,17 @@ using System;
 
 [UnitMenu("String/Join")]
 [UnitFriendlyName("String.Join")]
-[UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(String), HideExpressionInActionsList = true)]
 public class JLStringJoin : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression Separator;
 
-    [Parameter(ExpressionType = typeof(System.String))]
+    [Parameter(ExpressionType = typeof(String))]
     public JLExpression[] Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return System.String.Join(Separator.GetResult<System.String>(context), Value.GetResult<System.String>(context));
+        return String.Join(Separator.GetResult<String>(context), Value.GetResult<String>(context));
     }
 }

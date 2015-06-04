@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Single), HideExpressionInActionsList = true)]
 public class JLVector4Distance : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector4))]
+    [Parameter(ExpressionType = typeof(Vector4))]
     public JLExpression A;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector4))]
+    [Parameter(ExpressionType = typeof(Vector4))]
     public JLExpression B;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Vector4.Distance(A.GetResult<UnityEngine.Vector4>(context), B.GetResult<UnityEngine.Vector4>(context));
+        return Vector4.Distance(A.GetResult<Vector4>(context), B.GetResult<Vector4>(context));
     }
 }

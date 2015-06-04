@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.Byte[]), HideExpressionInActionsList = true)]
 public class JLWwwGetBytes : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.WWW))]
+    [Parameter(ExpressionType = typeof(WWW))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.WWW opValue = OperandValue.GetResult<UnityEngine.WWW>(context);
+        WWW opValue = OperandValue.GetResult<WWW>(context);
         return opValue.bytes;
     }
 }

@@ -12,6 +12,6 @@ public class JLPhysicsSetBounceThreshold : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.bounceThreshold = Value.GetResult<System.Single>(context);
+        return Physics.bounceThreshold = Value.GetResult<System.Single>(context);
     }
 }

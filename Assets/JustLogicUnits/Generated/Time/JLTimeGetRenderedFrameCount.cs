@@ -9,6 +9,6 @@ public class JLTimeGetRenderedFrameCount : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.renderedFrameCount;
+        return Time.renderedFrameCount;
     }
 }

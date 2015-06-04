@@ -7,11 +7,11 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLInputGetKeyDown2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.KeyCode))]
+    [Parameter(ExpressionType = typeof(KeyCode))]
     public JLExpression Key;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetKeyDown(Key.GetResult<UnityEngine.KeyCode>(context));
+        return Input.GetKeyDown(Key.GetResult<KeyCode>(context));
     }
 }

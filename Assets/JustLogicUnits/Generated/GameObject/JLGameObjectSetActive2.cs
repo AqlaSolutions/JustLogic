@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Set Active")]
 public class JLGameObjectSetActive2 : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -14,7 +14,7 @@ public class JLGameObjectSetActive2 : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         opValue.SetActive(Value.GetResult<System.Boolean>(context));
         return null;    }
 }

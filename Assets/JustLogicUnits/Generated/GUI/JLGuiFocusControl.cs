@@ -11,7 +11,7 @@ public class JLGuiFocusControl : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUI.FocusControl(Name.GetResult<System.String>(context));
+        GUI.FocusControl(Name.GetResult<System.String>(context));
         return null;
     }
 }

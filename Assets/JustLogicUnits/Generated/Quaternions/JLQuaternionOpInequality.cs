@@ -7,14 +7,14 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLQuaternionOpInequality : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Lhs;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Rhs;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return Lhs.GetResult<UnityEngine.Quaternion>(context) != Rhs.GetResult<UnityEngine.Quaternion>(context);
+        return Lhs.GetResult<Quaternion>(context) != Rhs.GetResult<Quaternion>(context);
     }
 }

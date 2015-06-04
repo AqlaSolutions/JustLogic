@@ -4,14 +4,14 @@ using UnityEngine;
 
 [UnitMenu("Quaternion/Inverse")]
 [UnitFriendlyName("Inverse")]
-[UnitUsage(typeof(UnityEngine.Quaternion), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Quaternion), HideExpressionInActionsList = true)]
 public class JLQuaternionInverse : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Quaternion))]
+    [Parameter(ExpressionType = typeof(Quaternion))]
     public JLExpression Rotation;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Quaternion.Inverse(Rotation.GetResult<UnityEngine.Quaternion>(context));
+        return Quaternion.Inverse(Rotation.GetResult<Quaternion>(context));
     }
 }

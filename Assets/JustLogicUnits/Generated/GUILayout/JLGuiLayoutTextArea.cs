@@ -10,11 +10,11 @@ public class JLGuiLayoutTextArea : JLExpression
     [Parameter(ExpressionType = typeof(System.String))]
     public JLExpression Text;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.TextArea(Text.GetResult<System.String>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.TextArea(Text.GetResult<System.String>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

@@ -12,6 +12,6 @@ public class JLPhysicsSetSleepVelocity : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.sleepVelocity = Value.GetResult<System.Single>(context);
+        return Physics.sleepVelocity = Value.GetResult<System.Single>(context);
     }
 }

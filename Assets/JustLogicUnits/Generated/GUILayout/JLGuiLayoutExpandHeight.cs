@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/ExpandHeight")]
 [UnitFriendlyName("GUILayout.ExpandHeight")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutExpandHeight : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Boolean))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutExpandHeight : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.ExpandHeight(Expand.GetResult<System.Boolean>(context));
+        return GUILayout.ExpandHeight(Expand.GetResult<System.Boolean>(context));
     }
 }

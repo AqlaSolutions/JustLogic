@@ -4,13 +4,13 @@ using UnityEngine;
 
 [UnitMenu("Color/Lerp")]
 [UnitFriendlyName("Color.Lerp")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorLerp : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression A;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Color))]
+    [Parameter(ExpressionType = typeof(Color))]
     public JLExpression B;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -18,6 +18,6 @@ public class JLColorLerp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Color.Lerp(A.GetResult<UnityEngine.Color>(context), B.GetResult<UnityEngine.Color>(context), T.GetResult<System.Single>(context));
+        return Color.Lerp(A.GetResult<Color>(context), B.GetResult<Color>(context), T.GetResult<System.Single>(context));
     }
 }

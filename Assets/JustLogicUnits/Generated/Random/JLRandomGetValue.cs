@@ -9,6 +9,6 @@ public class JLRandomGetValue : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Random.value;
+        return Random.value;
     }
 }

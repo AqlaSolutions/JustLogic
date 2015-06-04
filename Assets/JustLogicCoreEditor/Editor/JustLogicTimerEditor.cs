@@ -42,7 +42,7 @@ public class JustLogicTimerEditor : JLInspectorBase
 
     protected override bool Draw()
     {
-        var script = (JustLogicTimerBase)this.target;
+        var script = (JustLogicTimerBase)target;
 
         _drawContext.Reset();
         _drawContext.Inspector = this;

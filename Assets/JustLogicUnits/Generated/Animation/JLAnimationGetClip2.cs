@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Animation/Get Clip")]
 [UnitFriendlyName("Animation.Get Clip")]
-[UnitUsage(typeof(UnityEngine.AnimationClip), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AnimationClip), HideExpressionInActionsList = true)]
 public class JLAnimationGetClip2 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.String))]
@@ -15,7 +15,7 @@ public class JLAnimationGetClip2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         return opValue.GetClip(Name.GetResult<System.String>(context));
     }
 }

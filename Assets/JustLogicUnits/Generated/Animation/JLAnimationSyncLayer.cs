@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animation.Sync Layer")]
 public class JLAnimationSyncLayer : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animation))]
+    [Parameter(ExpressionType = typeof(Animation))]
     public JLExpression OperandValue;
 
     [Parameter(OverrideType = ParameterAttribute.OverrideTypes.Layer)]
@@ -14,7 +14,7 @@ public class JLAnimationSyncLayer : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animation opValue = OperandValue.GetResult<UnityEngine.Animation>(context);
+        Animation opValue = OperandValue.GetResult<Animation>(context);
         opValue.SyncLayer(Layer);
         return null;
     }

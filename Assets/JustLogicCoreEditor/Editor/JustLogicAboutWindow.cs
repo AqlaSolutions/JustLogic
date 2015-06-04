@@ -16,6 +16,7 @@ public class JustLogicAboutWindow : EditorWindow
 
     protected void OnEnable()
     {
+        // ReSharper disable ArrangeThisQualifier
         var r = this.position;
         r.width = 285;
 #if JUSTLOGIC_FREE
@@ -27,7 +28,7 @@ public class JustLogicAboutWindow : EditorWindow
         this.maxSize = new Vector2(r.width, r.height);
         this.minSize = this.maxSize;
         title = "About JustLogic";
-
+        // ReSharper restore ArrangeThisQualifier
     }
 
     GUIStyle _centeredLabel;

@@ -18,6 +18,6 @@ public class JLMathClamp2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Clamp(Value.GetResult<System.Int32>(context), Min.GetResult<System.Int32>(context), Max.GetResult<System.Int32>(context));
+        return Mathf.Clamp(Value.GetResult<System.Int32>(context), Min.GetResult<System.Int32>(context), Max.GetResult<System.Int32>(context));
     }
 }

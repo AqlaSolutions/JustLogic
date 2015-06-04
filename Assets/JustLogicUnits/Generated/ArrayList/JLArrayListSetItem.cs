@@ -7,7 +7,7 @@ using System.Collections;
 [UnitUsage(typeof(System.Int32))]
 public class JLArrayListSetItem : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -18,7 +18,7 @@ public class JLArrayListSetItem : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
         return opValue[Index.GetResult<System.Int32>(context)] = Value.GetResult<object>(context);
     }
 }

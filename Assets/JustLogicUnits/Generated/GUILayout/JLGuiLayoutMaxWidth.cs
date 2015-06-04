@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/MaxWidth")]
 [UnitFriendlyName("GUILayout.MaxWidth")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutMaxWidth : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutMaxWidth : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.MaxWidth(MaxWidth.GetResult<System.Single>(context));
+        return GUILayout.MaxWidth(MaxWidth.GetResult<System.Single>(context));
     }
 }

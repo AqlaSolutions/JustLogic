@@ -12,6 +12,6 @@ public class JLInputGetAxis : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetAxis(AxisName.GetResult<System.String>(context));
+        return Input.GetAxis(AxisName.GetResult<System.String>(context));
     }
 }

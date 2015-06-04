@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Transform/Set Parent")]
 [UnitFriendlyName("Set Parent")]
-[UnitUsage(typeof(UnityEngine.Transform))]
+[UnitUsage(typeof(Transform))]
 public class JLTransformSetParent : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Transform))]
+    [Parameter(ExpressionType = typeof(Transform))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Transform opValue = OperandValue.GetResult<UnityEngine.Transform>(context);
-        return opValue.parent = Value.GetResult<UnityEngine.Transform>(context);
+        Transform opValue = OperandValue.GetResult<Transform>(context);
+        return opValue.parent = Value.GetResult<Transform>(context);
     }
 }

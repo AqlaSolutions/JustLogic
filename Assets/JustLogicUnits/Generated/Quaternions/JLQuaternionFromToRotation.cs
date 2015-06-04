@@ -4,17 +4,17 @@ using UnityEngine;
 
 [UnitMenu("Quaternion/From To Rotation")]
 [UnitFriendlyName("From To Rotation")]
-[UnitUsage(typeof(UnityEngine.Quaternion), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Quaternion), HideExpressionInActionsList = true)]
 public class JLQuaternionFromToRotation : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression FromDirection;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.Vector3))]
+    [Parameter(ExpressionType = typeof(Vector3))]
     public JLExpression ToDirection;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Quaternion.FromToRotation(FromDirection.GetResult<UnityEngine.Vector3>(context), ToDirection.GetResult<UnityEngine.Vector3>(context));
+        return Quaternion.FromToRotation(FromDirection.GetResult<Vector3>(context), ToDirection.GetResult<Vector3>(context));
     }
 }

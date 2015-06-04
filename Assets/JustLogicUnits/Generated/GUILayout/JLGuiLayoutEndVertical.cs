@@ -8,7 +8,7 @@ public class JLGuiLayoutEndVertical : JLAction
 {
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.EndVertical();
+        GUILayout.EndVertical();
         return null;
     }
 }

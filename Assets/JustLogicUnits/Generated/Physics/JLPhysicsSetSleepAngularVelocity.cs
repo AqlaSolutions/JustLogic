@@ -12,6 +12,6 @@ public class JLPhysicsSetSleepAngularVelocity : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.sleepAngularVelocity = Value.GetResult<System.Single>(context);
+        return Physics.sleepAngularVelocity = Value.GetResult<System.Single>(context);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("Object/New Game Object")]
 [UnitFriendlyName("New Game Object")]
-[UnitUsage(typeof(UnityEngine.GameObject), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GameObject), HideExpressionInActionsList = true)]
 public class JLGameObjectNewGameObject2 : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.String))]
@@ -12,6 +12,6 @@ public class JLGameObjectNewGameObject2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return new UnityEngine.GameObject(Name.GetResult<System.String>(context));
+        return new GameObject(Name.GetResult<System.String>(context));
     }
 }

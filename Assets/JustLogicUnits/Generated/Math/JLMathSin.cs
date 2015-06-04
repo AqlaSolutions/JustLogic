@@ -12,6 +12,6 @@ public class JLMathSin : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Sin(F.GetResult<System.Single>(context));
+        return Mathf.Sin(F.GetResult<System.Single>(context));
     }
 }

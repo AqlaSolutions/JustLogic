@@ -6,7 +6,7 @@ using System.Collections;
 [UnitFriendlyName("ArrayList.Insert")]
 public class JLArrayListInsert : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -17,7 +17,7 @@ public class JLArrayListInsert : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
         opValue.Insert(Index.GetResult<System.Int32>(context), Value.GetResult<object>(context));
         return null;
     }

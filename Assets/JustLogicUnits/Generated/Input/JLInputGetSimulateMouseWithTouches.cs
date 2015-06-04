@@ -9,6 +9,6 @@ public class JLInputGetSimulateMouseWithTouches : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.simulateMouseWithTouches;
+        return Input.simulateMouseWithTouches;
     }
 }

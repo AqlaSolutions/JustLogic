@@ -7,12 +7,12 @@ using System;
 [UnitUsage(typeof(Array))]
 public class JLArrayReverse : JLExpression
 {
-    [Parameter(ExpressionType = typeof(System.Array))]
+    [Parameter(ExpressionType = typeof(Array))]
     public JLExpression Array;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        var r = Array.GetResult<System.Array>(context);
+        var r = Array.GetResult<Array>(context);
         System.Array.Reverse(r);
         return r;
     }

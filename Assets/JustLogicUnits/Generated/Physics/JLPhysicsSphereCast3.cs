@@ -7,7 +7,7 @@ using UnityEngine;
 [UnitUsage(typeof(System.Boolean), HideExpressionInActionsList = true)]
 public class JLPhysicsSphereCast3 : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Ray))]
+    [Parameter(ExpressionType = typeof(Ray))]
     public JLExpression Ray;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -21,6 +21,6 @@ public class JLPhysicsSphereCast3 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.SphereCast(Ray.GetResult<UnityEngine.Ray>(context), Radius.GetResult<System.Single>(context), Distance.GetResult<System.Single>(context), LayerMask);
+        return Physics.SphereCast(Ray.GetResult<Ray>(context), Radius.GetResult<System.Single>(context), Distance.GetResult<System.Single>(context), LayerMask);
     }
 }

@@ -12,6 +12,6 @@ public class JLMathClosestPowerOfTwo : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.ClosestPowerOfTwo(Value.GetResult<System.Int32>(context));
+        return Mathf.ClosestPowerOfTwo(Value.GetResult<System.Int32>(context));
     }
 }

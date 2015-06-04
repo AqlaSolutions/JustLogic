@@ -4,18 +4,18 @@ using UnityEngine;
 
 [UnitMenu("Animation/Clip/Set Wrap Mode")]
 [UnitFriendlyName("AnimationClip.Set Wrap Mode")]
-[UnitUsage(typeof(UnityEngine.WrapMode))]
+[UnitUsage(typeof(WrapMode))]
 public class JLAnimationClipSetWrapMode : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationClip))]
+    [Parameter(ExpressionType = typeof(AnimationClip))]
     public JLExpression OperandValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.WrapMode))]
+    [Parameter(ExpressionType = typeof(WrapMode))]
     public JLExpression Value;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationClip opValue = OperandValue.GetResult<UnityEngine.AnimationClip>(context);
-        return opValue.wrapMode = Value.GetResult<UnityEngine.WrapMode>(context);
+        AnimationClip opValue = OperandValue.GetResult<AnimationClip>(context);
+        return opValue.wrapMode = Value.GetResult<WrapMode>(context);
     }
 }

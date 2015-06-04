@@ -15,6 +15,6 @@ public class JLMathAtan2 : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Atan2(Y.GetResult<System.Single>(context), X.GetResult<System.Single>(context));
+        return Mathf.Atan2(Y.GetResult<System.Single>(context), X.GetResult<System.Single>(context));
     }
 }

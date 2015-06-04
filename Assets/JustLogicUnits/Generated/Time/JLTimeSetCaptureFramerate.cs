@@ -12,6 +12,6 @@ public class JLTimeSetCaptureFramerate : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.captureFramerate = Value.GetResult<System.Int32>(context);
+        return Time.captureFramerate = Value.GetResult<System.Int32>(context);
     }
 }

@@ -18,6 +18,6 @@ public class JLMathMoveTowards : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.MoveTowards(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context), MaxDelta.GetResult<System.Single>(context));
+        return Mathf.MoveTowards(Current.GetResult<System.Single>(context), Target.GetResult<System.Single>(context), MaxDelta.GetResult<System.Single>(context));
     }
 }

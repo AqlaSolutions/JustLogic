@@ -19,11 +19,11 @@ public class JLGuiLayoutHorizontalScrollbar : JLExpression
     [Parameter(ExpressionType = typeof(System.Single))]
     public JLExpression RightValue;
 
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.HorizontalScrollbar(Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), LeftValue.GetResult<System.Single>(context), RightValue.GetResult<System.Single>(context), Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        return GUILayout.HorizontalScrollbar(Value.GetResult<System.Single>(context), Size.GetResult<System.Single>(context), LeftValue.GetResult<System.Single>(context), RightValue.GetResult<System.Single>(context), Options.GetResult<GUILayoutOption>(context));
     }
 }

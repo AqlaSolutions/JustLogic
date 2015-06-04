@@ -15,6 +15,6 @@ public class JLMathPow : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Pow(F.GetResult<System.Single>(context), P.GetResult<System.Single>(context));
+        return Mathf.Pow(F.GetResult<System.Single>(context), P.GetResult<System.Single>(context));
     }
 }

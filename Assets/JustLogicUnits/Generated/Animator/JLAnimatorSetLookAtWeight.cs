@@ -6,7 +6,7 @@ using UnityEngine;
 [UnitFriendlyName("Animator.Set Look At Weight")]
 public class JLAnimatorSetLookAtWeight : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -14,7 +14,7 @@ public class JLAnimatorSetLookAtWeight : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         opValue.SetLookAtWeight(Weight.GetResult<System.Single>(context));
         return null;
     }

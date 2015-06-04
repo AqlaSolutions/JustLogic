@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Renderer/Get Materials")]
 [UnitFriendlyName("Renderer.Get Materials")]
-[UnitUsage(typeof(UnityEngine.Material[]), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Material[]), HideExpressionInActionsList = true)]
 public class JLRendererGetMaterials : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Renderer))]
+    [Parameter(ExpressionType = typeof(Renderer))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Renderer opValue = OperandValue.GetResult<UnityEngine.Renderer>(context);
+        Renderer opValue = OperandValue.GetResult<Renderer>(context);
         return opValue.materials;
     }
 }

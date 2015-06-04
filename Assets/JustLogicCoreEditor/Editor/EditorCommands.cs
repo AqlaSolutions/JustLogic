@@ -30,13 +30,13 @@ namespace JustLogic.Editor
             try
             {
                 // Private implementation of a filenaming function which puts the file at the selected path.
-                System.Type assetdatabase = typeof(UnityEditor.AssetDatabase);
+                System.Type assetdatabase = typeof(AssetDatabase);
                 path = (string)assetdatabase.GetMethod("GetUniquePathNameAtSelectedPath", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static).Invoke(assetdatabase, new object[] { filename });
             }
             catch
             {
                 // Protection against implementation changes.
-                path = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/" + filename);
+                path = AssetDatabase.GenerateUniqueAssetPath("Assets/" + filename);
             }
             return path;
         }

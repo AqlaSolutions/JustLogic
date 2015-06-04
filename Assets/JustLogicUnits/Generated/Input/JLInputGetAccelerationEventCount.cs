@@ -9,6 +9,6 @@ public class JLInputGetAccelerationEventCount : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.accelerationEventCount;
+        return Input.accelerationEventCount;
     }
 }

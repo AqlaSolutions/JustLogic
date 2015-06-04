@@ -20,7 +20,7 @@ public abstract class JLExpression : JLUnitBase
     /// <summary>
     /// Creates an expression fluently
     /// </summary>
-    public static T Build<T>(System.Action<T> initializer = null) where T : JLExpression
+    public static T Build<T>(Action<T> initializer = null) where T : JLExpression
     {
         var r = CreateInstanceFunc == null ? Library.Instantiator.CreateScriptable<T>() : (T)CreateInstanceFunc(typeof(T));
         if (initializer != null)

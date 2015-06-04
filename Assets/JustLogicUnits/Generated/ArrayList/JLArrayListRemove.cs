@@ -6,7 +6,7 @@ using System.Collections;
 [UnitFriendlyName("ArrayList.Remove")]
 public class JLArrayListRemove : JLAction
 {
-    [Parameter(ExpressionType = typeof(System.Collections.ArrayList))]
+    [Parameter(ExpressionType = typeof(ArrayList))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(object))]
@@ -14,7 +14,7 @@ public class JLArrayListRemove : JLAction
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        System.Collections.ArrayList opValue = OperandValue.GetResult<System.Collections.ArrayList>(context);
+        ArrayList opValue = OperandValue.GetResult<ArrayList>(context);
         opValue.Remove(Obj.GetResult<object>(context));
         return null;
     }

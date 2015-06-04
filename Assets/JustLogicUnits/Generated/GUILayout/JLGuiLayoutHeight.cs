@@ -4,7 +4,7 @@ using UnityEngine;
 
 [UnitMenu("GUILayout/Height")]
 [UnitFriendlyName("GUILayout.Height")]
-[UnitUsage(typeof(UnityEngine.GUILayoutOption), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUILayoutOption), HideExpressionInActionsList = true)]
 public class JLGuiLayoutHeight : JLExpression
 {
     [Parameter(ExpressionType = typeof(System.Single))]
@@ -12,6 +12,6 @@ public class JLGuiLayoutHeight : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.GUILayout.Height(Height.GetResult<System.Single>(context));
+        return GUILayout.Height(Height.GetResult<System.Single>(context));
     }
 }

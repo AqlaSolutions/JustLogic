@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Physics/Collision/Get Game Object")]
 [UnitFriendlyName("Collision.Get Game Object")]
-[UnitUsage(typeof(UnityEngine.GameObject), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GameObject), HideExpressionInActionsList = true)]
 public class JLCollisionGetGameObject : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Collision))]
+    [Parameter(ExpressionType = typeof(Collision))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Collision opValue = OperandValue.GetResult<UnityEngine.Collision>(context);
+        Collision opValue = OperandValue.GetResult<Collision>(context);
         return opValue.gameObject;
     }
 }

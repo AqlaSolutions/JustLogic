@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUILayout.Box")]
 public class JLGuiLayoutBox : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GUILayoutOption))]
+    [Parameter(ExpressionType = typeof(GUILayoutOption))]
     public JLExpression[] Options;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.Box("", Options.GetResult<UnityEngine.GUILayoutOption>(context));
+        GUILayout.Box("", Options.GetResult<GUILayoutOption>(context));
         return null;
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 [UnitMenu("Animator/Get Current Animator State Info")]
 [UnitFriendlyName("Animator.Get Current Animator State Info")]
-[UnitUsage(typeof(UnityEngine.AnimatorStateInfo), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(AnimatorStateInfo), HideExpressionInActionsList = true)]
 public class JLAnimatorGetCurrentAnimatorStateInfo : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Animator))]
+    [Parameter(ExpressionType = typeof(Animator))]
     public JLExpression OperandValue;
 
     [Parameter(ExpressionType = typeof(System.Int32))]
@@ -15,7 +15,7 @@ public class JLAnimatorGetCurrentAnimatorStateInfo : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.Animator opValue = OperandValue.GetResult<UnityEngine.Animator>(context);
+        Animator opValue = OperandValue.GetResult<Animator>(context);
         return opValue.GetCurrentAnimatorStateInfo(LayerIndex.GetResult<System.Int32>(context));
     }
 }

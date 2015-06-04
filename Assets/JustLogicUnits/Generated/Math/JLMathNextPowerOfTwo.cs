@@ -12,6 +12,6 @@ public class JLMathNextPowerOfTwo : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.NextPowerOfTwo(Value.GetResult<System.Int32>(context));
+        return Mathf.NextPowerOfTwo(Value.GetResult<System.Int32>(context));
     }
 }

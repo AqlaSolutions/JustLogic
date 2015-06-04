@@ -6,12 +6,12 @@ using UnityEngine;
 [UnitFriendlyName("GUILayout.BeginArea")]
 public class JLGuiLayoutBeginArea : JLAction
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.Rect))]
+    [Parameter(ExpressionType = typeof(Rect))]
     public JLExpression ScreenRect;
 
     protected override IEnumerator<YieldMode> OnExecute(IExecutionContext context)
     {
-        UnityEngine.GUILayout.BeginArea(ScreenRect.GetResult<UnityEngine.Rect>(context));
+        GUILayout.BeginArea(ScreenRect.GetResult<Rect>(context));
         return null;
     }
 }

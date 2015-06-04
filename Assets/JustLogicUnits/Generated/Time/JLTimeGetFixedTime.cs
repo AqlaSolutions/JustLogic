@@ -9,6 +9,6 @@ public class JLTimeGetFixedTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.fixedTime;
+        return Time.fixedTime;
     }
 }

@@ -27,7 +27,7 @@ public class JustLogicExpressionHolderEditor : JLInspectorBase
         base.OnUndoableScriptReseting();
         if (this)
         {
-            var script = (JustLogicSceneExpressionBase)this.target;
+            var script = (JustLogicSceneExpressionBase)target;
             JLScriptableHelper.Destroy(script.Value);
         }
     }
@@ -47,7 +47,7 @@ public class JustLogicExpressionHolderEditor : JLInspectorBase
 
     protected override bool Draw()
     {
-        var script = (IExpressionHolder)this.target;
+        var script = (IExpressionHolder)target;
 
         var expression = script.Value;
 

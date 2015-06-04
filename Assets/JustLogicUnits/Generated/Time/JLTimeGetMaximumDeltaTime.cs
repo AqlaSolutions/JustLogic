@@ -9,6 +9,6 @@ public class JLTimeGetMaximumDeltaTime : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Time.maximumDeltaTime;
+        return Time.maximumDeltaTime;
     }
 }

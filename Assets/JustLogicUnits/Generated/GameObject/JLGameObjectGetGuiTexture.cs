@@ -4,15 +4,15 @@ using UnityEngine;
 
 [UnitMenu("Object/Get Gui Texture")]
 [UnitFriendlyName("Get Gui Texture")]
-[UnitUsage(typeof(UnityEngine.GUITexture), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(GUITexture), HideExpressionInActionsList = true)]
 public class JLGameObjectGetGuiTexture : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.GameObject))]
+    [Parameter(ExpressionType = typeof(GameObject))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.GameObject opValue = OperandValue.GetResult<UnityEngine.GameObject>(context);
+        GameObject opValue = OperandValue.GetResult<GameObject>(context);
         return opValue.GetComponent<GUITexture>();
     }
 }

@@ -7,12 +7,12 @@ using UnityEngine;
 [UnitUsage(typeof(System.String), HideExpressionInActionsList = true)]
 public class JLAnimationClipGetName : JLExpression
 {
-    [Parameter(ExpressionType = typeof(UnityEngine.AnimationClip))]
+    [Parameter(ExpressionType = typeof(AnimationClip))]
     public JLExpression OperandValue;
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        UnityEngine.AnimationClip opValue = OperandValue.GetResult<UnityEngine.AnimationClip>(context);
+        AnimationClip opValue = OperandValue.GetResult<AnimationClip>(context);
         return opValue.name;
     }
 }

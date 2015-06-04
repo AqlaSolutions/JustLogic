@@ -4,11 +4,11 @@ using UnityEngine;
 
 [UnitMenu("Color/Get Red")]
 [UnitFriendlyName("Color.Get Red")]
-[UnitUsage(typeof(UnityEngine.Color), HideExpressionInActionsList = true)]
+[UnitUsage(typeof(Color), HideExpressionInActionsList = true)]
 public class JLColorGetRed : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Color.red;
+        return Color.red;
     }
 }

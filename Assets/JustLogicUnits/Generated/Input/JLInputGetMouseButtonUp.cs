@@ -12,6 +12,6 @@ public class JLInputGetMouseButtonUp : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Input.GetMouseButtonUp(Button.GetResult<System.Int32>(context));
+        return Input.GetMouseButtonUp(Button.GetResult<System.Int32>(context));
     }
 }

@@ -9,6 +9,6 @@ public class JLPhysicsGetSleepVelocity : JLExpression
 {
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Physics.sleepVelocity;
+        return Physics.sleepVelocity;
     }
 }

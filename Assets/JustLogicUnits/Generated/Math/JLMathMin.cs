@@ -12,6 +12,6 @@ public class JLMathMin : JLExpression
 
     public override object GetAnyResult(IExecutionContext context)
     {
-        return UnityEngine.Mathf.Min(Values.GetResult<System.Single>(context));
+        return Mathf.Min(Values.GetResult<System.Single>(context));
     }
 }
