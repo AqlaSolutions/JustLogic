@@ -8,13 +8,11 @@ Sandcastle
 .NET 4
 
 Put to /deployscript:
-UnityEngine.dll
-UnityEditor.dll
-ILMerge.exe
-zip.exe
+UnityEngine.dll (find in Unity editor directory)
+UnityEditor.dll (find in Unity editor directory)
+ILMerge.exe (download from microsoft website)
+zip.exe (console zip archiver)
 
-You can get everything here
-http://www.megafileupload.com/1B09/jl_deployscript_files.zip
 
 Make build:
 run /deployscript/!DeployFull.bat
